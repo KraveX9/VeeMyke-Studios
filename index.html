@@ -1,1760 +1,1054 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VeeMyke Studios — Timeless Moments, Preserved | Abuja</title>
-<meta name="description" content="VeeMyke Studios — portraits and events photography in Abuja, Nigeria.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231F1A17'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='%23D4A574' font-family='Georgia' font-size='56' font-weight='700' font-style='italic'%3EV%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Kaushan+Script&display=swap" rel="stylesheet">
-<style>
-:root{
-  --cream:#F7F1E8;--cream-2:#F1E9DC;--ivory:#EBE0CF;--ivory-2:#DDCFB8;
-  --espresso:#1F1A17;--espresso-2:#120F0D;
-  --terracotta:#C25C3B;--terracotta-2:#D97554;--terracotta-3:#8B3F28;
-  --brass:#C9A961;--brass-2:#DDBC7A;--brass-3:#8B6F35;
-  --text:#1F1A17;--text-2:#4A413C;--muted:#8B7E72;
-  --line:rgba(31,26,23,.10);--line-2:rgba(31,26,23,.22);
-  --max:1360px;
-  --font:'Inter',system-ui,sans-serif;--serif:'Playfair Display',Georgia,serif;
-  --script:'Cormorant Garamond',Georgia,serif;--hand:'Kaushan Script',cursive;
-  --ease:cubic-bezier(.22,.72,.24,1);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--cream);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body.locked{overflow:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-input,textarea,select{font:inherit;color:inherit}
-h1,h2,h3,h4{margin:0;line-height:1.1}
-p{margin:0}
-::selection{background:var(--terracotta);color:#fff}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeeMyke Studios | Portraits & Events Photography Abuja</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-/* PHOTO — SVG art fills instantly, uploaded images optional */
-.photo{position:relative;overflow:hidden;background:#1F1A17;isolation:isolate}
-.photo svg.art{position:absolute;inset:0;width:100%;height:100%;display:block}
-.photo img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s,transform 1.4s var(--ease)}
-.photo img.loaded{opacity:1}
-.photo:hover img{transform:scale(1.05)}
+    <style>
+        /* =========================================
+           CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-nav: rgba(10, 10, 10, 0.85);
+            --accent: #d4af37;
+            --accent-hover: #f1c40f;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
 
-.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 28px}
-.section{padding:100px 0}
-.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.68rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:var(--terracotta-3);margin-bottom:18px}
-.eyebrow::before{content:'';width:32px;height:1.5px;background:var(--terracotta)}
-.eyebrow--center{justify-content:center}
-.eyebrow--center::after{content:'';width:32px;height:1.5px;background:var(--terracotta)}
-.eyebrow--light{color:var(--brass-2)}
-.eyebrow--light::before,.eyebrow--light::after{background:var(--brass-2)}
-.section-title{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.5rem);letter-spacing:-.02em;line-height:1.04;font-weight:600;color:var(--espresso)}
-.section-title em{font-style:italic;color:var(--terracotta-3);font-weight:500}
-.section-title--light{color:var(--cream)}
-.section-title--light em{color:var(--brass-2)}
-.section-lead{color:var(--muted);max-width:600px;margin-top:18px;font-size:1.02rem;line-height:1.8}
-.section-lead--light{color:rgba(247,241,232,.82)}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:44px;flex-wrap:wrap;margin-bottom:50px}
-.head--center{text-align:center;justify-content:center;flex-direction:column;align-items:center;gap:0}
-.head--center .section-lead{margin-left:auto;margin-right:auto;text-align:center}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 32px;font-size:.72rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;transition:.3s var(--ease);white-space:nowrap;border:1.5px solid transparent;cursor:pointer;border-radius:100px}
-.btn--primary{background:var(--terracotta);color:#fff;border-color:var(--terracotta)}
-.btn--primary:hover{background:var(--terracotta-3);border-color:var(--terracotta-3);transform:translateY(-2px);box-shadow:0 18px 40px -16px rgba(194,92,59,.6)}
-.btn--brass{background:linear-gradient(135deg,var(--brass),var(--brass-2));color:var(--espresso);border-color:var(--brass)}
-.btn--brass:hover{transform:translateY(-2px);box-shadow:0 18px 40px -14px rgba(201,169,97,.7)}
-.btn--outline{background:transparent;color:var(--espresso);border-color:var(--espresso)}
-.btn--outline:hover{background:var(--espresso);color:var(--cream)}
-.btn--outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
-.btn--outline-light:hover{background:#fff;color:var(--espresso);border-color:#fff}
-.btn--wa{background:#25D366;color:#fff;border-color:#25D366}
-.btn--wa:hover{background:#1ea952;border-color:#1ea952;transform:translateY(-2px)}
-.btn--sm{padding:11px 22px;font-size:.62rem}
-.btn--block{width:100%}
-.btn svg{width:15px;height:15px;flex-shrink:0}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.ticker{background:var(--espresso);color:var(--brass-2);padding:11px 0;overflow:hidden}
-.ticker__track{display:flex;gap:56px;width:max-content;animation:marq 46s linear infinite;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;font-weight:700}
-.ticker__track span{display:flex;align-items:center;gap:56px;white-space:nowrap}
-.ticker__track span::after{content:'❋';color:var(--terracotta-2);font-size:.9rem}
-@keyframes marq{to{transform:translateX(-50%)}}
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-.header{position:sticky;top:0;left:0;right:0;z-index:90;background:rgba(247,241,232,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
-.header__inner{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px 0}
-.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
-.brand__mark{width:50px;height:50px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--espresso);display:grid;place-items:center;border:1.5px solid var(--brass)}
-.brand__mark img{width:100%;height:100%;object-fit:cover}
-.brand__mark svg{width:80%;height:80%}
-.brand__text{display:flex;flex-direction:column;line-height:1}
-.brand__name{font-family:var(--serif);font-weight:700;font-size:1.15rem;letter-spacing:-.01em;color:var(--espresso)}
-.brand__name em{font-style:italic;color:var(--terracotta-3)}
-.brand__sub{font-size:.54rem;letter-spacing:.4em;text-transform:uppercase;color:var(--terracotta-3);margin-top:5px;font-weight:800}
-.nav{display:flex;align-items:center;gap:26px}
-.nav a{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-2);transition:.3s;position:relative;padding:6px 0}
-.nav a:hover{color:var(--terracotta-3)}
-.nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--terracotta);transition:width .35s var(--ease)}
-.nav a:hover::after{width:100%}
-.header__actions{display:flex;align-items:center;gap:10px}
-.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);position:relative}
-.burger span,.burger span::before,.burger span::after{position:absolute;left:50%;transform:translateX(-50%);width:18px;height:1.6px;background:var(--text);transition:.3s;content:''}
-.burger span{top:50%;margin-top:-.8px}
-.burger span::before{top:-6px}
-.burger span::after{top:6px}
-.burger.open span{background:transparent}
-.mobile-nav{position:fixed;inset:0;z-index:85;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;visibility:hidden;transition:.4s}
-.mobile-nav.open{opacity:1;visibility:visible}
-.mobile-nav a{font-family:var(--serif);font-size:1.9rem;padding:12px 0;color:var(--espresso);font-weight:600}
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-/* HERO — 2x2 collage of SVG artworks */
-.hero{position:relative;padding:60px 0 80px;overflow:hidden;background:
-  radial-gradient(circle at 15% 20%, rgba(194,92,59,.12), transparent 45%),
-  radial-gradient(circle at 85% 80%, rgba(201,169,97,.14), transparent 45%),
-  var(--cream)}
-.hero__wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
-.hero__tag{font-family:var(--hand);font-size:1.4rem;color:var(--terracotta-3);margin-bottom:18px;display:inline-block}
-.hero__title{font-family:var(--serif);font-weight:600;letter-spacing:-.025em;font-size:clamp(2.3rem,5.4vw,4.4rem);line-height:1;margin-bottom:24px;color:var(--espresso)}
-.hero__title em{font-style:italic;color:var(--terracotta-3);font-weight:500;display:block;margin-top:4px}
-.hero__sub{color:var(--text-2);font-size:1.05rem;max-width:540px;line-height:1.85;margin-bottom:32px}
-.hero__sub b{color:var(--terracotta-3);font-weight:600}
-.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
-.hero__meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:28px;border-top:1px solid var(--line-2);max-width:560px}
-.hero__meta b{font-family:var(--serif);font-size:1.55rem;font-weight:700;color:var(--terracotta-3);display:block;line-height:1}
-.hero__meta small{display:block;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:8px;font-weight:700}
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
 
-/* 2x2 collage grid — every frame is a rich SVG */
-.hero__collage{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;aspect-ratio:1/1;max-width:540px;margin-left:auto;width:100%}
-.hero__tile{position:relative;overflow:hidden;border-radius:2px;box-shadow:0 20px 50px -20px rgba(31,26,23,.4);transition:.5s var(--ease)}
-.hero__tile:hover{transform:translateY(-4px);box-shadow:0 30px 70px -24px rgba(31,26,23,.5);z-index:5}
-.hero__tile .photo{position:absolute;inset:0}
-.hero__tile--main{grid-column:1;grid-row:1/3;aspect-ratio:unset}
-.hero__tile--a{grid-column:2;grid-row:1}
-.hero__tile--b{grid-column:2;grid-row:2}
-.hero__collage__deco{position:absolute;pointer-events:none;z-index:6}
-.hero__collage__deco.tl{top:-12px;left:-12px;width:80px;height:80px;border-left:2px solid var(--brass);border-top:2px solid var(--brass)}
-.hero__collage__deco.br{bottom:-12px;right:-12px;width:80px;height:80px;border-right:2px solid var(--terracotta);border-bottom:2px solid var(--terracotta)}
-.hero__badge{position:absolute;top:20px;right:20px;z-index:8;background:var(--brass);color:var(--espresso);padding:8px 14px;border-radius:100px;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800}
-.hero__sticker{position:absolute;bottom:-20px;left:-20px;z-index:8;background:var(--espresso);color:var(--brass-2);width:100px;height:100px;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:var(--serif);font-style:italic;font-weight:600;font-size:.85rem;line-height:1.15;padding:10px;box-shadow:0 20px 40px -14px rgba(31,26,23,.6);border:2px solid var(--brass)}
+        ul {
+            list-style: none;
+        }
 
-/* PILLARS */
-.pillars{background:var(--espresso);color:#fff;position:relative;overflow:hidden}
-.pillars::before{content:'';position:absolute;inset:0;background-image:
-  repeating-linear-gradient(90deg, rgba(201,169,97,.06) 0 1px, transparent 1px 40px);pointer-events:none}
-.pillars__grid{display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:2}
-.pillar{padding:44px 30px;border-right:1px solid rgba(201,169,97,.25);text-align:center;transition:.4s}
-.pillar:last-child{border-right:0}
-.pillar:hover{background:rgba(201,169,97,.08)}
-.pillar__ic{width:54px;height:54px;margin:0 auto 18px;border:1.5px solid var(--brass);border-radius:50%;display:grid;place-items:center;color:var(--brass-2)}
-.pillar__ic svg{width:24px;height:24px}
-.pillar h3{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
-.pillar p{font-size:.85rem;color:rgba(247,241,232,.75);line-height:1.65;max-width:280px;margin:0 auto}
+        /* =========================================
+           UTILITY CLASSES
+           ========================================= */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* INTRO */
-.intro{padding:100px 0;background:var(--cream)}
-.intro__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
-.intro__media{position:relative}
-.intro__img{aspect-ratio:4/5;overflow:hidden;box-shadow:0 50px 100px -40px rgba(31,26,23,.45);border-radius:2px;position:relative}
-.intro__img .photo{position:absolute;inset:0}
-.intro__badge{position:absolute;bottom:-18px;right:-18px;background:var(--brass);color:var(--espresso);padding:20px 26px;border-radius:2px;text-align:center;box-shadow:0 20px 40px -18px rgba(201,169,97,.6);z-index:3}
-.intro__badge b{display:block;font-family:var(--serif);font-size:2rem;font-weight:700;line-height:1;letter-spacing:-.02em}
-.intro__badge small{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;margin-top:6px;display:block}
-.intro__right h2{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.1rem);letter-spacing:-.03em;line-height:1.05;font-weight:600;margin-bottom:24px;color:var(--espresso)}
-.intro__right h2 em{font-style:italic;color:var(--terracotta-3);font-weight:500}
-.intro__right p{color:var(--text-2);font-size:1.02rem;line-height:1.9;margin-bottom:18px}
-.intro__sig{font-family:var(--hand);font-size:1.6rem;color:var(--terracotta-3);margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
-.intro__points{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
-.intro__point b{display:block;font-family:var(--serif);font-size:2rem;color:var(--terracotta-3);font-weight:700;line-height:1;letter-spacing:-.02em}
-.intro__point span{display:block;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:10px}
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-/* SPLIT */
-.split{padding:100px 0;background:var(--ivory)}
-.split__grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.split__card{position:relative;overflow:hidden;cursor:pointer;transition:.5s var(--ease);background:#fff;border-radius:2px;box-shadow:0 20px 40px -20px rgba(31,26,23,.18)}
-.split__card:hover{transform:translateY(-6px);box-shadow:0 40px 80px -30px rgba(31,26,23,.4)}
-.split__card .photo{aspect-ratio:4/5;position:relative}
-.split__card__body{position:absolute;inset:auto 0 0 0;z-index:5;padding:30px 28px;background:linear-gradient(transparent,rgba(18,15,13,.94))}
-.split__card__body small{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);font-weight:800;display:block;margin-bottom:10px}
-.split__card__body h3{font-family:var(--serif);font-size:1.7rem;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-.02em}
-.split__card__body p{color:rgba(247,241,232,.82);font-size:.9rem;line-height:1.65;margin-bottom:16px;max-width:400px}
-.split__card__body .cta{display:inline-flex;align-items:center;gap:8px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-2);font-weight:800}
-.split__card__body .cta svg{width:13px;height:13px;transition:transform .35s var(--ease)}
-.split__card:hover .split__card__body .cta svg{transform:translateX(5px)}
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+        }
 
-/* MARQUEE */
-.photo-marquee{background:var(--espresso);padding:40px 0;overflow:hidden;border-top:1px solid rgba(201,169,97,.3);border-bottom:1px solid rgba(201,169,97,.3);position:relative}
-.photo-marquee::before{content:'';position:absolute;inset:0;background-image:
-  repeating-linear-gradient(45deg, rgba(201,169,97,.04) 0 1px, transparent 1px 30px);pointer-events:none}
-.photo-marquee__label{text-align:center;font-family:var(--hand);font-size:1.05rem;color:var(--brass-2);margin-bottom:26px;position:relative;z-index:2}
-.photo-marquee__viewport{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);z-index:2}
-.photo-marquee__track{display:flex;gap:14px;width:max-content;animation:film 70s linear infinite}
-@keyframes film{to{transform:translateX(-50%)}}
-.photo-marquee__item{position:relative;flex-shrink:0;width:230px;height:300px;overflow:hidden;cursor:pointer;transition:.5s var(--ease);border-radius:2px}
-.photo-marquee__item .photo{position:absolute;inset:0}
-.photo-marquee__item:hover{transform:translateY(-8px)}
-.photo-marquee__cap{position:absolute;bottom:0;left:0;right:0;z-index:5;padding:16px;background:linear-gradient(transparent,rgba(18,15,13,.92));color:#fff;opacity:0;transition:.4s}
-.photo-marquee__item:hover .photo-marquee__cap{opacity:1}
-.photo-marquee__cap small{font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-2);font-weight:800;display:block;margin-bottom:4px}
-.photo-marquee__cap b{font-family:var(--serif);font-size:.95rem;font-weight:600}
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
 
-/* PORTFOLIO SLIDER */
-.portfolio{padding:100px 0;background:var(--cream)}
-.ps{position:relative;max-width:1120px;margin:0 auto}
-.ps__stage{position:relative;aspect-ratio:16/10;overflow:hidden;box-shadow:0 50px 100px -30px rgba(31,26,23,.45);border-radius:2px;background:var(--espresso)}
-.ps__slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease);z-index:1}
-.ps__slide.active{opacity:1;z-index:2}
-.ps__slide .photo{position:absolute;inset:0}
-.ps__info{position:absolute;inset:auto 0 0 0;z-index:5;padding:32px 38px 26px;background:linear-gradient(transparent 15%,rgba(18,15,13,.94));color:#fff}
-.ps__info small{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--brass-2);font-weight:800;display:block;margin-bottom:10px}
-.ps__info h3{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.9rem);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px;color:#fff}
-.ps__info p{color:rgba(247,241,232,.82);font-size:.88rem;max-width:600px;line-height:1.65}
-.ps__nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(18,15,13,.55);backdrop-filter:blur(10px);color:#fff;display:grid;place-items:center;transition:.3s var(--ease);z-index:6;font-size:1.2rem}
-.ps__nav.prev{left:16px}
-.ps__nav.next{right:16px}
-.ps__nav:hover{background:var(--brass);color:var(--espresso);border-color:var(--brass)}
-.ps__counter{position:absolute;top:20px;left:24px;z-index:6;font-family:var(--serif);font-size:.78rem;letter-spacing:.18em;color:#fff;background:rgba(18,15,13,.6);backdrop-filter:blur(8px);padding:7px 13px;border-radius:100px;border:1px solid rgba(201,169,97,.5)}
-.ps__counter b{color:var(--brass-2)}
-.ps__thumbs{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:16px}
-.ps__thumb{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:.3s;opacity:.55;border-radius:2px}
-.ps__thumb .photo{position:absolute;inset:0}
-.ps__thumb:hover{opacity:.85}
-.ps__thumb.active{opacity:1;border-color:var(--brass)}
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            cursor: pointer;
+            transition: var(--transition);
+        }
 
-/* GALLERY */
-.gallery{padding:100px 0;background:var(--ivory)}
-.filters{display:flex;gap:6px;flex-wrap:wrap}
-.chip{padding:10px 20px;font-size:.6rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--text-2);border:1px solid var(--line-2);transition:.3s;background:transparent;border-radius:100px}
-.chip:hover{border-color:var(--terracotta);color:var(--terracotta-3)}
-.chip.active{background:var(--terracotta);color:#fff;border-color:var(--terracotta)}
-.g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.g-post{position:relative;overflow:hidden;cursor:pointer;background:#fff;transition:.5s var(--ease);border-radius:2px}
-.g-post:hover{transform:translateY(-6px);box-shadow:0 40px 80px -30px rgba(31,26,23,.4)}
-.g-post .photo{aspect-ratio:4/5;position:relative}
-.g-post__cat{position:absolute;top:16px;left:16px;z-index:6;font-size:.54rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;padding:7px 13px;background:var(--terracotta);color:#fff;border-radius:100px}
-.g-post__count{position:absolute;top:16px;right:16px;z-index:6;font-size:.62rem;font-weight:700;padding:7px 12px;background:rgba(247,241,232,.94);color:var(--espresso);border-radius:100px}
-.g-post__info{position:absolute;inset:auto 0 0 0;z-index:5;padding:24px 22px;background:linear-gradient(transparent,rgba(18,15,13,.94));color:#fff}
-.g-post__title{font-family:var(--serif);font-size:1.28rem;font-weight:600;line-height:1.2;letter-spacing:-.02em;margin-bottom:6px}
-.g-post__desc{color:rgba(247,241,232,.82);font-size:.8rem;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.g-post__cta{display:inline-block;margin-top:10px;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-2);font-weight:800}
-.g-empty{grid-column:1/-1;padding:60px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line-2);font-family:var(--hand);font-size:1.15rem;border-radius:2px}
+        .btn:hover {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
 
-/* TESTIMONIALS */
-.testimonials{padding:100px 0;background:var(--cream);position:relative;overflow:hidden}
-.testimonials::before{content:'';position:absolute;top:20%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(194,92,59,.08),transparent 65%);pointer-events:none}
-.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;position:relative;z-index:2}
-.tst{padding:36px 32px;background:#fff;border:1px solid var(--line);transition:.4s;position:relative;border-radius:2px;box-shadow:0 15px 35px -20px rgba(31,26,23,.15)}
-.tst::before{content:'"';position:absolute;top:14px;right:22px;font-family:var(--serif);font-size:5rem;line-height:1;color:rgba(194,92,59,.25);font-weight:700}
-.tst:hover{border-color:var(--brass);transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(31,26,23,.25)}
-.tst__stars{color:var(--brass);letter-spacing:3px;font-size:.85rem;margin-bottom:14px}
-.tst p{color:var(--text-2);font-family:var(--script);font-style:italic;font-size:1.15rem;line-height:1.8;margin-bottom:24px;position:relative;z-index:2}
-.tst__who{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--line)}
-.tst__av{width:48px;height:48px;background:var(--terracotta);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:.95rem;border-radius:50%;flex-shrink:0}
-.tst__who b{display:block;font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--espresso)}
-.tst__who small{font-size:.7rem;color:var(--muted)}
+        .btn-solid {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
 
-/* CTA */
-.cta{background:var(--espresso);color:#fff;padding:90px 0;text-align:center;position:relative;overflow:hidden}
-.cta::before{content:'';position:absolute;inset:0;background:
-  radial-gradient(circle at 20% 30%, rgba(194,92,59,.25), transparent 50%),
-  radial-gradient(circle at 80% 70%, rgba(201,169,97,.2), transparent 50%)}
-.cta__in{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 24px}
-.cta h2{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.2rem);letter-spacing:-.03em;font-weight:600;line-height:1.05;margin-bottom:20px}
-.cta h2 em{font-style:italic;color:var(--brass-2)}
-.cta p{color:rgba(247,241,232,.85);font-size:1.05rem;line-height:1.85;margin-bottom:34px}
-.cta__btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .btn-solid:hover {
+            background: transparent;
+            color: var(--accent);
+        }
 
-/* BOOKING */
-.booking{padding:100px 0;background:var(--cream-2);position:relative;overflow:hidden}
-.booking::before{content:'';position:absolute;top:-40%;right:-15%;width:60%;height:180%;background:radial-gradient(circle,rgba(194,92,59,.08),transparent 65%);pointer-events:none}
-.booking__grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start;position:relative;z-index:2}
-.booking__info h2{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.1rem);letter-spacing:-.03em;line-height:1.05;font-weight:600;margin-bottom:22px;color:var(--espresso)}
-.booking__info h2 em{font-style:italic;color:var(--terracotta-3);font-weight:500}
-.booking__info > p{color:var(--text-2);font-size:1rem;line-height:1.85;margin-bottom:30px}
-.info-block{display:flex;gap:16px;padding:16px 18px;background:#fff;border:1px solid var(--line);margin-bottom:10px;transition:.3s;border-radius:2px}
-.info-block:hover{border-color:var(--brass);transform:translateX(4px)}
-.info-block__ic{width:42px;height:42px;border-radius:50%;background:rgba(201,169,97,.2);display:grid;place-items:center;color:var(--brass-3);flex-shrink:0;border:1px solid rgba(201,169,97,.4)}
-.info-block__ic svg{width:18px;height:18px}
-.info-block b{display:block;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:4px}
-.info-block span{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--text);word-break:break-word}
-.info-block span a:hover{color:var(--terracotta-3)}
-.form{padding:38px;background:#fff;border:1px solid var(--line-2);position:relative;box-shadow:0 30px 60px -30px rgba(31,26,23,.2);border-radius:2px}
-.form::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;height:4px;background:linear-gradient(90deg,var(--terracotta),var(--brass));border-radius:2px 2px 0 0}
-.form h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--espresso);margin-bottom:6px}
-.form > p{font-family:var(--hand);font-size:1.05rem;color:var(--terracotta-3);margin-bottom:24px}
-.field{margin-bottom:16px;display:block}
-.field > span{display:block;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:800}
-.field input,.field textarea,.field select{width:100%;padding:13px 16px;background:var(--cream);border:1px solid var(--line-2);color:var(--text);font-size:.94rem;outline:none;transition:.3s;font-family:inherit;border-radius:2px}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(194,92,59,.15)}
-.field textarea{resize:vertical;min-height:100px}
-.row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        /* Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
 
-/* FOOTER */
-.footer{background:var(--espresso-2);color:rgba(247,241,232,.85);padding:70px 0 30px}
-.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:50px}
-.footer__brand{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.footer__brand .brand__mark{width:46px;height:46px;border-color:var(--brass)}
-.footer__brand .brand__name{color:var(--cream);font-family:var(--serif)}
-.footer__brand .brand__name em{color:var(--brass-2)}
-.footer__brand .brand__sub{color:var(--brass-2)}
-.footer h4{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);margin-bottom:20px;font-weight:800}
-.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
-.footer ul a{font-size:.85rem;color:rgba(247,241,232,.7);transition:.3s}
-.footer ul a:hover{color:var(--brass-2)}
-.footer__about{font-size:.85rem;line-height:1.8;color:rgba(247,241,232,.6);max-width:340px}
-.socials{display:flex;gap:8px;margin-top:22px}
-.socials a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(201,169,97,.4);display:grid;place-items:center;color:rgba(247,241,232,.75);transition:.3s}
-.socials a:hover{background:var(--brass);color:var(--espresso);border-color:var(--brass)}
-.socials svg{width:16px;height:16px}
-.footer__bottom{padding-top:26px;border-top:1px solid rgba(247,241,232,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.72rem;color:rgba(247,241,232,.5)}
-.footer__bottom a:hover{color:var(--brass-2)}
-.footer__tagline{font-family:var(--hand);color:var(--brass-2);font-size:1.15rem}
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.fab{position:fixed;bottom:22px;right:22px;z-index:88;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;display:grid;place-items:center;box-shadow:0 14px 36px -8px rgba(37,211,102,.75);transition:.3s}
-.fab:hover{transform:translateY(-3px) scale(1.05)}
-.fab svg{width:26px;height:26px}
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
 
-.lightbox{position:fixed;inset:0;z-index:400;background:rgba(18,15,13,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 30px 130px;opacity:0;visibility:hidden;transition:.4s}
-.lightbox.open{opacity:1;visibility:visible}
-.lb__stage{position:relative;width:100%;max-width:1100px;height:100%;display:flex;align-items:center;justify-content:center}
-.lb__stage .photo{max-width:100%;max-height:100%;width:auto;height:auto;aspect-ratio:4/3;min-width:280px;min-height:210px;max-width:min(1000px,90vw);max-height:72vh;box-shadow:0 40px 100px -30px rgba(0,0,0,.6);border-radius:2px}
-.lb__close,.lb__nav{position:absolute;width:50px;height:50px;border-radius:50%;border:1px solid rgba(201,169,97,.5);background:rgba(18,15,13,.7);color:var(--brass-2);display:grid;place-items:center;transition:.3s;z-index:8;font-size:1.15rem}
-.lb__close{top:20px;right:20px}
-.lb__nav.prev{left:16px;top:50%;transform:translateY(-50%)}
-.lb__nav.next{right:16px;top:50%;transform:translateY(-50%)}
-.lb__close:hover,.lb__nav:hover{background:var(--brass);color:var(--espresso);border-color:var(--brass)}
-.lb__info{position:absolute;bottom:100px;left:0;right:0;text-align:center;padding:0 20px}
-.lb__cat{display:inline-block;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);font-weight:800;margin-bottom:10px}
-.lb__title{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.8rem);color:#fff;letter-spacing:-.02em;margin-bottom:6px;font-weight:600}
-.lb__desc{color:rgba(247,241,232,.8);font-size:.86rem;max-width:600px;margin:0 auto;line-height:1.6}
-.lb__thumbs{position:absolute;bottom:22px;left:0;right:0;display:flex;justify-content:center;gap:8px;padding:0 20px;overflow-x:auto;scrollbar-width:none}
-.lb__thumbs::-webkit-scrollbar{display:none}
-.lb__thumb{width:64px;height:48px;overflow:hidden;flex-shrink:0;border:2px solid transparent;opacity:.45;transition:.3s;cursor:pointer;position:relative;border-radius:2px}
-.lb__thumb .photo{position:absolute;inset:0}
-.lb__thumb.active{opacity:1;border-color:var(--brass)}
+        nav.scrolled {
+            background: var(--bg-nav);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
 
-.modal{position:fixed;inset:0;z-index:500;background:rgba(18,15,13,.9);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.35s;overflow-y:auto}
-.modal.open{opacity:1;visibility:visible}
-.modal__card{width:100%;max-width:560px;background:#fff;padding:36px;box-shadow:0 50px 100px -30px rgba(0,0,0,.5);transform:translateY(16px);transition:.4s;max-height:90vh;overflow-y:auto;position:relative;border-radius:2px}
-.modal.open .modal__card{transform:none}
-.modal__close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);transition:.3s;font-size:1rem}
-.modal__close:hover{color:var(--terracotta-3);border-color:var(--terracotta-3)}
-.sm__body h2{font-family:var(--serif);font-size:1.7rem;font-weight:600;color:var(--espresso);margin-bottom:12px}
-.sm__body > p{color:var(--text-2);line-height:1.8;font-size:.95rem;margin-bottom:22px}
-.sm__list{list-style:none;padding:0;margin:0 0 24px;border-top:1px solid var(--line)}
-.sm__list li{padding:13px 0 13px 30px;font-size:.88rem;border-bottom:1px solid var(--line);position:relative;color:var(--text-2)}
-.sm__list li::before{content:'❋';position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--terracotta);font-size:.8rem}
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.admin{position:fixed;inset:0;z-index:600;background:var(--cream);display:none;overflow:hidden}
-.admin.open{display:block}
-.admin__gate{position:absolute;inset:0;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 50% 30%,rgba(201,169,97,.18),transparent 55%)}
-.gate__card{width:100%;max-width:400px;padding:42px 34px;background:#fff;border:1px solid var(--line-2);text-align:center;position:relative;box-shadow:0 40px 80px -30px rgba(31,26,23,.35);border-radius:2px}
-.gate__card::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;height:4px;background:linear-gradient(90deg,var(--terracotta),var(--brass));border-radius:2px 2px 0 0}
-.gate__logo{width:72px;height:72px;border-radius:50%;margin:0 auto 20px;background:var(--espresso);display:grid;place-items:center;overflow:hidden;border:2px solid var(--brass)}
-.gate__logo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.gate__logo svg{width:80%;height:80%}
-.gate__card h2{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--espresso);margin-bottom:6px}
-.gate__card p{font-family:var(--hand);color:var(--terracotta-3);font-size:1rem;margin-bottom:22px}
-.gate__card input{width:100%;padding:13px 16px;background:var(--cream);border:1px solid var(--line-2);text-align:center;letter-spacing:.24em;outline:none;margin-bottom:14px;color:var(--text);font-size:.95rem;border-radius:2px}
-.gate__card input:focus{border-color:var(--terracotta)}
-.gate__hint{margin-top:18px;font-size:.72rem;color:var(--muted)}
-.gate__hint code{background:var(--ivory);color:var(--terracotta-3);padding:4px 9px;letter-spacing:.08em;font-weight:800}
-.gate__err{color:#C93B3B;font-size:.78rem;margin-top:12px;display:none}
-.gate__err.show{display:block}
-.admin__shell{display:grid;grid-template-columns:240px 1fr;height:100%}
-.admin__side{border-right:1px solid var(--line);background:#fff;display:flex;flex-direction:column;padding:22px 16px;overflow-y:auto}
-.admin__brand{display:flex;align-items:center;gap:10px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:18px}
-.admin__brand .mk{width:42px;height:42px;border-radius:50%;background:var(--espresso);display:grid;place-items:center;overflow:hidden;flex-shrink:0;border:1px solid var(--brass)}
-.admin__brand .mk img{width:100%;height:100%;object-fit:cover}
-.admin__brand .mk svg{width:80%;height:80%}
-.admin__brand b{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--espresso);display:block}
-.admin__brand small{font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta-3);font-weight:800;margin-top:3px;display:block}
-.admin__tabs{display:flex;flex-direction:column;gap:3px;flex:1}
-.admin__tabs button{display:flex;align-items:center;gap:10px;padding:11px 12px;font-size:.78rem;color:var(--muted);text-align:left;transition:.25s;font-weight:600;border-left:2px solid transparent}
-.admin__tabs button svg{width:16px;height:16px;flex-shrink:0}
-.admin__tabs button:hover{background:var(--cream-2);color:var(--text)}
-.admin__tabs button.active{background:linear-gradient(90deg,rgba(194,92,59,.15),transparent);color:var(--terracotta-3);border-left-color:var(--terracotta)}
-.admin__side-foot{display:flex;flex-direction:column;gap:6px;padding-top:16px;border-top:1px solid var(--line);margin-top:14px}
-.admin__main{display:flex;flex-direction:column;overflow:hidden}
-.admin__top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:18px 26px;border-bottom:1px solid var(--line);background:#fff}
-.admin__top h2{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--espresso)}
-.admin__top p{font-family:var(--hand);font-size:.9rem;color:var(--terracotta-3);margin-top:2px}
-.admin__top-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.admin-badge{display:inline-flex;align-items:center;gap:6px;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#3D8A52;background:rgba(61,138,82,.12);padding:6px 12px;font-weight:800;border-radius:100px}
-.admin__panels{flex:1;overflow-y:auto;padding:24px 26px 80px}
-.panel{display:none}
-.panel.active{display:block}
-.panel h3{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta-3);margin:24px 0 12px;font-weight:800}
-.panel h3:first-child{margin-top:0}
-.card-box{padding:20px;background:#fff;border:1px solid var(--line);margin-bottom:16px;border-radius:2px}
-.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field-grid .full{grid-column:1/-1}
-.hint{color:var(--muted);margin-top:10px;line-height:1.65;font-family:var(--hand);font-size:.9rem}
-.hint a{color:var(--terracotta-3)}
-.uploader{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
-.uploader__preview{width:140px;height:140px;border-radius:50%;border:2px dashed var(--line-2);background:var(--cream);display:grid;place-items:center;overflow:hidden;flex-shrink:0;color:var(--muted);font-size:.68rem;text-align:center}
-.uploader__preview.square{border-radius:12px;width:140px;height:100px}
-.uploader__preview img{width:100%;height:100%;object-fit:cover}
-.uploader__actions{display:flex;flex-direction:column;gap:10px;flex:1;min-width:200px}
-.uploader__actions .row{display:flex;gap:8px;flex-wrap:wrap}
-.thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
-.thumb{position:relative;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--ivory);border-radius:2px}
-.thumb .photo{position:absolute;inset:0}
-.thumb__x{position:absolute;top:6px;right:6px;width:26px;height:26px;border-radius:50%;background:rgba(18,15,13,.9);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;font-size:.8rem;color:#ff9a9a;z-index:10}
-.thumb__x:hover{background:var(--brass);color:var(--espresso)}
-.ap-row{display:flex;gap:12px;padding:12px;background:var(--cream);border:1px solid var(--line);margin-bottom:8px;align-items:flex-start;border-radius:2px}
-.ap-row:hover{border-color:var(--brass)}
-.ap-row__cover{width:90px;height:68px;overflow:hidden;flex-shrink:0;position:relative;background:var(--ivory);border-radius:2px}
-.ap-row__cover .photo{position:absolute;inset:0}
-.ap-row__body{flex:1;min-width:0}
-.ap-row__cat{font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terracotta-3);font-weight:800}
-.ap-row__title{font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--espresso);margin-top:3px;line-height:1.25}
-.ap-row__desc{font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.5}
-.ap-row__actions{display:flex;gap:6px;flex-shrink:0}
-.ap-row__actions button{width:30px;height:30px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);border-radius:50%;transition:.25s}
-.ap-row__actions button:hover{border-color:var(--terracotta-3);color:var(--terracotta-3)}
-.empty-note{padding:30px;text-align:center;color:var(--muted);font-family:var(--hand);border:1px dashed var(--line-2);font-size:1rem;border-radius:2px}
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
-.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,30px);z-index:900;background:var(--espresso);color:var(--brass-2);padding:13px 24px;font-size:.8rem;font-weight:700;letter-spacing:.04em;opacity:0;transition:.4s;pointer-events:none;box-shadow:0 24px 50px -18px rgba(31,26,23,.6);max-width:90vw;text-align:center;border-radius:100px}
-.toast.show{opacity:1;transform:translate(-50%,0)}
+        .logo span {
+            color: var(--accent);
+        }
 
-@media (max-width:1024px){
-  .hero__wrap{grid-template-columns:1fr;gap:44px}
-  .hero__collage{max-width:520px;margin:0 auto}
-  .intro__grid{grid-template-columns:1fr;gap:50px}
-  .intro__media{max-width:480px;margin:0 auto}
-  .split__grid{grid-template-columns:1fr}
-  .booking__grid{grid-template-columns:1fr;gap:44px}
-  .footer__grid{grid-template-columns:1fr 1fr;gap:32px}
-  .pillars__grid{grid-template-columns:1fr}
-  .pillar{border-right:0;border-bottom:1px solid rgba(201,169,97,.25)}
-  .pillar:last-child{border-bottom:0}
-  .admin__shell{grid-template-columns:1fr}
-  .admin__side{flex-direction:row;align-items:center;padding:12px 16px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto;gap:10px}
-  .admin__brand{border:0;padding:0 12px 0 0;margin:0;border-right:1px solid var(--line);flex-shrink:0}
-  .admin__brand .txt{display:none}
-  .admin__tabs{flex-direction:row;flex:0 0 auto;gap:4px}
-  .admin__tabs button{white-space:nowrap;padding:9px 12px;border-left:0;border-bottom:2px solid transparent}
-  .admin__tabs button.active{border-left:0;border-bottom-color:var(--terracotta)}
-  .admin__tabs button span{display:none}
-  .admin__side-foot{flex-direction:row;border:0;padding:0;margin:0;flex-shrink:0}
-  .admin__side-foot .btn span{display:none}
-  .ps__thumbs{grid-template-columns:repeat(4,1fr)}
-}
-@media (max-width:768px){
-  .wrap{padding:0 20px}
-  .nav{display:none}
-  .burger{display:block}
-  .header__actions .btn--sm:not(.btn--primary){display:none}
-  .section{padding:70px 0}
-  .hero{padding:40px 0 60px}
-  .hero__title{font-size:2rem}
-  .hero__meta{grid-template-columns:1fr 1fr;gap:16px}
-  .hero__meta b{font-size:1.3rem}
-  .g-grid{grid-template-columns:1fr}
-  .row-2,.field-grid{grid-template-columns:1fr}
-  .admin__panels{padding:18px 16px 80px}
-  .admin__top{padding:14px 16px}
-  .footer__grid{grid-template-columns:1fr;gap:28px}
-  .form{padding:24px}
-  .ps__stage{aspect-ratio:4/3}
-  .ps__info{padding:22px 20px 20px}
-  .ps__nav{width:40px;height:40px;font-size:1rem}
-  .ps__nav.prev{left:8px}
-  .ps__nav.next{right:8px}
-  .ps__thumbs{grid-template-columns:repeat(4,1fr);gap:6px}
-  .intro__points{grid-template-columns:1fr}
-  .intro__badge{right:8px;bottom:-8px}
-  .photo-marquee__item{width:180px;height:230px}
-}
-@media (max-width:480px){
-  .wrap{padding:0 16px}
-  .hero__title{font-size:1.75rem}
-  .section-title{font-size:1.5rem}
-  .hero__cta .btn{flex:1}
-  .hero__meta{grid-template-columns:1fr;gap:12px}
-  .tst{padding:28px 22px}
-  .fab{width:50px;height:50px;bottom:16px;right:16px}
-  .fab svg{width:22px;height:22px}
-  .btn{padding:12px 22px;font-size:.6rem}
-  .split__card__body{padding:22px 20px}
-  .split__card__body h3{font-size:1.35rem}
-  .ps__thumbs{grid-template-columns:repeat(3,1fr)}
-  .photo-marquee__item{width:150px;height:200px}
-}
-</style>
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: -1;
+        }
+
+        .hero-bg.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.8) 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* =========================================
+           ABOUT SECTION
+           ========================================= */
+        .about {
+            padding: 100px 0;
+            background: var(--bg-dark);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-text h2 span {
+            color: var(--accent);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-text .signature {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-top: 30px;
+        }
+
+        /* =========================================
+           SERVICES SECTION
+           ========================================= */
+        .services {
+            padding: 100px 0;
+            background: var(--bg-card);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-dark);
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           PORTFOLIO GALLERY
+           ========================================= */
+        .portfolio {
+            padding: 100px 0;
+            background: var(--bg-dark);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 4px;
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: var(--accent);
+            font-size: 2rem;
+            transform: scale(0.5);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay i {
+            transform: scale(1);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-prev, .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: color 0.3s;
+            padding: 20px;
+        }
+
+        .lightbox-prev:hover, .lightbox-next:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        /* =========================================
+           CONTACT SECTION
+           ========================================= */
+        .contact {
+            padding: 100px 0;
+            background: var(--bg-card);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-top: 5px;
+        }
+
+        .contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-item p, .contact-item a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            color: #fff;
+        }
+
+        .contact-form {
+            background: var(--bg-dark);
+            padding: 40px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #050505;
+            padding: 50px 0 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-muted);
+        }
+
+        .social-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 3.5rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-img img { height: 400px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--bg-card);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-btns { flex-direction: column; gap: 15px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="ticker" aria-hidden="true"><div class="ticker__track" id="tickerTrack"></div></div>
-
-<header class="header">
-  <div class="wrap header__inner">
-    <a href="#top" class="brand">
-      <span class="brand__mark" data-logo></span>
-      <span class="brand__text">
-        <span class="brand__name" data-name>VeeMyke <em>Studios</em></span>
-        <span class="brand__sub" data-sub>Portraits & Events · Abuja</span>
-      </span>
-    </a>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#split">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#booking">Book</a>
+    <!-- ================= NAVIGATION ================= -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">VeeMyke <span>Studios</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
-    <div class="header__actions">
-      <a href="https://wa.me/2348137774888" target="_blank" rel="noopener" class="btn btn--wa btn--sm">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
-        WhatsApp
-      </a>
-      <a href="#booking" class="btn btn--primary btn--sm">Book a Session</a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span></button>
-    </div>
-  </div>
-</header>
 
-<div class="mobile-nav" id="mobileNav">
-  <a href="#about">About</a><a href="#split">Services</a><a href="#portfolio">Portfolio</a>
-  <a href="#gallery">Gallery</a><a href="#booking">Book</a>
-  <button class="btn btn--primary" id="openAdminMobile" style="margin-top:20px">Admin</button>
-</div>
-
-<section class="hero" id="top">
-  <div class="wrap hero__wrap">
-    <div class="hero__content">
-      <span class="hero__tag" id="heroTag">Timeless moments, preserved</span>
-      <h1 class="hero__title" id="heroTitle">
-        <span id="heroLine1">Capture, inspire,</span>
-        <em id="heroLine2">preserve memories.</em>
-      </h1>
-      <p class="hero__sub" id="heroSub">Abuja's portrait and events studio — crafting <b>timeless images</b> that celebrate your story, your people and the moments that matter most.</p>
-      <div class="hero__cta">
-        <a href="#booking" class="btn btn--primary" id="heroBtn1">Book a Session</a>
-        <a href="#portfolio" class="btn btn--outline" id="heroBtn2">View Portfolio</a>
-      </div>
-      <div class="hero__meta" id="heroMeta"></div>
-    </div>
-    <div class="hero__visual">
-      <div class="hero__collage">
-        <div class="hero__collage__deco tl"></div>
-        <div class="hero__collage__deco br"></div>
-        <div class="hero__tile hero__tile--main"><div class="photo" id="heroMain"></div></div>
-        <div class="hero__tile hero__tile--a"><div class="photo" id="heroA"></div></div>
-        <div class="hero__tile hero__tile--b"><div class="photo" id="heroB"></div></div>
-        <div class="hero__badge">Featured Session</div>
-        <div class="hero__sticker">Timeless<br>Moments</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="pillars">
-  <div class="wrap"><div class="pillars__grid" id="pillarsGrid"></div></div>
-</div>
-
-<section class="intro" id="about">
-  <div class="wrap intro__grid">
-    <div class="intro__media">
-      <div class="intro__img"><div class="photo" id="introPhoto"></div></div>
-      <div class="intro__badge"><b id="introBadgeNum">500+</b><small>Sessions Captured</small></div>
-    </div>
-    <div class="intro__right">
-      <span class="eyebrow">About the Studio</span>
-      <h2 id="aboutTitle">Every image tells <em>your story.</em></h2>
-      <p id="aboutText1"></p>
-      <p id="aboutText2"></p>
-      <div class="intro__sig" id="aboutSig">— VeeMyke Studios</div>
-      <div class="intro__points" id="aboutPoints"></div>
-    </div>
-  </div>
-</section>
-
-<section class="split" id="split">
-  <div class="wrap">
-    <div class="head head--center">
-      <span class="eyebrow eyebrow--center">What We Do</span>
-      <h2 class="section-title">Two studios. One <em>standard.</em></h2>
-      <p class="section-lead">Portraits that celebrate you. Events that preserve the day. Every session shot with intention and edited with care.</p>
-    </div>
-    <div class="split__grid" id="splitGrid"></div>
-  </div>
-</section>
-
-<div class="photo-marquee">
-  <div class="photo-marquee__label">Selected frames from the studio — scroll to explore</div>
-  <div class="photo-marquee__viewport"><div class="photo-marquee__track" id="marqueeTrack"></div></div>
-</div>
-
-<section class="portfolio" id="portfolio">
-  <div class="wrap">
-    <div class="head head--center">
-      <span class="eyebrow eyebrow--center">Portfolio Showcase</span>
-      <h2 class="section-title">Selected <em>frames.</em></h2>
-      <p class="section-lead">A curated slideshow of recent sessions — click any thumbnail to jump in, or let it play.</p>
-    </div>
-    <div class="ps">
-      <div class="ps__stage" id="psStage">
-        <div class="ps__counter" id="psCounter">01 / 08</div>
-        <button class="ps__nav prev" id="psPrev">‹</button>
-        <button class="ps__nav next" id="psNext">›</button>
-        <div class="ps__info">
-          <small id="psCat">Portraits</small>
-          <h3 id="psTitle">Featured Session</h3>
-          <p id="psDesc">Curated from our studio archive.</p>
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="hero">
+        <!-- Background Slider Images (Using high-res Unsplash images for demo) -->
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop');"></div>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1964&auto=format&fit=crop');"></div>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=2070&auto=format&fit=crop');"></div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="reveal">Capturing Timeless Moments</h1>
+            <p class="reveal">Portraits & Events Photography in Abuja, Nigeria.</p>
+            <div class="hero-btns reveal">
+                <a href="#portfolio" class="btn btn-solid">View Portfolio</a>
+                <a href="#contact" class="btn">Book a Session</a>
+            </div>
         </div>
-      </div>
-      <div class="ps__thumbs" id="psThumbs"></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <span class="eyebrow">Full Portfolio</span>
-        <h2 class="section-title">Frames that <em>tell stories.</em></h2>
-        <p class="section-lead">Click any post to explore the full session — most contain multiple images.</p>
-      </div>
-      <div class="filters" id="filters"></div>
-    </div>
-    <div class="g-grid" id="galleryGrid"></div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="wrap">
-    <div class="head head--center">
-      <span class="eyebrow eyebrow--center">Kind Words</span>
-      <h2 class="section-title">Loved by <em>clients.</em></h2>
-    </div>
-    <div class="tst-grid" id="tstGrid"></div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="cta__in">
-    <h2>Ready to create something <em>timeless?</em></h2>
-    <p>Portrait, event or family session — let's create images you'll be proud to look back on for a lifetime.</p>
-    <div class="cta__btns">
-      <a href="https://wa.me/2348137774888" target="_blank" rel="noopener" class="btn btn--brass">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
-        Chat on WhatsApp
-      </a>
-      <a href="tel:+2348137774888" class="btn btn--outline-light">Call 0813 777 4888</a>
-    </div>
-  </div>
-</section>
-
-<section class="booking" id="booking">
-  <div class="wrap booking__grid">
-    <div class="booking__info">
-      <span class="eyebrow">Book a Session</span>
-      <h2>Let's talk about <em>your story.</em></h2>
-      <p>Fill the form and we'll confirm on WhatsApp within a few hours. Same-day bookings often possible — just ask.</p>
-      <div class="info-block"><div class="info-block__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg></div><div><b>Phone / WhatsApp</b><span id="contactPhone"><a href="tel:+2348137774888">0813 777 4888</a></span></div></div>
-      <div class="info-block"><div class="info-block__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></div><div><b>Email</b><span id="contactEmail"><a href="mailto:veemykestudios@gmail.com">veemykestudios@gmail.com</a></span></div></div>
-      <div class="info-block"><div class="info-block__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div><b>Studio Location</b><span id="contactAddress">Abuja, Kuje, Nigeria 900105</span></div></div>
-      <a href="https://wa.me/2348137774888?text=Hi%20VeeMyke%20Studios" target="_blank" rel="noopener" class="btn btn--wa btn--block" style="margin-top:16px">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
-        Chat on WhatsApp
-      </a>
-    </div>
-    <form class="form" id="bookingForm">
-      <h3>Session Enquiry</h3>
-      <p>Tell us about your story</p>
-      <div class="row-2">
-        <label class="field"><span>Your name</span><input type="text" required placeholder="Full name"></label>
-        <label class="field"><span>WhatsApp number</span><input type="tel" required placeholder="0801 234 5678"></label>
-      </div>
-      <div class="row-2">
-        <label class="field"><span>Preferred date</span><input type="date" required></label>
-        <label class="field"><span>Session type</span>
-          <select required>
-            <option value="">Choose...</option>
-            <option>Portrait Session</option><option>Family Portraits</option><option>Maternity Session</option>
-            <option>Birthday / Milestone</option><option>Event Coverage</option><option>Wedding</option>
-            <option>Brand / Commercial</option><option>Something else</option>
-          </select>
-        </label>
-      </div>
-      <label class="field"><span>Location / Venue</span><input type="text" placeholder="Where would you like to shoot?"></label>
-      <label class="field"><span>Tell us more</span><textarea placeholder="Your vision, references, mood, crew size..."></textarea></label>
-      <button type="submit" class="btn btn--primary btn--block">Send Enquiry</button>
-    </form>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer__grid">
-      <div>
-        <div class="footer__brand">
-          <span class="brand__mark" data-logo></span>
-          <span class="brand__text">
-            <span class="brand__name" data-name>VeeMyke <em>Studios</em></span>
-            <span class="brand__sub" data-sub>Portraits & Events · Abuja</span>
-          </span>
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="about">
+        <div class="container about-grid">
+            <div class="about-img reveal">
+                <!-- Image inspired by the profile picture / brand aesthetic -->
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" alt="VeeMyke Studios Photographer">
+            </div>
+            <div class="about-text reveal">
+                <h2>Creating Memories that <span>Inspire</span></h2>
+                <p>Welcome to VeeMyke Studios. We are a passionate photography and videography studio based in Kuje, Abuja, Nigeria. Our mission is simple: to capture and create timeless moments that inspire, and preserve memories for a lifetime.</p>
+                <p>Whether it's a personal portrait session, a grand wedding, or a corporate event, we bring a unique artistic vision and technical expertise to every shoot. We don't just take pictures; we tell your story.</p>
+                <p class="signature">VeeMyke Studios</p>
+            </div>
         </div>
-        <p class="footer__about">To capture & create timeless moments that inspire, and preserve memories. Portraits & events photography based in Abuja, Nigeria.</p>
-        <div class="socials">
-          <a href="https://instagram.com/veemykestudios" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-          <a href="mailto:veemykestudios@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></a>
-          <a href="https://wa.me/2348137774888" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5A8.4 8.4 0 0 1 12.5 20a8.4 8.4 0 0 1-3.9-.9L3 21l1.9-5.6a8.4 8.4 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3a8.4 8.4 0 0 1 8.5 8.5z"/></svg></a>
-        </div>
-      </div>
-      <div><h4>Sessions</h4><ul id="footerSvc"></ul></div>
-      <div><h4>Studio</h4><ul><li><a href="#about">About</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#booking">Book</a></li></ul></div>
-      <div><h4>Contact</h4><ul>
-        <li><a href="tel:+2348137774888">0813 777 4888</a></li>
-        <li><a href="mailto:veemykestudios@gmail.com">veemykestudios@gmail.com</a></li>
-        <li><a href="https://wa.me/2348137774888">WhatsApp us</a></li>
-        <li><a href="#" id="footerAdmin">Admin Login</a></li>
-      </ul></div>
-    </div>
-    <div class="footer__bottom">
-      <span>© <span id="year"></span> VeeMyke Studios · Abuja, Nigeria</span>
-      <span class="footer__tagline">Timeless moments, preserved.</span>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<a href="https://wa.me/2348137774888" target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
-</a>
-
-<div class="lightbox" id="lightbox">
-  <button class="lb__close" id="lbClose">✕</button>
-  <button class="lb__nav prev" id="lbPrev">‹</button>
-  <button class="lb__nav next" id="lbNext">›</button>
-  <div class="lb__stage"><div class="photo" id="lbStage"></div></div>
-  <div class="lb__info">
-    <span class="lb__cat" id="lbCat"></span>
-    <h3 class="lb__title" id="lbTitle"></h3>
-    <p class="lb__desc" id="lbDesc"></p>
-  </div>
-  <div class="lb__thumbs" id="lbThumbs"></div>
-</div>
-
-<div class="modal" id="svcModal">
-  <div class="modal__card">
-    <button class="modal__close" id="svcClose">✕</button>
-    <div id="svcContent"></div>
-  </div>
-</div>
-
-<div class="admin" id="admin" aria-hidden="true">
-  <div class="admin__gate" id="adminGate">
-    <form class="gate__card" id="gateForm">
-      <div class="gate__logo" data-logo></div>
-      <h2>Admin Panel</h2>
-      <p>Enter passcode to manage the site</p>
-      <input type="password" id="gatePass" placeholder="••••••••">
-      <button class="btn btn--primary btn--block" type="submit">Unlock Dashboard</button>
-      <div class="gate__err" id="gateErr">Incorrect passcode.</div>
-      <p class="gate__hint">Demo passcode: <code>veemyke2025</code></p>
-      <p class="gate__hint"><a href="#" id="gateExit" style="color:var(--terracotta-3)">← Back to site</a></p>
-    </form>
-  </div>
-
-  <div class="admin__shell" id="adminShell" style="display:none">
-    <aside class="admin__side">
-      <div class="admin__brand"><span class="mk" data-logo></span><span class="txt"><b>VeeMyke</b><small>Admin</small></span></div>
-      <nav class="admin__tabs" id="adminTabs">
-        <button class="active" data-tab="branding"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg><span>Branding</span></button>
-        <button data-tab="hero"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m3 16 5-5 4 4 3-3 6 6"/></svg><span>Hero</span></button>
-        <button data-tab="about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/></svg><span>About & Services</span></button>
-        <button data-tab="gallery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Gallery</span></button>
-        <button data-tab="contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Contact</span></button>
-        <button data-tab="data"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg><span>Data</span></button>
-      </nav>
-      <div class="admin__side-foot">
-        <button class="btn btn--outline btn--sm" id="adminView"><span>View Site</span></button>
-        <button class="btn btn--outline btn--sm" id="adminLogout"><span>Log Out</span></button>
-      </div>
-    </aside>
-
-    <main class="admin__main">
-      <header class="admin__top">
-        <div><h2 id="panelTitle">Branding</h2><p id="panelSub">Logo, name and identity</p></div>
-        <div class="admin__top-actions">
-          <span class="admin-badge">● Live</span>
-          <button class="btn btn--outline btn--sm" id="resetAll" style="color:#C93B3B;border-color:#C93B3B">Reset</button>
-        </div>
-      </header>
-      <div class="admin__panels">
-
-        <section class="panel active" data-panel="branding">
-          <h3>Logo — upload from gallery</h3>
-          <div class="card-box">
-            <div class="uploader">
-              <div class="uploader__preview" id="logoPreview">No logo</div>
-              <div class="uploader__actions">
-                <div class="row">
-                  <label class="btn btn--primary btn--sm">📁 Upload Logo<input type="file" accept="image/*" id="logoInput" hidden></label>
-                  <button class="btn btn--outline btn--sm" id="logoRemove">Remove</button>
+    <!-- ================= SERVICES SECTION ================= -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title reveal">Our Services</h2>
+            <p class="section-subtitle reveal">What we bring to the table</p>
+            
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <i class="fas fa-camera service-icon"></i>
+                    <h3>Portrait Photography</h3>
+                    <p>Professional headshots, personal branding, and family portraits that capture your true essence and personality.</p>
                 </div>
-                <p class="hint">Pick any image from your phone — appears instantly everywhere.</p>
-              </div>
+                <div class="service-card reveal">
+                    <i class="fas fa-glass-cheers service-icon"></i>
+                    <h3>Event Photography</h3>
+                    <p>From weddings to corporate events, we document every candid moment, emotion, and detail of your special day.</p>
+                </div>
+                <div class="service-card reveal">
+                    <i class="fas fa-video service-icon"></i>
+                    <h3>Videography</h3>
+                    <p>Cinematic video production for events, commercials, and documentaries. We bring your stories to life in motion.</p>
+                </div>
             </div>
-          </div>
-          <h3>Studio identity</h3>
-          <div class="card-box">
-            <div class="field-grid">
-              <label class="field"><span>Studio name</span><input type="text" data-bind="brand.name"></label>
-              <label class="field"><span>Sub-line</span><input type="text" data-bind="brand.sub"></label>
+        </div>
+    </section>
+
+    <!-- ================= PORTFOLIO SECTION ================= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title reveal">Our Portfolio</h2>
+            <p class="section-subtitle reveal">A glimpse into our recent work</p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Items -->
+                <div class="gallery-item reveal" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1964&auto=format&fit=crop" alt="Portrait">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop" alt="Event">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070&auto=format&fit=crop" alt="Wedding">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" alt="Portrait">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop" alt="Event">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop" alt="Portrait">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
             </div>
-          </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="panel" data-panel="hero">
-          <h3>Hero copy</h3>
-          <div class="card-box">
-            <div class="field-grid">
-              <label class="field full"><span>Tagline (script)</span><input type="text" data-bind="hero.tag"></label>
-              <label class="field full"><span>Headline line 1</span><input type="text" data-bind="hero.line1"></label>
-              <label class="field full"><span>Headline line 2 (italic)</span><input type="text" data-bind="hero.line2"></label>
-              <label class="field full"><span>Sub-headline</span><textarea data-bind="hero.sub" rows="3"></textarea></label>
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <p class="section-subtitle reveal">Let's create something beautiful together</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Abuja, Kuje, Nigeria, 900105</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+2348137774888">0813 777 4888</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:veemekestudios@gmail.com">veemekestudios@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/2348137774888" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+
+                <div class="contact-form reveal">
+                    <form id="bookingForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" class="form-control" required style="background: #0a0a0a;">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="portrait">Portrait Photography</option>
+                                <option value="event">Event Photography</option>
+                                <option value="video">Videography</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-solid" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
             </div>
-          </div>
-          <h3>Hero meta numbers</h3>
-          <div class="card-box"><div id="heroMetaEditor"></div></div>
-        </section>
+        </div>
+    </section>
 
-        <section class="panel" data-panel="about">
-          <h3>About section</h3>
-          <div class="card-box">
-            <div class="field-grid">
-              <label class="field full"><span>Section headline</span><input type="text" data-bind="about.title"></label>
-              <label class="field full"><span>Paragraph 1</span><textarea data-bind="about.text1" rows="3"></textarea></label>
-              <label class="field full"><span>Paragraph 2</span><textarea data-bind="about.text2" rows="3"></textarea></label>
-              <label class="field"><span>Signature</span><input type="text" data-bind="about.sig"></label>
-              <label class="field"><span>Badge number</span><input type="text" data-bind="about.badge"></label>
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">VeeMyke <span>Studios</span></div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/2348137774888" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
-          </div>
-          <h3>About stat points</h3>
-          <div class="card-box"><div id="aboutPointsEditor"></div></div>
-          <h3>Services split</h3>
-          <div class="card-box"><div id="splitEditor"></div></div>
-        </section>
+            <p class="footer-text">&copy; 2023 VeeMyke Studios. All Rights Reserved. | Abuja, Nigeria</p>
+        </div>
+    </footer>
 
-        <section class="panel" data-panel="gallery">
-          <h3>Create gallery post</h3>
-          <div class="card-box">
-            <div class="field-grid">
-              <label class="field full"><span>Title</span><input type="text" id="gTitle" placeholder="e.g. Portrait — Studio Session"></label>
-              <label class="field full"><span>Description</span><textarea id="gDesc" rows="2"></textarea></label>
-              <label class="field"><span>Category</span><select id="gCat"></select></label>
-            </div>
-            <div style="margin-top:14px">
-              <label class="btn btn--primary btn--sm">📁 Upload Photos<input type="file" accept="image/*" multiple id="gFileInput" hidden></label>
-            </div>
-          </div>
-          <h3>Posts <span id="gCount" style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none"></span></h3>
-          <div id="gList"></div>
-        </section>
+    <!-- ================= LIGHTBOX MODAL ================= -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-img" src="" alt="Gallery Image">
+        <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>
+    </div>
 
-        <section class="panel" data-panel="contact">
-          <h3>Contact information</h3>
-          <div class="card-box">
-            <div class="field-grid">
-              <label class="field"><span>Phone display</span><input type="text" data-bind="contact.phone"></label>
-              <label class="field"><span>WhatsApp (intl, no +)</span><input type="text" data-bind="contact.whatsapp"></label>
-              <label class="field full"><span>Email</span><input type="text" data-bind="contact.email"></label>
-              <label class="field full"><span>Address</span><input type="text" data-bind="contact.address"></label>
-              <label class="field full"><span>Instagram handle</span><input type="text" data-bind="contact.instagram"></label>
-            </div>
-          </div>
-        </section>
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        /* --- Navbar Scroll Effect --- */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-        <section class="panel" data-panel="data">
-          <h3>Backup &amp; restore</h3>
-          <div class="card-box">
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
-              <button class="btn btn--primary btn--sm" id="exportData">Export JSON</button>
-              <label class="btn btn--outline btn--sm">Import<input type="file" accept="application/json" id="importData" hidden></label>
-              <button class="btn btn--outline btn--sm" id="resetAll2" style="color:#C93B3B;border-color:#C93B3B">Reset Everything</button>
-            </div>
-          </div>
-          <h3>Admin passcode</h3>
-          <div class="card-box">
-            <label class="field"><span>New passcode</span><input type="text" id="passInput"></label>
-            <button class="btn btn--primary btn--sm" id="passSave">Update</button>
-          </div>
-        </section>
+        /* --- Mobile Menu Toggle --- */
+        const navLinks = document.getElementById('navLinks');
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+        }
+        function closeMenu() {
+            navLinks.classList.remove('active');
+        }
 
-      </div>
-    </main>
-  </div>
-</div>
+        /* --- Hero Background Slider --- */
+        const heroBgs = document.querySelectorAll('.hero-bg');
+        let currentBg = 0;
+        
+        function nextBg() {
+            heroBgs[currentBg].classList.remove('active');
+            currentBg = (currentBg + 1) % heroBgs.length;
+            heroBgs[currentBg].classList.add('active');
+        }
+        
+        // Initialize first background
+        heroBgs[0].classList.add('active');
+        // Change background every 5 seconds
+        setInterval(nextBg, 5000);
 
-<div class="toast" id="toast">Saved</div>
+        /* --- Scroll Reveal Animation --- */
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
 
-<script>
-(function(){
-'use strict';
-const $ = (s,c)=>(c||document).querySelector(s);
-const $$ = (s,c)=>Array.from((c||document).querySelectorAll(s));
-const uid = ()=>Math.random().toString(36).slice(2,10);
-const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        revealElements.forEach(el => revealObserver.observe(el));
 
-/* ========= SVG ART LIBRARY ========= */
-/* Every artwork is inline SVG. Zero network requests. Loads 100% instantly. */
-function svgWrap(content){
-  return '<svg class="art" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">'+content+'</svg>';
-}
-const SVGS = {
-  /* Portrait — elegant female silhouette in warm light */
-  portrait: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="pb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F4E4CE"/><stop offset="55%" stop-color="#D9B58A"/><stop offset="100%" stop-color="#A67947"/></linearGradient>
-      <radialGradient id="pl" cx="30%" cy="20%" r="65%"><stop offset="0%" stop-color="#FFF8EC" stop-opacity=".85"/><stop offset="100%" stop-color="#FFF8EC" stop-opacity="0"/></radialGradient>
-      <linearGradient id="pk" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7A4528"/><stop offset="100%" stop-color="#3A1F12"/></linearGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#pb)"/>
-    <rect width="400" height="500" fill="url(#pl)"/>
-    <ellipse cx="200" cy="510" rx="230" ry="150" fill="#3A1F12" opacity=".35"/>
-    <path d="M130 500 Q130 340 200 320 Q270 340 270 500 Z" fill="url(#pk)"/>
-    <ellipse cx="200" cy="230" rx="62" ry="78" fill="url(#pk)"/>
-    <path d="M140 220 Q135 130 200 125 Q265 130 260 220 Q245 165 200 165 Q155 165 140 220 Z" fill="#1A0D07"/>
-    <path d="M215 130 Q240 145 255 185" stroke="#5A2F1A" stroke-width="3" fill="none" opacity=".7"/>
-    <circle cx="180" cy="235" r="3.5" fill="#1A0D07" opacity=".9"/>
-    <circle cx="220" cy="235" r="3.5" fill="#1A0D07" opacity=".9"/>
-    <path d="M188 275 Q200 285 212 275" stroke="#5A2F1A" stroke-width="2" fill="none" opacity=".6"/>
-    <circle cx="60" cy="90" r="40" fill="#FFE9C7" opacity=".4"/>
-    <circle cx="370" cy="420" r="60" fill="#C25C3B" opacity=".25"/>
-  `),
-  /* Bridal — elegant white figure */
-  bridal: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="bb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F8F1E4"/><stop offset="100%" stop-color="#C9A57A"/></linearGradient>
-      <linearGradient id="bd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEFBF5"/><stop offset="100%" stop-color="#E8D6B8"/></linearGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#bb)"/>
-    <circle cx="200" cy="180" r="130" fill="#FFF8EC" opacity=".5"/>
-    <path d="M110 500 Q105 320 200 290 Q295 320 290 500 Z" fill="url(#bd)"/>
-    <path d="M200 130 Q170 130 155 165 Q140 205 155 245 Q172 275 200 275 Q228 275 245 245 Q260 205 245 165 Q230 130 200 130 Z" fill="#E0B98F"/>
-    <path d="M155 165 Q145 105 200 100 Q255 105 245 165 Q240 130 200 125 Q160 130 155 165 Z" fill="#3D2115"/>
-    <ellipse cx="140" cy="135" rx="55" ry="70" fill="#FFF8EC" opacity=".45"/>
-    <ellipse cx="260" cy="140" rx="60" ry="75" fill="#FFF8EC" opacity=".35"/>
-    <circle cx="185" cy="195" r="3" fill="#3D2115"/>
-    <circle cx="215" cy="195" r="3" fill="#3D2115"/>
-    <path d="M190 225 Q200 232 210 225" stroke="#8B3F28" stroke-width="2.5" fill="none"/>
-    <circle cx="200" cy="290" r="8" fill="#DDBC7A"/>
-  `),
-  /* Beauty — dramatic close-up with light play */
-  beauty: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="eb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E8B98A"/><stop offset="100%" stop-color="#7A4528"/></linearGradient>
-      <radialGradient id="el" cx="75%" cy="20%" r="60%"><stop offset="0%" stop-color="#FFF4DE" stop-opacity=".9"/><stop offset="100%" stop-color="#FFF4DE" stop-opacity="0"/></radialGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#eb)"/>
-    <rect width="400" height="500" fill="url(#el)"/>
-    <path d="M100 500 Q90 320 200 290 Q310 320 300 500 Z" fill="#5A2F1A"/>
-    <ellipse cx="200" cy="200" rx="75" ry="95" fill="#7A4528"/>
-    <path d="M125 200 Q120 90 200 85 Q280 90 275 200 Q260 135 200 135 Q140 135 125 200 Z" fill="#1A0D07"/>
-    <path d="M240 130 Q265 145 275 185" stroke="#5A2F1A" stroke-width="4" fill="none" opacity=".8"/>
-    <circle cx="175" cy="205" r="4" fill="#1A0D07"/>
-    <circle cx="230" cy="205" r="4" fill="#1A0D07"/>
-    <path d="M160 185 Q175 178 188 185" stroke="#1A0D07" stroke-width="3" fill="none"/>
-    <path d="M215 185 Q228 178 245 185" stroke="#1A0D07" stroke-width="3" fill="none"/>
-    <path d="M185 240 Q200 250 215 240" stroke="#C25C3B" stroke-width="3" fill="none"/>
-    <path d="M190 245 Q200 255 210 245" fill="#C25C3B" opacity=".6"/>
-    <circle cx="180" cy="215" r="14" fill="#FFF8EC" opacity=".35"/>
-    <circle cx="225" cy="212" r="12" fill="#FFF8EC" opacity=".3"/>
-  `),
-  /* Events — stage lights + crowd */
-  events: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="vb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1F1A17"/><stop offset="60%" stop-color="#3D1F18"/><stop offset="100%" stop-color="#8B3F28"/></linearGradient>
-      <radialGradient id="vl" cx="50%" cy="15%" r="40%"><stop offset="0%" stop-color="#FFE9C7" stop-opacity=".9"/><stop offset="100%" stop-color="#FFE9C7" stop-opacity="0"/></radialGradient>
-      <radialGradient id="vl2" cx="20%" cy="30%" r="30%"><stop offset="0%" stop-color="#C25C3B" stop-opacity=".7"/><stop offset="100%" stop-color="#C25C3B" stop-opacity="0"/></radialGradient>
-      <radialGradient id="vl3" cx="80%" cy="35%" r="30%"><stop offset="0%" stop-color="#C9A961" stop-opacity=".6"/><stop offset="100%" stop-color="#C9A961" stop-opacity="0"/></radialGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#vb)"/>
-    <rect width="400" height="500" fill="url(#vl)"/>
-    <rect width="400" height="500" fill="url(#vl2)"/>
-    <rect width="400" height="500" fill="url(#vl3)"/>
-    <g fill="#0A0503" opacity=".9">
-      <ellipse cx="60" cy="470" rx="35" ry="55"/>
-      <ellipse cx="130" cy="485" rx="40" ry="60"/>
-      <ellipse cx="210" cy="475" rx="42" ry="58"/>
-      <ellipse cx="290" cy="485" rx="38" ry="60"/>
-      <ellipse cx="360" cy="475" rx="35" ry="55"/>
-    </g>
-    <g fill="#FFE9C7" opacity=".7">
-      <circle cx="60" cy="140" r="4"/>
-      <circle cx="110" cy="160" r="3"/>
-      <circle cx="160" cy="130" r="4"/>
-      <circle cx="220" cy="150" r="3"/>
-      <circle cx="270" cy="135" r="4"/>
-      <circle cx="330" cy="155" r="3"/>
-    </g>
-    <path d="M30 60 L90 180 M120 50 L150 170 M270 50 L240 170 M370 60 L320 180" stroke="#FFE9C7" stroke-width="1.5" opacity=".3"/>
-  `),
-  /* Family — 3 figures of different heights */
-  family: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F4E4CE"/><stop offset="100%" stop-color="#C9A57A"/></linearGradient>
-      <linearGradient id="fk" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7A4528"/><stop offset="100%" stop-color="#3A1F12"/></linearGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#fb)"/>
-    <circle cx="200" cy="150" r="120" fill="#FFF8EC" opacity=".4"/>
-    <path d="M40 500 Q40 340 100 320 Q160 340 160 500 Z" fill="url(#fk)"/>
-    <circle cx="100" cy="260" r="48" fill="url(#fk)"/>
-    <path d="M55 255 Q60 200 100 200 Q140 200 145 255 Q135 225 100 225 Q65 225 55 255 Z" fill="#1A0D07"/>
-    <path d="M240 500 Q240 320 300 300 Q360 320 360 500 Z" fill="url(#fk)"/>
-    <circle cx="300" cy="235" r="50" fill="url(#fk)"/>
-    <path d="M252 235 Q258 175 300 175 Q342 175 348 235 Q338 200 300 200 Q262 200 252 235 Z" fill="#3D2115"/>
-    <path d="M150 500 Q150 380 200 365 Q250 380 250 500 Z" fill="url(#fk)"/>
-    <circle cx="200" cy="320" r="38" fill="url(#fk)"/>
-    <path d="M165 320 Q165 275 200 275 Q235 275 235 320 Q228 293 200 293 Q172 293 165 320 Z" fill="#2A150C"/>
-  `),
-  /* Maternity — curved profile */
-  maternity: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="mb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F8ECDC"/><stop offset="100%" stop-color="#C9945A"/></linearGradient>
-      <radialGradient id="ml" cx="35%" cy="25%" r="60%"><stop offset="0%" stop-color="#FFF8EC" stop-opacity=".85"/><stop offset="100%" stop-color="#FFF8EC" stop-opacity="0"/></radialGradient>
-      <linearGradient id="mk" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B5A38"/><stop offset="100%" stop-color="#4A2A18"/></linearGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#mb)"/>
-    <rect width="400" height="500" fill="url(#ml)"/>
-    <path d="M100 500 Q85 340 140 320 Q170 310 200 320 Q230 340 260 380 Q290 420 280 500 Z" fill="url(#mk)"/>
-    <ellipse cx="185" cy="240" rx="48" ry="60" fill="url(#mk)"/>
-    <path d="M137 235 Q132 165 185 160 Q238 165 233 235 Q220 190 185 190 Q150 190 137 235 Z" fill="#1A0D07"/>
-    <path d="M195 200 Q230 210 235 260" stroke="#4A2A18" stroke-width="2.5" fill="none" opacity=".7"/>
-    <path d="M225 360 Q260 380 255 460" stroke="#3D2115" stroke-width="3" fill="none" opacity=".4"/>
-    <circle cx="165" cy="248" r="3" fill="#1A0D07"/>
-    <circle cx="205" cy="248" r="3" fill="#1A0D07"/>
-    <path d="M175 278 Q185 285 195 278" stroke="#8B3F28" stroke-width="2" fill="none"/>
-  `),
-  /* Corporate — clean geometric */
-  corporate: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="cb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0EBE0"/><stop offset="100%" stop-color="#C4B595"/></linearGradient>
-      <linearGradient id="ck" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2A2622"/><stop offset="100%" stop-color="#0F0D0B"/></linearGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#cb)"/>
-    <rect x="60" y="60" width="280" height="400" fill="#1F1A17" opacity=".08"/>
-    <path d="M120 500 Q120 340 200 320 Q280 340 280 500 Z" fill="url(#ck)"/>
-    <path d="M160 500 L200 340 L240 500 Z" fill="#F0EBE0" opacity=".9"/>
-    <ellipse cx="200" cy="230" rx="55" ry="72" fill="url(#ck)"/>
-    <path d="M145 220 Q140 140 200 135 Q260 140 255 220 Q242 168 200 168 Q158 168 145 220 Z" fill="#0F0D0B"/>
-    <rect x="180" y="295" width="40" height="30" fill="#C9A961"/>
-    <circle cx="200" cy="310" r="4" fill="#1F1A17"/>
-  `),
-  /* Studio — spotlight on figure */
-  studio: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="sb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4A413C"/><stop offset="100%" stop-color="#1A1512"/></linearGradient>
-      <radialGradient id="sp" cx="50%" cy="30%" r="55%"><stop offset="0%" stop-color="#FFE9C7" stop-opacity=".85"/><stop offset="100%" stop-color="#FFE9C7" stop-opacity="0"/></radialGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#sb)"/>
-    <rect width="400" height="500" fill="url(#sp)"/>
-    <ellipse cx="200" cy="480" rx="130" ry="25" fill="#0A0806" opacity=".6"/>
-    <path d="M110 500 Q110 340 200 320 Q290 340 290 500 Z" fill="#0F0B09"/>
-    <ellipse cx="200" cy="230" rx="58" ry="74" fill="#0F0B09"/>
-    <ellipse cx="200" cy="230" rx="52" ry="68" fill="#2A1F18"/>
-    <path d="M148 220 Q145 145 200 140 Q255 145 252 220 Q240 172 200 172 Q160 172 148 220 Z" fill="#0A0503"/>
-    <circle cx="180" cy="235" r="3.5" fill="#C9A961"/>
-    <circle cx="220" cy="235" r="3.5" fill="#C9A961"/>
-    <path d="M188 275 Q200 283 212 275" stroke="#C9A961" stroke-width="2" fill="none"/>
-  `),
-  /* Model — dramatic shadow and light */
-  model: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="mb2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3D2A1F"/><stop offset="50%" stop-color="#8B5A38"/><stop offset="100%" stop-color="#C9945A"/></linearGradient>
-      <linearGradient id="ms" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A0D07"/><stop offset="100%" stop-color="#4A2A18"/></linearGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#mb2)"/>
-    <path d="M40 0 L40 500 L180 500 L180 0 Z" fill="#0A0503" opacity=".4"/>
-    <path d="M110 500 Q110 340 200 320 Q290 340 290 500 Z" fill="url(#ms)"/>
-    <ellipse cx="200" cy="230" rx="58" ry="74" fill="url(#ms)"/>
-    <path d="M148 220 Q145 145 200 140 Q255 145 252 220 Q240 172 200 172 Q160 172 148 220 Z" fill="#0A0503"/>
-    <circle cx="178" cy="235" r="3.5" fill="#C25C3B"/>
-    <circle cx="218" cy="235" r="3.5" fill="#C25C3B"/>
-    <path d="M188 275 Q200 285 212 275" stroke="#C25C3B" stroke-width="2.5" fill="none"/>
-    <path d="M230 200 Q270 190 290 220" stroke="#FFF8EC" stroke-width="1.5" fill="none" opacity=".5"/>
-  `),
-  /* Couple — two figures leaning */
-  couple: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="cb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F4E4CE"/><stop offset="100%" stop-color="#C25C3B"/></linearGradient>
-      <linearGradient id="ck2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4A2A18"/><stop offset="100%" stop-color="#1A0D07"/></linearGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#cb2)"/>
-    <circle cx="200" cy="160" r="130" fill="#FFF8EC" opacity=".5"/>
-    <path d="M40 500 Q40 340 120 320 Q150 315 175 335 Q160 380 140 500 Z" fill="url(#ck2)"/>
-    <ellipse cx="110" cy="240" rx="42" ry="56" fill="url(#ck2)"/>
-    <path d="M68 235 Q65 175 110 172 Q155 175 152 235 Q142 195 110 195 Q78 195 68 235 Z" fill="#1A0D07"/>
-    <path d="M200 500 Q200 330 260 310 Q330 330 340 500 Z" fill="url(#ck2)"/>
-    <ellipse cx="270" cy="225" rx="44" ry="58" fill="url(#ck2)"/>
-    <path d="M226 220 Q223 155 270 152 Q317 155 314 220 Q302 180 270 180 Q238 180 226 220 Z" fill="#3D2115"/>
-    <path d="M160 340 Q200 320 250 335" stroke="#C25C3B" stroke-width="3" fill="none" opacity=".6"/>
-  `),
-  /* Landscape */
-  landscape: ()=> svgWrap(`
-    <defs>
-      <linearGradient id="lb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F4C88A"/><stop offset="50%" stop-color="#C25C3B"/><stop offset="100%" stop-color="#3D1F18"/></linearGradient>
-      <radialGradient id="ls" cx="50%" cy="55%" r="25%"><stop offset="0%" stop-color="#FFF8EC" stop-opacity=".95"/><stop offset="100%" stop-color="#FFF8EC" stop-opacity="0"/></radialGradient>
-    </defs>
-    <rect width="400" height="500" fill="url(#lb)"/>
-    <circle cx="200" cy="280" r="100" fill="url(#ls)"/>
-    <circle cx="200" cy="280" r="55" fill="#FFF8EC" opacity=".85"/>
-    <path d="M0 500 L0 380 L100 320 L180 380 L260 300 L340 370 L400 320 L400 500 Z" fill="#1F1208" opacity=".7"/>
-    <path d="M0 500 L0 430 L80 400 L160 440 L240 400 L320 440 L400 410 L400 500 Z" fill="#0F0704" opacity=".9"/>
-    <ellipse cx="80" cy="120" rx="60" ry="18" fill="#FFF8EC" opacity=".3"/>
-    <ellipse cx="300" cy="90" rx="70" ry="20" fill="#FFF8EC" opacity=".25"/>
-  `)
-};
+        /* --- Lightbox Gallery --- */
+        const galleryImages = [
+            'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1964&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop'
+        ];
 
-/* URL scheme: SVG keys stored as "svg:portrait" etc.
-   Real uploaded images stored as data URIs. External URLs also work. */
-function photoHTML(src, alt){
-  if (!src) return '<div class="photo">'+SVGS.portrait()+'</div>';
-  if (src.indexOf('svg:') === 0){
-    const key = src.slice(4);
-    const fn = SVGS[key] || SVGS.portrait;
-    return '<div class="photo">'+fn()+'</div>';
-  }
-  // Real image URL / data URI — try to load, SVG fallback via onerror
-  const seed = 'vm'+Math.random().toString(36).slice(2,8);
-  const fb = 'https://picsum.photos/seed/'+seed+'/800/1000';
-  return '<div class="photo"><img src="'+esc(src)+'" alt="'+esc(alt||'')+'" loading="lazy" '+
-    'onload="this.classList.add(\'loaded\')" '+
-    'onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src=\''+fb+'\';}else{this.style.display=\'none\'}"></div>';
-}
-function renderPhotoInto(el, src, alt){
-  if (!el) return;
-  el.innerHTML = photoHTML(src, alt).replace(/^<div class="photo">/, '').replace(/<\/div>$/,'');
-}
+        let currentImageIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
 
-/* ========= DEFAULTS ========= */
-const HERO_MAIN = 'svg:portrait';
-const HERO_A = 'svg:bridal';
-const HERO_B = 'svg:events';
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = galleryImages[currentImageIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
 
-function seedPosts(){
-  return [
-    { id:uid(), title:'Portrait — The Studio Session', cat:'Portraits',
-      desc:'A refined editorial portrait session exploring warm light, soft textures and honest expression.',
-      images:['svg:portrait','svg:beauty','svg:model'] },
-    { id:uid(), title:'Bridal — The Preparation', cat:'Bridal',
-      desc:'Quiet, tender bridal portraits captured in the hours before the ceremony begins.',
-      images:['svg:bridal','svg:portrait','svg:couple'] },
-    { id:uid(), title:'Family — At Home', cat:'Family',
-      desc:'A relaxed family session in natural light — real connection, real laughter, real moments.',
-      images:['svg:family','svg:maternity'] },
-    { id:uid(), title:'Rooftop Birthday', cat:'Events',
-      desc:'An intimate rooftop celebration documented in warm natural light.',
-      images:['svg:events','svg:studio'] },
-    { id:uid(), title:'Corporate Gala — Evening', cat:'Events',
-      desc:'Full event coverage from welcome reception to closing celebration.',
-      images:['svg:corporate','svg:events','svg:studio'] },
-    { id:uid(), title:'Maternity Portrait', cat:'Portraits',
-      desc:'A tender maternity session capturing the beauty of waiting — soft light, quiet anticipation.',
-      images:['svg:maternity','svg:family'] },
-    { id:uid(), title:'Model Portfolio', cat:'Portraits',
-      desc:'A model portfolio session with bold framing and warm editorial tones.',
-      images:['svg:model','svg:beauty'] },
-    { id:uid(), title:'Traditional Wedding Rites', cat:'Bridal',
-      desc:'A vibrant documentation of a traditional wedding — colour, ceremony, family, joy.',
-      images:['svg:couple','svg:bridal','svg:family'] }
-  ];
-}
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
 
-const DEFAULTS = {
-  brand: { name:'VeeMyke Studios', sub:'Portraits & Events · Abuja', logo:'' },
-  hero: {
-    tag:'Timeless moments, preserved',
-    line1:'Capture, inspire,',
-    line2:'preserve memories.',
-    sub:'Abuja\'s portrait and events studio — crafting timeless images that celebrate your story, your people and the moments that matter most.',
-    mainImg: HERO_MAIN, aImg: HERO_A, bImg: HERO_B,
-    meta: [
-      { n:'500+', l:'Sessions captured' },
-      { n:'5.0', l:'Average rating' },
-      { n:'48hr', l:'Preview delivery' }
-    ]
-  },
-  pillars: [
-    { icon:'camera', t:'Portraits & Events', d:'Specialists in portrait and event photography — a focused craft, not everything for everyone.' },
-    { icon:'heart', t:'Timeless, Not Trendy', d:'Edited to age gracefully. Images you\'ll still love twenty years from now.' },
-    { icon:'star', t:'Preserved Memories', d:'Every session treated with the same obsessive care — big or small.' }
-  ],
-  about: {
-    title:'Every image tells your story.',
-    text1:'VeeMyke Studios is a portraits and events photography studio based in Abuja, Nigeria. We exist to capture and create timeless moments that inspire — and preserve memories that matter.',
-    text2:'From quiet studio portrait sessions to full-day event coverage, every shoot is shot with intention and edited with care. No rushed work, no preset shortcuts. Just images you\'ll be proud to look back on.',
-    sig:'— VeeMyke Studios',
-    badge:'500+',
-    img: 'svg:portrait',
-    points: [
-      { n:'500+', l:'Sessions captured' },
-      { n:'5.0', l:'Average rating' },
-      { n:'48hr', l:'Preview delivery' }
-    ]
-  },
-  split: [
-    { id:'portrait', title:'Portrait Sessions', cat:'Portraits', img: 'svg:beauty',
-      desc:'Studio and outdoor portrait sessions that actually look like you. Editorial, personal brand, maternity, family and more.',
-      list:['Individual & personal brand portraits','Family & maternity sessions','Graduation & milestone shoots','Bridal & engagement portraits'] },
-    { id:'events', title:'Event Coverage', cat:'Events', img: 'svg:events',
-      desc:'Full-day event coverage delivered as a curated story — not just a folder of files. Weddings, parties, corporate events.',
-      list:['Weddings & traditional ceremonies','Birthdays & anniversaries','Corporate galas & conferences','Concerts & live performances'] }
-  ],
-  gallery: {
-    cats:['Portraits','Bridal','Family','Events'],
-    posts: seedPosts()
-  },
-  contact: {
-    phone:'0813 777 4888',
-    whatsapp:'2348137774888',
-    email:'veemykestudios@gmail.com',
-    address:'Abuja, Kuje, Nigeria 900105',
-    instagram:'veemykestudios'
-  },
-  password:'veemyke2025'
-};
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            } else if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            }
+            lightboxImg.src = galleryImages[currentImageIndex];
+        }
 
-const STORE_KEY = 'veemyke.v4';
-function load(){
-  const base = JSON.parse(JSON.stringify(DEFAULTS));
-  try{
-    const raw = localStorage.getItem(STORE_KEY);
-    if (raw) return merge(base, JSON.parse(raw));
-  }catch(e){}
-  return base;
-}
-function merge(base, patch){
-  if (!patch || typeof patch !== 'object') return base;
-  Object.keys(patch).forEach(k=>{
-    const v = patch[k];
-    if (Array.isArray(v)) base[k] = v;
-    else if (v && typeof v === 'object'){
-      if (!base[k] || typeof base[k] !== 'object' || Array.isArray(base[k])) base[k] = {};
-      merge(base[k], v);
-    } else if (v !== undefined) base[k] = v;
-  });
-  return base;
-}
-let state = load();
-function save(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); return true; } catch(e){ return false; } }
-function toast(msg){ const el = $('#toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(el._t); el._t = setTimeout(()=>el.classList.remove('show'), 2400); }
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
 
-/* ========= BRAND ========= */
-function logoSVG(){
-  return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">' +
-    '<defs><linearGradient id="vg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#DDBC7A"/><stop offset="100%" stop-color="#C9A961"/></linearGradient></defs>' +
-    '<circle cx="50" cy="50" r="46" fill="none" stroke="url(#vg)" stroke-width="2"/>' +
-    '<text x="50" y="68" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="48" font-style="italic" font-weight="700" fill="url(#vg)">V</text>' +
-    '<circle cx="68" cy="68" r="3" fill="#DDBC7A"/></svg>';
-}
-function applyBrand(){
-  const b = state.brand;
-  $$('[data-logo]').forEach(el=>{
-    if (b.logo) el.innerHTML = '<img src="'+b.logo+'" alt="logo" onerror="this.parentNode.innerHTML=logoSVG()">';
-    else el.innerHTML = logoSVG();
-  });
-  $$('[data-name]').forEach(el => {
-    const n = b.name, idx = n.indexOf(' ');
-    if (idx > 0) el.innerHTML = esc(n.slice(0, idx)) + ' <em>' + esc(n.slice(idx+1)) + '</em>';
-    else el.textContent = n;
-  });
-  $$('[data-sub]').forEach(el => el.textContent = b.sub);
-  document.title = b.name + ' — Timeless Moments, Preserved | Abuja';
-}
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+            }
+        });
 
-function renderTicker(){
-  const items = ['Portraits & Events Photography','Abuja · Nigeria','Capturing Timeless Moments','Preserving Memories','WhatsApp 0813 777 4888','Book Your Session Today'];
-  const b = '<span>'+items.join('</span><span>')+'</span>';
-  $('#tickerTrack').innerHTML = b + b;
-}
-
-function renderHero(){
-  const h = state.hero;
-  if ($('#heroTag')) $('#heroTag').textContent = h.tag;
-  if ($('#heroLine1')) $('#heroLine1').textContent = h.line1;
-  if ($('#heroLine2')) $('#heroLine2').textContent = h.line2;
-  if ($('#heroSub')) $('#heroSub').innerHTML = esc(h.sub).replace('timeless images','<b>timeless images</b>');
-  if ($('#heroMeta')) $('#heroMeta').innerHTML = (h.meta||[]).map(m=>'<div><b>'+esc(m.n)+'</b><small>'+esc(m.l)+'</small></div>').join('');
-  renderPhotoInto($('#heroMain'), h.mainImg || HERO_MAIN);
-  renderPhotoInto($('#heroA'), h.aImg || HERO_A);
-  renderPhotoInto($('#heroB'), h.bImg || HERO_B);
-}
-
-const PILLAR_ICONS = {
-  camera:'<rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="4"/>',
-  heart:'<path d="M12 21s-7-4.4-7-9.4A3.6 3.6 0 0 1 12 8a3.6 3.6 0 0 1 7 2.6c0 5-7 9.4-7 9.4z"/>',
-  star:'<path d="M12 2 15 8l6 1-4.5 4.5L17.7 20 12 17l-5.7 3 1.2-6.5L3 9l6-1z"/>'
-};
-function renderPillars(){
-  $('#pillarsGrid').innerHTML = state.pillars.map(p=>
-    '<div class="pillar"><div class="pillar__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(PILLAR_ICONS[p.icon]||PILLAR_ICONS.star)+'</svg></div>'+
-    '<h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p></div>'
-  ).join('');
-}
-
-function renderAbout(){
-  const a = state.about;
-  if ($('#aboutTitle')) $('#aboutTitle').innerHTML = esc(a.title).replace(/(your story|story)/i, m => '<em>'+m+'</em>');
-  if ($('#aboutText1')) $('#aboutText1').textContent = a.text1;
-  if ($('#aboutText2')) $('#aboutText2').textContent = a.text2;
-  if ($('#aboutSig')) $('#aboutSig').textContent = a.sig;
-  if ($('#introBadgeNum')) $('#introBadgeNum').textContent = a.badge;
-  renderPhotoInto($('#introPhoto'), a.img || 'svg:portrait');
-  if ($('#aboutPoints')) $('#aboutPoints').innerHTML = (a.points||[]).map(p=>'<div class="intro__point"><b>'+esc(p.n)+'</b><span>'+esc(p.l)+'</span></div>').join('');
-}
-
-function renderSplit(){
-  $('#splitGrid').innerHTML = state.split.map(s=>
-    '<div class="split__card" data-svc="'+s.id+'">'+photoHTML(s.img, s.title)+
-      '<div class="split__card__body"><small>'+esc(s.cat)+'</small><h3>'+esc(s.title)+'</h3>'+
-      '<p>'+esc(s.desc)+'</p>'+
-      '<span class="cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>'+
-    '</div>'
-  ).join('');
-  $$('#splitGrid .split__card').forEach(el => el.addEventListener('click', ()=> openSplit(el.dataset.svc)));
-  if ($('#footerSvc')) $('#footerSvc').innerHTML = state.split.map(s=>'<li><a href="#split">'+esc(s.title)+'</a></li>').join('');
-}
-function openSplit(id){
-  const s = state.split.find(x => x.id === id); if (!s) return;
-  $('#svcContent').innerHTML =
-    '<div class="sm__body"><h2>'+esc(s.title)+'</h2><p>'+esc(s.desc)+'</p>'+
-    '<h3 style="font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta-3);margin-bottom:14px;font-weight:800">What\'s included</h3>'+
-    '<ul class="sm__list">'+(s.list||[]).map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
-    '<a href="https://wa.me/2348137774888?text='+encodeURIComponent('Hi VeeMyke Studios, I\'m interested in '+s.title)+'" target="_blank" rel="noopener" class="btn btn--primary btn--block">Enquire on WhatsApp</a></div>';
-  $('#svcModal').classList.add('open'); document.body.classList.add('locked');
-}
-
-const MARQUEE_ITEMS = [
-  {src:'svg:beauty',   cat:'Portrait', title:'The Beauty Session'},
-  {src:'svg:bridal',   cat:'Bridal',   title:'Bridal Portrait'},
-  {src:'svg:couple',   cat:'Weddings', title:'The First Look'},
-  {src:'svg:family',   cat:'Family',   title:'At Home'},
-  {src:'svg:events',   cat:'Events',   title:'Corporate Gala'},
-  {src:'svg:maternity',cat:'Maternity',title:'Waiting'},
-  {src:'svg:model',    cat:'Portrait', title:'Model Session'},
-  {src:'svg:studio',   cat:'Studio',   title:'Spotlight'},
-  {src:'svg:corporate',cat:'Corporate',title:'Executive Session'},
-  {src:'svg:landscape',cat:'Landscape',title:'Golden Hour'}
-];
-function renderMarquee(){
-  const one = MARQUEE_ITEMS.map(m =>
-    '<div class="photo-marquee__item">'+photoHTML(m.src, m.title)+
-      '<div class="photo-marquee__cap"><small>'+esc(m.cat)+'</small><b>'+esc(m.title)+'</b></div>'+
-    '</div>'
-  ).join('');
-  $('#marqueeTrack').innerHTML = one + one;
-}
-
-let portIdx = 0, portTimer = null, portItems = [];
-function renderPortfolio(){
-  const posts = state.gallery.posts || [];
-  portItems = posts.slice(0,8).map(p => ({
-    src: p.images && p.images[0] ? p.images[0] : 'svg:portrait',
-    cat: p.cat, title: p.title, desc: p.desc
-  }));
-  const stage = $('#psStage');
-  $$('.ps__slide', stage).forEach(el => el.remove());
-  portItems.forEach((it,i)=>{
-    const d = document.createElement('div');
-    d.className = 'ps__slide' + (i===0?' active':'');
-    d.innerHTML = photoHTML(it.src, it.title);
-    stage.insertBefore(d, stage.firstChild);
-  });
-  $('#psThumbs').innerHTML = portItems.map((it,i)=>
-    '<div class="ps__thumb'+(i===0?' active':'')+'" data-i="'+i+'">'+photoHTML(it.src,'')+'</div>'
-  ).join('');
-  $$('#psThumbs .ps__thumb').forEach(t => t.addEventListener('click', ()=> goPort(+t.dataset.i)));
-  portIdx = 0; updatePortInfo(); startPortAuto();
-}
-function updatePortInfo(){
-  const it = portItems[portIdx]; if (!it) return;
-  if ($('#psCat')) $('#psCat').textContent = it.cat;
-  if ($('#psTitle')) $('#psTitle').textContent = it.title;
-  if ($('#psDesc')) $('#psDesc').textContent = it.desc;
-  if ($('#psCounter')) $('#psCounter').innerHTML = String(portIdx+1).padStart(2,'0') + ' / <b>' + String(portItems.length).padStart(2,'0') + '</b>';
-}
-function goPort(n){
-  if (!portItems.length) return;
-  portIdx = (n + portItems.length) % portItems.length;
-  $$('.ps__slide').forEach((el,i)=> el.classList.toggle('active', i===portIdx));
-  $$('#psThumbs .ps__thumb').forEach((el,i)=> el.classList.toggle('active', i===portIdx));
-  updatePortInfo(); startPortAuto();
-}
-function startPortAuto(){ clearInterval(portTimer); if (portItems.length < 2) return; portTimer = setInterval(()=> goPort(portIdx+1), 6000); }
-
-let activeFilter = 'All', visiblePosts = [];
-function renderFilters(){
-  const cats = ['All'].concat(state.gallery.cats);
-  $('#filters').innerHTML = cats.map(c =>
-    '<button class="chip'+(c===activeFilter?' active':'')+'" data-filter="'+esc(c)+'">'+esc(c)+'</button>'
-  ).join('');
-  $$('#filters .chip').forEach(b => b.addEventListener('click', ()=>{ activeFilter = b.dataset.filter; renderFilters(); renderGallery(); }));
-}
-function renderGallery(){
-  const posts = state.gallery.posts || [];
-  visiblePosts = activeFilter === 'All' ? posts : posts.filter(p => p.cat === activeFilter);
-  const grid = $('#galleryGrid');
-  if (!visiblePosts.length){ grid.innerHTML = '<div class="g-empty">No posts in this category yet.</div>'; return; }
-  grid.innerHTML = visiblePosts.map(p=>{
-    const cover = p.images && p.images[0] ? p.images[0] : 'svg:portrait';
-    const n = (p.images||[]).length;
-    return '<figure class="g-post" data-post="'+p.id+'">'+
-      photoHTML(cover, p.title)+
-      '<span class="g-post__cat">'+esc(p.cat)+'</span>'+
-      '<span class="g-post__count">'+n+' photo'+(n===1?'':'s')+'</span>'+
-      '<div class="g-post__info"><h3 class="g-post__title">'+esc(p.title)+'</h3>'+
-        '<p class="g-post__desc">'+esc(p.desc||'')+'</p>'+
-        '<span class="g-post__cta">Open Story →</span>'+
-      '</div>'+
-    '</figure>';
-  }).join('');
-  $$('#galleryGrid .g-post').forEach(el => el.addEventListener('click', ()=> openLightbox(el.dataset.post, 0)));
-}
-
-let lbPostId = null, lbIdx = 0, lbImages = [];
-function openLightbox(postId, idx){
-  const post = (state.gallery.posts||[]).find(p => p.id === postId); if (!post) return;
-  lbPostId = postId; lbImages = post.images || []; lbIdx = idx || 0;
-  updateLightbox();
-  $('#lightbox').classList.add('open'); document.body.classList.add('locked');
-}
-function updateLightbox(){
-  const post = (state.gallery.posts||[]).find(p => p.id === lbPostId); if (!post) return;
-  const src = lbImages[lbIdx]; if (!src) return;
-  renderPhotoInto($('#lbStage'), src);
-  $('#lbCat').textContent = post.cat;
-  $('#lbTitle').textContent = post.title;
-  $('#lbDesc').textContent = post.desc || '';
-  $('#lbThumbs').innerHTML = lbImages.map((src,i)=>
-    '<div class="lb__thumb'+(i===lbIdx?' active':'')+'" data-i="'+i+'">'+photoHTML(src,'')+'</div>'
-  ).join('');
-  $$('#lbThumbs .lb__thumb').forEach(b => b.addEventListener('click', ()=>{ lbIdx = +b.dataset.i; updateLightbox(); }));
-}
-function closeLightbox(){ $('#lightbox').classList.remove('open'); document.body.classList.remove('locked'); }
-function stepLightbox(d){ if (!lbImages.length) return; lbIdx = (lbIdx + d + lbImages.length) % lbImages.length; updateLightbox(); }
-
-function renderTestimonials(){
-  const T = [
-    { q:'Every image from our session feels like art. VeeMyke captured our family in a way I didn\'t know was possible.', n:'Ada O.', r:'Family Session', a:'AO' },
-    { q:'My personal brand portraits are stunning. I use them everywhere — LinkedIn, website, everything.', n:'Chioma N.', r:'Personal Brand', a:'CN' },
-    { q:'They covered our event with so much grace. Every candid, every moment — nothing was missed.', n:'Tunde A.', r:'Event Client', a:'TA' },
-    { q:'The bridal portraits took my breath away. These are the kind of images you frame and pass down.', n:'Amina K.', r:'Bridal Session', a:'AK' },
-    { q:'Relaxed, professional and the final images are extraordinary. Booking again for our next milestone.', n:'Fatima I.', r:'Milestone Session', a:'FI' },
-    { q:'Timeless is the right word. These photos will never go out of style.', n:'Emeka N.', r:'Portrait Client', a:'EN' }
-  ];
-  $('#tstGrid').innerHTML = T.map(t =>
-    '<div class="tst"><div class="tst__stars">★★★★★</div>' +
-      '<p>“'+esc(t.q)+'”</p>' +
-      '<div class="tst__who"><div class="tst__av">'+t.a+'</div><div><b>'+esc(t.n)+'</b><small>'+esc(t.r)+'</small></div></div>' +
-    '</div>'
-  ).join('');
-}
-function renderContact(){
-  const c = state.contact;
-  if ($('#contactPhone')) $('#contactPhone').innerHTML = '<a href="tel:+'+c.whatsapp+'">'+esc(c.phone)+'</a>';
-  if ($('#contactEmail')) $('#contactEmail').innerHTML = '<a href="mailto:'+esc(c.email)+'">'+esc(c.email)+'</a>';
-  if ($('#contactAddress')) $('#contactAddress').textContent = c.address;
-}
-function renderSite(){
-  applyBrand(); renderTicker(); renderHero(); renderPillars(); renderAbout();
-  renderSplit(); renderMarquee(); renderPortfolio(); renderFilters(); renderGallery(); renderTestimonials(); renderContact();
-}
-
-function initHeader(){
-  const burger = $('#burger'), mnav = $('#mobileNav');
-  burger.addEventListener('click', ()=>{
-    burger.classList.toggle('open'); mnav.classList.toggle('open');
-    document.body.classList.toggle('locked', mnav.classList.contains('open'));
-  });
-  $$('#mobileNav a').forEach(a => a.addEventListener('click', ()=>{
-    burger.classList.remove('open'); mnav.classList.remove('open'); document.body.classList.remove('locked');
-  }));
-}
-
-let adminUnlocked = false;
-function openAdmin(){
-  $('#admin').classList.add('open'); document.body.classList.add('locked');
-  $('#adminGate').style.display = adminUnlocked ? 'none' : 'grid';
-  $('#adminShell').style.display = adminUnlocked ? 'grid' : 'none';
-  if (!adminUnlocked) setTimeout(()=> $('#gatePass').focus(), 200);
-  if (adminUnlocked) syncAdminForms();
-}
-function closeAdmin(){ $('#admin').classList.remove('open'); document.body.classList.remove('locked'); }
-function initGate(){
-  $('#gateForm').addEventListener('submit', e=>{
-    e.preventDefault();
-    if ($('#gatePass').value.trim() === state.password){
-      adminUnlocked = true;
-      $('#gateErr').classList.remove('show'); $('#gatePass').value = '';
-      $('#adminGate').style.display = 'none'; $('#adminShell').style.display = 'grid';
-      syncAdminForms(); toast('Welcome back');
-    } else { $('#gateErr').classList.add('show'); $('#gatePass').value = ''; }
-  });
-  $('#gateExit').addEventListener('click', e=>{ e.preventDefault(); closeAdmin(); });
-  $('#adminLogout').addEventListener('click', ()=>{ adminUnlocked = false; closeAdmin(); toast('Logged out'); });
-  $('#adminView').addEventListener('click', closeAdmin);
-}
-const PANEL_META = {
-  branding:['Branding','Logo, name and identity'],
-  hero:['Hero','Copy and artwork frames'],
-  about:['About & Services','Studio story and services'],
-  gallery:['Gallery','Multi-image posts'],
-  contact:['Contact','Phone, email, address'],
-  data:['Data','Backup and reset']
-};
-function initTabs(){
-  $$('#adminTabs button').forEach(b => b.addEventListener('click', ()=>{
-    const t = b.dataset.tab;
-    $$('#adminTabs button').forEach(x => x.classList.toggle('active', x === b));
-    $$('.panel').forEach(p => p.classList.toggle('active', p.dataset.panel === t));
-    const meta = PANEL_META[t] || ['',''];
-    $('#panelTitle').textContent = meta[0];
-    $('#panelSub').textContent = meta[1];
-    $('.admin__panels').scrollTop = 0;
-    if (t === 'hero') renderHeroMetaEditor();
-    if (t === 'about') { renderAboutPointsEditor(); renderSplitEditor(); }
-    if (t === 'gallery') { renderGalleryAdmin(); renderCatSelect(); }
-  }));
-}
-function initBindings(){
-  $$('[data-bind]').forEach(el => {
-    const path = el.dataset.bind;
-    const handler = ()=>{
-      const v = el.value;
-      const parts = path.split('.'); const last = parts.pop();
-      const tgt = parts.reduce((o,k)=> (o[k]=o[k]||{}), state);
-      tgt[last] = v; save();
-      if (path.startsWith('brand.')) applyBrand();
-      if (path.startsWith('hero.')) renderHero();
-      if (path.startsWith('about.')) renderAbout();
-      if (path.startsWith('contact.')) renderContact();
-    };
-    el.addEventListener('input', handler);
-    el.addEventListener('change', handler);
-  });
-}
-function syncAdminForms(){
-  $$('[data-bind]').forEach(el => {
-    const path = el.dataset.bind; const parts = path.split('.');
-    let v = state; parts.forEach(k => { v = v && v[k]; });
-    el.value = v == null ? '' : v;
-  });
-  syncPreview('#logoPreview', state.brand.logo, 'No logo');
-  renderHeroMetaEditor(); renderAboutPointsEditor(); renderSplitEditor();
-  renderGalleryAdmin(); renderCatSelect();
-}
-function syncPreview(sel, src, empty){
-  const el = $(sel); if (!el) return;
-  el.innerHTML = src ? '<img src="'+src+'" alt="">' : '<span>'+empty+'</span>';
-}
-function wireUpload(inputSel, handler){
-  const input = $(inputSel); if (!input) return;
-  input.addEventListener('change', async ()=>{
-    const files = Array.from(input.files || []); if (!files.length) return;
-    try{ await handler(files); } catch(err){ console.error(err); toast('Could not process image'); }
-    input.value = '';
-  });
-}
-function optimise(file, maxDim, quality){
-  return new Promise((resolve, reject)=>{
-    const r = new FileReader();
-    r.onerror = reject;
-    r.onload = ()=>{
-      const img = new Image();
-      img.onerror = reject;
-      img.onload = ()=>{
-        let w = img.naturalWidth, h = img.naturalHeight;
-        const sc = Math.min(1, maxDim / Math.max(w,h));
-        w = Math.round(w*sc); h = Math.round(h*sc);
-        const c = document.createElement('canvas'); c.width = w; c.height = h;
-        c.getContext('2d').drawImage(img, 0, 0, w, h);
-        try{ resolve(c.toDataURL('image/jpeg', quality || .82)); } catch(e){ reject(e); }
-      };
-      img.src = r.result;
-    };
-    r.readAsDataURL(file);
-  });
-}
-function initUploads(){
-  wireUpload('#logoInput', async files=>{
-    state.brand.logo = await optimise(files[0], 600, .92);
-    save(); applyBrand(); syncPreview('#logoPreview', state.brand.logo, 'No logo'); toast('✓ Logo updated');
-  });
-  $('#logoRemove').addEventListener('click', ()=>{ state.brand.logo=''; save(); applyBrand(); syncPreview('#logoPreview', '', 'No logo'); toast('Logo removed'); });
-  wireUpload('#gFileInput', async files=>{
-    const title = $('#gTitle').value.trim();
-    const desc = $('#gDesc').value.trim();
-    const cat = $('#gCat').value || state.gallery.cats[0];
-    if (!title){ toast('Add a title first'); return; }
-    const images = [];
-    for (const f of files){ images.push(await optimise(f, 1400, .75)); }
-    state.gallery.posts.unshift({ id:uid(), title, desc: desc || (cat+' — from the VeeMyke archive.'), cat, images });
-    save(); $('#gTitle').value=''; $('#gDesc').value='';
-    renderGallery(); renderPortfolio(); renderMarquee(); renderGalleryAdmin();
-    toast('✓ Post published');
-  });
-}
-function renderHeroMetaEditor(){
-  const el = $('#heroMetaEditor'); if (!el) return;
-  el.innerHTML = (state.hero.meta||[]).map((m,i)=>
-    '<div style="display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-bottom:8px">' +
-      '<input type="text" value="'+esc(m.n)+'" data-hm-idx="'+i+'" data-hm-field="n" style="padding:9px;background:var(--cream);border:1px solid var(--line-2)">' +
-      '<input type="text" value="'+esc(m.l)+'" data-hm-idx="'+i+'" data-hm-field="l" style="padding:9px;background:var(--cream);border:1px solid var(--line-2)">' +
-    '</div>'
-  ).join('');
-  $$('#heroMetaEditor [data-hm-idx]').forEach(inp=>{
-    inp.addEventListener('input', ()=>{ state.hero.meta[+inp.dataset.hmIdx][inp.dataset.hmField] = inp.value; save(); renderHero(); });
-  });
-}
-function renderAboutPointsEditor(){
-  const el = $('#aboutPointsEditor'); if (!el) return;
-  el.innerHTML = (state.about.points||[]).map((p,i)=>
-    '<div style="display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-bottom:8px">' +
-      '<input type="text" value="'+esc(p.n)+'" data-ap-idx="'+i+'" data-ap-field="n" style="padding:9px;background:var(--cream);border:1px solid var(--line-2)">' +
-      '<input type="text" value="'+esc(p.l)+'" data-ap-idx="'+i+'" data-ap-field="l" style="padding:9px;background:var(--cream);border:1px solid var(--line-2)">' +
-    '</div>'
-  ).join('');
-  $$('#aboutPointsEditor [data-ap-idx]').forEach(inp=>{
-    inp.addEventListener('input', ()=>{ state.about.points[+inp.dataset.apIdx][inp.dataset.apField] = inp.value; save(); renderAbout(); });
-  });
-}
-function renderSplitEditor(){
-  const el = $('#splitEditor'); if (!el) return;
-  el.innerHTML = state.split.map((s,i)=>
-    '<div style="padding:14px;background:var(--cream);border:1px solid var(--line);margin-bottom:10px">' +
-      '<div class="field-grid">' +
-        '<label class="field"><span>Title</span><input type="text" value="'+esc(s.title)+'" data-sp-idx="'+i+'" data-sp-field="title"></label>' +
-        '<label class="field"><span>Category</span><input type="text" value="'+esc(s.cat)+'" data-sp-idx="'+i+'" data-sp-field="cat"></label>' +
-        '<label class="field full"><span>Description</span><textarea rows="2" data-sp-idx="'+i+'" data-sp-field="desc">'+esc(s.desc)+'</textarea></label>' +
-        '<label class="field full"><span>SVG key (portrait/bridal/beauty/events/family/maternity/corporate/studio/model/couple/landscape)</span><input type="text" value="'+esc((s.img||'').replace('svg:',''))+'" data-sp-idx="'+i+'" data-sp-field="imgkey"></label>' +
-      '</div>' +
-    '</div>'
-  ).join('');
-  $$('#splitEditor [data-sp-idx]').forEach(inp=>{
-    inp.addEventListener('input', ()=>{
-      const i = +inp.dataset.spIdx, f = inp.dataset.spField;
-      if (f === 'imgkey') state.split[i].img = 'svg:' + inp.value.trim();
-      else state.split[i][f] = inp.value;
-      save(); renderSplit();
-    });
-  });
-}
-function renderGalleryAdmin(){
-  const el = $('#gList'); if (!el) return;
-  const posts = state.gallery.posts || [];
-  $('#gCount').textContent = posts.length ? '· '+posts.length+' posts' : '';
-  if (!posts.length){ el.innerHTML = '<div class="empty-note">No posts yet.</div>'; return; }
-  el.innerHTML = posts.map(p =>
-    '<div class="ap-row">' +
-      '<div class="ap-row__cover">'+photoHTML(p.images && p.images[0] ? p.images[0] : '', '')+'</div>' +
-      '<div class="ap-row__body">' +
-        '<div class="ap-row__cat">'+esc(p.cat)+'</div>' +
-        '<div class="ap-row__title">'+esc(p.title)+'</div>' +
-        '<div class="ap-row__desc">'+esc(p.desc||'')+'</div>' +
-      '</div>' +
-      '<div class="ap-row__actions"><button class="danger" data-del="'+p.id+'" style="color:#C93B3B">✕</button></div>' +
-    '</div>'
-  ).join('');
-  $$('#gList [data-del]').forEach(b => b.addEventListener('click', ()=>{
-    if (!confirm('Delete this post?')) return;
-    state.gallery.posts = state.gallery.posts.filter(p => p.id !== b.dataset.del);
-    save(); renderGallery(); renderPortfolio(); renderMarquee(); renderGalleryAdmin(); toast('Post deleted');
-  }));
-}
-function renderCatSelect(){ $('#gCat').innerHTML = state.gallery.cats.map(c=>'<option>'+esc(c)+'</option>').join(''); }
-
-function initData(){
-  $('#exportData').addEventListener('click', ()=>{
-    const blob = new Blob([JSON.stringify(state, null, 2)], { type:'application/json' });
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-    a.download = 'veemyke-data.json'; a.click(); URL.revokeObjectURL(a.href);
-    toast('Backup downloaded');
-  });
-  $('#importData').addEventListener('change', e=>{
-    const file = e.target.files[0]; if (!file) return;
-    const fr = new FileReader();
-    fr.onload = ()=>{
-      try{
-        const parsed = JSON.parse(fr.result);
-        const base = JSON.parse(JSON.stringify(DEFAULTS));
-        state = merge(base, parsed);
-        save(); renderSite(); syncAdminForms(); toast('Data imported');
-      }catch(err){ toast('Invalid file'); }
-    };
-    fr.readAsText(file); e.target.value = '';
-  });
-  const reset = ()=>{
-    if (!confirm('Reset everything?')) return;
-    state = JSON.parse(JSON.stringify(DEFAULTS));
-    save(); renderSite(); syncAdminForms(); toast('Reset complete');
-  };
-  $('#resetAll').addEventListener('click', reset);
-  $('#resetAll2').addEventListener('click', reset);
-  $('#passSave').addEventListener('click', ()=>{
-    const v = $('#passInput').value.trim();
-    if (v.length < 4){ toast('Min 4 characters'); return; }
-    state.password = v; save(); $('#passInput').value = ''; toast('Passcode updated');
-  });
-}
-
-function init(){
-  try { $('#year').textContent = new Date().getFullYear(); } catch(e){}
-  try { renderSite(); } catch(e){ console.error('site', e); }
-  try { initHeader(); } catch(e){}
-  try { initGate(); } catch(e){}
-  try { initTabs(); } catch(e){}
-  try { initBindings(); } catch(e){}
-  try { initUploads(); } catch(e){}
-  try { initData(); } catch(e){}
-
-  if ($('#psPrev')) $('#psPrev').addEventListener('click', ()=> goPort(portIdx-1));
-  if ($('#psNext')) $('#psNext').addEventListener('click', ()=> goPort(portIdx+1));
-
-  try {
-    $('#lbClose').addEventListener('click', closeLightbox);
-    $('#lbPrev').addEventListener('click', ()=> stepLightbox(-1));
-    $('#lbNext').addEventListener('click', ()=> stepLightbox(1));
-    $('#lightbox').addEventListener('click', e=>{ if (e.target.id === 'lightbox') closeLightbox(); });
-    $('#svcClose').addEventListener('click', ()=>{ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); });
-    $('#svcModal').addEventListener('click', e=>{ if (e.target.id === 'svcModal'){ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); } });
-    document.addEventListener('keydown', e=>{
-      if (e.key === 'Escape'){ closeLightbox(); $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); }
-      if (!$('#lightbox').classList.contains('open')) return;
-      if (e.key === 'ArrowLeft') stepLightbox(-1);
-      if (e.key === 'ArrowRight') stepLightbox(1);
-    });
-  } catch(e){}
-
-  try {
-    $('#bookingForm').addEventListener('submit', e=>{
-      e.preventDefault();
-      const inputs = e.target.querySelectorAll('input, select, textarea');
-      const text = 'Hi VeeMyke Studios! New booking enquiry.\n\n' +
-        'Name: ' + (inputs[0].value||'') + '\n' +
-        'WhatsApp: ' + (inputs[1].value||'') + '\n' +
-        'Date: ' + (inputs[2].value||'') + '\n' +
-        'Session: ' + (inputs[3].value||'') + '\n' +
-        'Location: ' + (inputs[4].value||'') + '\n' +
-        'Details: ' + (inputs[5].value||'');
-      window.open('https://wa.me/2348137774888?text=' + encodeURIComponent(text), '_blank');
-      toast('Opening WhatsApp...');
-      e.target.reset();
-    });
-  } catch(e){}
-
-  try {
-    ['#openAdminMobile','#footerAdmin'].forEach(sel => {
-      const el = $(sel); if (el) el.addEventListener('click', e=>{ e.preventDefault(); openAdmin(); });
-    });
-    if (location.hash === '#admin') openAdmin();
-  } catch(e){}
-}
-
-document.addEventListener('DOMContentLoaded', init);
-})();
-</script>
+        /* --- Contact Form Submission (Demo) --- */
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Message Sent!';
+            btn.style.background = '#25D366';
+            btn.style.color = '#fff';
+            btn.style.borderColor = '#25D366';
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.style.borderColor = '';
+                e.target.reset();
+            }, 3000);
+        }
+    </script>
 </body>
-</html>
+  </html>
