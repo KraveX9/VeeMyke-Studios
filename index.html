@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeeMyke Studios — Timeless Moments, Preserved | Abuja Photography</title>
+<meta name="description" content="VeeMyke Studios — portraits and events photography in Abuja, Nigeria. Capturing timeless moments that inspire and preserve memories.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23D97A8A'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='%23FBF7F2' font-family='Georgia' font-size='52' font-weight='700' font-style='italic'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Kaushan+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#FBF7F2;
+  --blush-2:#F5EBE0;
+  --ivory:#EFE2D3;
+  --rose:#D97A8A;
+  --rose-2:#E89AA5;
+  --rose-dark:#A84B5D;
+  --wine:#7A2E3D;
+  --terracotta:#C17A5C;
+  --gold:#C9A961;
+  --gold-2:#E0C08C;
+  --text:#2A1F22;
+  --text-2:#5A4A4E;
+  --muted:#9A8A88;
+  --line:rgba(42,31,34,.09);
+  --line-2:rgba(42,31,34,.18);
+  --max:1360px;
+  --font:'Inter',system-ui,sans-serif;
+  --serif:'Playfair Display',Georgia,serif;
+  --script:'Cormorant Garamond',Georgia,serif;
+  --hand:'Kaushan Script',cursive;
+  --ease:cubic-bezier(.22,.72,.24,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--blush);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,textarea,select{font:inherit;color:inherit}
+h1,h2,h3,h4{margin:0;line-height:1.1}
+p{margin:0}
+::selection{background:var(--rose);color:#fff}
+
+/* ===== PREMIUM PHOTO FRAME — never black ===== */
+.photo{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(217,122,138,.45), transparent 55%),
+    radial-gradient(circle at 75% 85%, rgba(201,169,97,.35), transparent 55%),
+    linear-gradient(135deg, #F5EBE0 0%, #EFE2D3 45%, #E5D2C1 100%);
+}
+.photo::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(217,122,138,.07) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(-45deg, rgba(122,46,61,.05) 0 1px, transparent 1px 32px);
+  pointer-events:none;
+}
+.photo::after{
+  content:'VM';position:absolute;inset:0;z-index:1;
+  display:grid;place-items:center;
+  font-family:var(--serif);font-style:italic;font-weight:700;
+  font-size:clamp(2rem,5vw,4rem);letter-spacing:.2em;
+  color:rgba(122,46,61,.14);pointer-events:none;
+}
+.photo img{
+  position:absolute;inset:0;z-index:2;
+  width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .5s, transform 1.2s var(--ease);
+}
+.photo img.loaded{opacity:1}
+.photo:hover img{transform:scale(1.05)}
+
+/* ===== LAYOUT ===== */
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 28px}
+.section{padding:110px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.68rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:var(--rose-dark);margin-bottom:20px}
+.eyebrow::before{content:'';width:32px;height:1.5px;background:var(--rose-dark)}
+.eyebrow--center{justify-content:center}
+.eyebrow--center::after{content:'';width:32px;height:1.5px;background:var(--rose-dark)}
+.eyebrow--light{color:var(--gold-2)}
+.eyebrow--light::before,.eyebrow--light::after{background:var(--gold-2)}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.6rem);letter-spacing:-.02em;line-height:1.05;font-weight:600}
+.section-title em{font-style:italic;color:var(--rose-dark);font-weight:500}
+.section-title--light{color:#FFF}
+.section-title--light em{color:var(--gold-2)}
+.section-lead{color:var(--muted);max-width:600px;margin-top:20px;font-size:1.02rem;line-height:1.8}
+.section-lead--light{color:rgba(255,255,255,.85)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:44px;flex-wrap:wrap;margin-bottom:54px}
+.head--center{text-align:center;justify-content:center;flex-direction:column;align-items:center;gap:0}
+.head--center .section-lead{margin-left:auto;margin-right:auto;text-align:center}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 34px;font-size:.72rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;transition:.3s var(--ease);white-space:nowrap;border:1.5px solid transparent;cursor:pointer;border-radius:100px}
+.btn--primary{background:var(--rose-dark);color:#fff;border-color:var(--rose-dark);box-shadow:0 14px 34px -14px rgba(168,75,93,.55)}
+.btn--primary:hover{background:var(--wine);border-color:var(--wine);transform:translateY(-2px);box-shadow:0 20px 44px -14px rgba(122,46,61,.6)}
+.btn--outline{background:transparent;color:var(--rose-dark);border-color:var(--rose-dark)}
+.btn--outline:hover{background:var(--rose-dark);color:#fff}
+.btn--outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn--outline-light:hover{background:#fff;color:var(--wine);border-color:#fff}
+.btn--wa{background:#25D366;color:#fff;border-color:#25D366}
+.btn--wa:hover{background:#1ea952;border-color:#1ea952;transform:translateY(-2px)}
+.btn--gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:var(--wine);border-color:var(--gold)}
+.btn--gold:hover{background:var(--gold-2);transform:translateY(-2px);box-shadow:0 18px 40px -14px rgba(201,169,97,.6)}
+.btn--sm{padding:12px 22px;font-size:.62rem}
+.btn--block{width:100%}
+.btn svg{width:15px;height:15px;flex-shrink:0}
+
+/* ===== TICKER ===== */
+.ticker{background:var(--wine);color:var(--gold-2);padding:11px 0;overflow:hidden}
+.ticker__track{display:flex;gap:60px;width:max-content;animation:marq 48s linear infinite;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;font-weight:700}
+.ticker__track span{display:flex;align-items:center;gap:60px;white-space:nowrap}
+.ticker__track span::after{content:'❋';color:var(--gold-2);font-size:.9rem}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ===== HEADER ===== */
+.header{position:sticky;top:0;left:0;right:0;z-index:90;background:rgba(251,247,242,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand__mark{width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--rose-dark);display:grid;place-items:center;border:1.5px solid var(--gold)}
+.brand__mark img{width:100%;height:100%;object-fit:cover}
+.brand__mark svg{width:80%;height:80%}
+.brand__text{display:flex;flex-direction:column;line-height:1}
+.brand__name{font-family:var(--serif);font-weight:700;font-size:1.18rem;letter-spacing:-.01em;color:var(--wine)}
+.brand__name em{font-style:italic;color:var(--rose-dark)}
+.brand__sub{font-size:.54rem;letter-spacing:.4em;text-transform:uppercase;color:var(--rose-dark);margin-top:5px;font-weight:800}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-2);transition:.3s;position:relative;padding:6px 0}
+.nav a:hover{color:var(--rose-dark)}
+.nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--rose);transition:width .35s var(--ease)}
+.nav a:hover::after{width:100%}
+.header__actions{display:flex;align-items:center;gap:10px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;left:50%;transform:translateX(-50%);width:18px;height:1.6px;background:var(--text);transition:.3s;content:''}
+.burger span{top:50%;margin-top:-.8px}
+.burger span::before{top:-6px}
+.burger span::after{top:6px}
+.burger.open span{background:transparent}
+.mobile-nav{position:fixed;inset:0;z-index:85;background:var(--blush);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;visibility:hidden;transition:.4s}
+.mobile-nav.open{opacity:1;visibility:visible}
+.mobile-nav a{font-family:var(--serif);font-size:1.9rem;padding:12px 0;color:var(--wine);font-weight:600}
+.mobile-nav a:hover{color:var(--rose-dark)}
+
+/* ===== HERO ===== */
+.hero{position:relative;padding:70px 0 90px;overflow:hidden;background:
+  radial-gradient(circle at 15% 20%, rgba(217,122,138,.1), transparent 45%),
+  radial-gradient(circle at 85% 80%, rgba(201,169,97,.08), transparent 45%),
+  var(--blush)}
+.hero__wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.hero__tag{font-family:var(--hand);font-size:1.4rem;color:var(--rose-dark);margin-bottom:18px;display:inline-block}
+.hero__title{font-family:var(--serif);font-weight:600;letter-spacing:-.025em;font-size:clamp(2.4rem,5.6vw,4.6rem);line-height:1;margin-bottom:24px;color:var(--wine)}
+.hero__title em{font-style:italic;color:var(--rose-dark);font-weight:500;display:block;margin-top:4px}
+.hero__sub{color:var(--text-2);font-size:1.05rem;max-width:540px;line-height:1.85;margin-bottom:32px}
+.hero__sub b{color:var(--rose-dark);font-weight:600}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.hero__meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:28px;border-top:1px solid var(--line-2);max-width:560px}
+.hero__meta b{font-family:var(--serif);font-size:1.55rem;font-weight:700;color:var(--rose-dark);display:block;line-height:1}
+.hero__meta small{display:block;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:8px;font-weight:700}
+
+.hero__visual{position:relative}
+.hero__frame{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px;box-shadow:0 40px 90px -30px rgba(122,46,61,.35)}
+.hero__photo{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease);z-index:1}
+.hero__photo.active{opacity:1;z-index:2}
+.hero__frame__deco{position:absolute;pointer-events:none;z-index:0}
+.hero__frame__deco.tl{top:-16px;left:-16px;width:110px;height:110px;border-left:1.5px solid var(--rose);border-top:1.5px solid var(--rose);border-top-left-radius:2px}
+.hero__frame__deco.br{bottom:-16px;right:-16px;width:110px;height:110px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);border-bottom-right-radius:2px}
+.hero__caption{position:absolute;inset:auto 0 0 0;z-index:5;padding:24px 26px;background:linear-gradient(transparent,rgba(122,46,61,.88));color:#fff}
+.hero__caption small{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:6px}
+.hero__caption b{font-family:var(--serif);font-size:1.2rem;font-weight:600;letter-spacing:-.015em;line-height:1.2}
+.hero__dots{position:absolute;bottom:20px;right:22px;z-index:6;display:flex;gap:6px}
+.hero__dots button{width:26px;height:3px;background:rgba(255,255,255,.4);transition:.4s;border-radius:2px}
+.hero__dots button.active{background:var(--gold);width:44px}
+
+/* ===== PILLARS ===== */
+.pillars{background:var(--wine);color:#fff;padding:0}
+.pillars__grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.pillar{padding:48px 32px;border-right:1px solid rgba(255,255,255,.12);text-align:center;transition:.4s}
+.pillar:last-child{border-right:0}
+.pillar:hover{background:rgba(255,255,255,.03)}
+.pillar__ic{width:56px;height:56px;margin:0 auto 20px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-2)}
+.pillar__ic svg{width:24px;height:24px}
+.pillar h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
+.pillar p{font-size:.86rem;color:rgba(255,255,255,.75);line-height:1.65;max-width:280px;margin:0 auto}
+
+/* ===== INTRO / ABOUT ===== */
+.intro{padding:110px 0;background:var(--blush)}
+.intro__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+.intro__media{position:relative}
+.intro__img{aspect-ratio:4/5;overflow:hidden;box-shadow:0 50px 100px -40px rgba(122,46,61,.35)}
+.intro__img .photo{aspect-ratio:4/5}
+.intro__badge{position:absolute;bottom:-18px;right:-18px;background:var(--gold);color:var(--wine);padding:20px 26px;border-radius:2px;text-align:center}
+.intro__badge b{display:block;font-family:var(--serif);font-size:2rem;font-weight:700;line-height:1;letter-spacing:-.02em}
+.intro__badge small{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;margin-top:6px;display:block}
+.intro__right h2{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.2rem);letter-spacing:-.03em;line-height:1.05;font-weight:600;margin-bottom:24px;color:var(--wine)}
+.intro__right h2 em{font-style:italic;color:var(--rose-dark);font-weight:500}
+.intro__right p{color:var(--text-2);font-size:1.02rem;line-height:1.9;margin-bottom:18px}
+.intro__sig{font-family:var(--hand);font-size:1.6rem;color:var(--rose-dark);margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.intro__points{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
+.intro__point b{display:block;font-family:var(--serif);font-size:2rem;color:var(--rose-dark);font-weight:700;line-height:1;letter-spacing:-.02em}
+.intro__point span{display:block;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:10px}
+
+/* ===== SERVICES SPLIT (Portraits / Events) ===== */
+.split{padding:110px 0;background:var(--blush-2)}
+.split__grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.split__card{position:relative;overflow:hidden;cursor:pointer;transition:.5s var(--ease);background:#fff}
+.split__card:hover{transform:translateY(-6px);box-shadow:0 40px 80px -30px rgba(122,46,61,.3)}
+.split__card .photo{aspect-ratio:4/5}
+.split__card__body{position:absolute;inset:auto 0 0 0;z-index:5;padding:32px 28px;background:linear-gradient(transparent,rgba(122,46,61,.92))}
+.split__card__body small{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:10px}
+.split__card__body h3{font-family:var(--serif);font-size:1.7rem;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.split__card__body p{color:rgba(255,255,255,.82);font-size:.9rem;line-height:1.65;margin-bottom:16px;max-width:400px}
+.split__card__body .cta{display:inline-flex;align-items:center;gap:8px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2);font-weight:800}
+.split__card__body .cta svg{width:13px;height:13px;transition:transform .35s var(--ease)}
+.split__card:hover .split__card__body .cta svg{transform:translateX(5px)}
+
+/* ===== PORTFOLIO SLIDER ===== */
+.portfolio{padding:110px 0;background:var(--blush)}
+.ps{position:relative;max-width:1100px;margin:0 auto}
+.ps__stage{position:relative;aspect-ratio:16/10;overflow:hidden;box-shadow:0 50px 100px -30px rgba(122,46,61,.35);border-radius:2px}
+.ps__slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease);z-index:1}
+.ps__slide.active{opacity:1;z-index:2}
+.ps__slide .photo{position:absolute;inset:0}
+.ps__info{position:absolute;inset:auto 0 0 0;z-index:5;padding:34px 40px 28px;background:linear-gradient(transparent 15%,rgba(122,46,61,.94));color:#fff}
+.ps__info small{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:10px}
+.ps__info h3{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.9rem);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px;color:#fff}
+.ps__info p{color:rgba(255,255,255,.82);font-size:.88rem;max-width:600px;line-height:1.65}
+.ps__nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(122,46,61,.55);backdrop-filter:blur(10px);color:#fff;display:grid;place-items:center;transition:.3s var(--ease);z-index:6;font-size:1.2rem}
+.ps__nav.prev{left:16px}
+.ps__nav.next{right:16px}
+.ps__nav:hover{background:var(--gold);color:var(--wine);border-color:var(--gold)}
+.ps__counter{position:absolute;top:20px;left:24px;z-index:6;font-family:var(--serif);font-size:.78rem;letter-spacing:.18em;color:#fff;background:rgba(122,46,61,.6);backdrop-filter:blur(8px);padding:7px 13px;border-radius:100px;border:1px solid rgba(255,255,255,.2)}
+.ps__counter b{color:var(--gold-2)}
+.ps__thumbs{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:16px}
+.ps__thumb{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:.3s;opacity:.55;border-radius:2px}
+.ps__thumb .photo{position:absolute;inset:0}
+.ps__thumb .photo::after{font-size:1.4rem}
+.ps__thumb:hover{opacity:.85}
+.ps__thumb.active{opacity:1;border-color:var(--rose-dark)}
+
+/* ===== GALLERY GRID ===== */
+.gallery{padding:110px 0;background:var(--blush-2)}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:10px 20px;font-size:.6rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--text-2);border:1px solid var(--line-2);transition:.3s;background:transparent;border-radius:100px}
+.chip:hover{border-color:var(--rose-dark);color:var(--rose-dark)}
+.chip.active{background:var(--rose-dark);color:#fff;border-color:var(--rose-dark)}
+.g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.g-post{position:relative;overflow:hidden;cursor:pointer;background:#fff;transition:.5s var(--ease);border-radius:2px}
+.g-post:hover{transform:translateY(-6px);box-shadow:0 40px 80px -30px rgba(122,46,61,.35)}
+.g-post .photo{aspect-ratio:4/5}
+.g-post__cat{position:absolute;top:16px;left:16px;z-index:6;font-size:.54rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;padding:7px 13px;background:var(--rose-dark);color:#fff;border-radius:100px}
+.g-post__count{position:absolute;top:16px;right:16px;z-index:6;font-size:.62rem;font-weight:700;padding:7px 12px;background:rgba(255,255,255,.92);color:var(--wine);border-radius:100px}
+.g-post__info{position:absolute;inset:auto 0 0 0;z-index:5;padding:24px 22px 22px;background:linear-gradient(transparent,rgba(122,46,61,.94));color:#fff}
+.g-post__title{font-family:var(--serif);font-size:1.28rem;font-weight:600;line-height:1.2;letter-spacing:-.02em;margin-bottom:6px}
+.g-post__desc{color:rgba(255,255,255,.82);font-size:.8rem;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.g-post__cta{display:inline-block;margin-top:10px;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2);font-weight:800}
+.g-empty{grid-column:1/-1;padding:60px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line-2);font-family:var(--hand);font-size:1.15rem;border-radius:2px}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials{padding:110px 0;background:var(--blush)}
+.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.tst{padding:38px 32px;background:#fff;border:1px solid var(--line);transition:.4s;position:relative;border-radius:2px}
+.tst::before{content:'"';position:absolute;top:14px;right:22px;font-family:var(--serif);font-size:5rem;line-height:1;color:rgba(217,122,138,.25);font-weight:700}
+.tst:hover{border-color:var(--rose);transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(122,46,61,.2)}
+.tst__stars{color:var(--gold);letter-spacing:3px;font-size:.85rem;margin-bottom:14px}
+.tst p{color:var(--text-2);font-family:var(--script);font-style:italic;font-size:1.15rem;line-height:1.8;margin-bottom:24px}
+.tst__who{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--line)}
+.tst__av{width:48px;height:48px;background:var(--rose-dark);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:.95rem;border-radius:50%;flex-shrink:0}
+.tst__who b{display:block;font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--wine)}
+.tst__who small{font-size:.7rem;color:var(--muted)}
+
+/* ===== BOOKING ===== */
+.booking{padding:110px 0;background:var(--blush-2);position:relative;overflow:hidden}
+.booking::before{content:'';position:absolute;top:-40%;right:-15%;width:60%;height:180%;background:radial-gradient(circle,rgba(217,122,138,.1),transparent 65%);pointer-events:none}
+.booking__grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start;position:relative;z-index:2}
+.booking__info h2{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.2rem);letter-spacing:-.03em;line-height:1.05;font-weight:600;margin-bottom:22px;color:var(--wine)}
+.booking__info h2 em{font-style:italic;color:var(--rose-dark);font-weight:500}
+.booking__info > p{color:var(--text-2);font-size:1rem;line-height:1.85;margin-bottom:30px}
+.info-block{display:flex;gap:16px;padding:16px 18px;background:#fff;border:1px solid var(--line);margin-bottom:10px;transition:.3s;border-radius:2px}
+.info-block:hover{border-color:var(--rose);transform:translateX(4px)}
+.info-block__ic{width:42px;height:42px;border-radius:50%;background:rgba(217,122,138,.14);display:grid;place-items:center;color:var(--rose-dark);flex-shrink:0;border:1px solid rgba(217,122,138,.3)}
+.info-block__ic svg{width:18px;height:18px}
+.info-block b{display:block;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:4px}
+.info-block span{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--text);word-break:break-word}
+.info-block span a:hover{color:var(--rose-dark)}
+.form{padding:38px;background:#fff;border:1px solid var(--line-2);position:relative;box-shadow:0 30px 60px -30px rgba(122,46,61,.15);border-radius:2px}
+.form::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;height:4px;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:2px 2px 0 0}
+.form h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--wine);margin-bottom:6px}
+.form > p{font-family:var(--hand);font-size:1.05rem;color:var(--rose-dark);margin-bottom:24px}
+.field{margin-bottom:16px;display:block}
+.field > span{display:block;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:800}
+.field input,.field textarea,.field select{width:100%;padding:13px 16px;background:var(--blush);border:1px solid var(--line-2);color:var(--text);font-size:.94rem;outline:none;transition:.3s;font-family:inherit;border-radius:2px}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(217,122,138,.15)}
+.field textarea{resize:vertical;min-height:100px}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* ===== CTA ===== */
+.cta{background:var(--wine);color:#fff;padding:90px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 20% 30%, rgba(217,122,138,.15), transparent 50%),
+  radial-gradient(circle at 80% 70%, rgba(201,169,97,.12), transparent 50%)}
+.cta__in{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 24px}
+.cta h2{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.2rem);letter-spacing:-.03em;font-weight:600;line-height:1.05;margin-bottom:20px}
+.cta h2 em{font-style:italic;color:var(--gold-2)}
+.cta p{color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.85;margin-bottom:34px}
+.cta__btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ===== FOOTER ===== */
+.footer{background:#3D1A23;color:rgba(255,255,255,.85);padding:70px 0 30px}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:50px}
+.footer__brand{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.footer__brand .brand__mark{width:48px;height:48px;border-color:var(--gold)}
+.footer__brand .brand__name{color:#fff;font-family:var(--serif)}
+.footer__brand .brand__name em{color:var(--gold-2)}
+.footer__brand .brand__sub{color:var(--gold-2)}
+.footer h4{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2);margin-bottom:20px;font-weight:800}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+.footer ul a{font-size:.85rem;color:rgba(255,255,255,.72);transition:.3s}
+.footer ul a:hover{color:var(--gold-2)}
+.footer__about{font-size:.85rem;line-height:1.8;color:rgba(255,255,255,.62);max-width:340px}
+.socials{display:flex;gap:8px;margin-top:22px}
+.socials a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(201,169,97,.4);display:grid;place-items:center;color:rgba(255,255,255,.75);transition:.3s}
+.socials a:hover{background:var(--gold);color:var(--wine);border-color:var(--gold)}
+.socials svg{width:16px;height:16px}
+.footer__bottom{padding-top:26px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.72rem;color:rgba(255,255,255,.5)}
+.footer__bottom a:hover{color:var(--gold-2)}
+.footer__tagline{font-family:var(--hand);color:var(--gold-2);font-size:1.15rem}
+
+/* ===== FAB ===== */
+.fab{position:fixed;bottom:22px;right:22px;z-index:88;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;display:grid;place-items:center;box-shadow:0 14px 36px -8px rgba(37,211,102,.75);transition:.3s}
+.fab:hover{transform:translateY(-3px) scale(1.05)}
+.fab svg{width:26px;height:26px}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{position:fixed;inset:0;z-index:400;background:rgba(61,26,35,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 30px 130px;opacity:0;visibility:hidden;transition:.4s}
+.lightbox.open{opacity:1;visibility:visible}
+.lb__stage{position:relative;width:100%;max-width:1100px;height:100%;display:flex;align-items:center;justify-content:center}
+.lb__stage .photo{max-width:100%;max-height:100%;width:auto;height:auto;aspect-ratio:4/3;min-width:280px;min-height:210px;max-width:min(1000px,90vw);max-height:72vh;box-shadow:0 40px 100px -30px rgba(0,0,0,.6);border-radius:2px}
+.lb__close,.lb__nav{position:absolute;width:50px;height:50px;border-radius:50%;border:1px solid rgba(201,169,97,.5);background:rgba(61,26,35,.7);color:var(--gold-2);display:grid;place-items:center;transition:.3s;z-index:8;font-size:1.15rem}
+.lb__close{top:20px;right:20px}
+.lb__nav.prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb__nav.next{right:16px;top:50%;transform:translateY(-50%)}
+.lb__close:hover,.lb__nav:hover{background:var(--gold);color:var(--wine);border-color:var(--gold)}
+.lb__info{position:absolute;bottom:100px;left:0;right:0;text-align:center;padding:0 20px}
+.lb__cat{display:inline-block;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2);font-weight:800;margin-bottom:10px}
+.lb__title{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.8rem);color:#fff;letter-spacing:-.02em;margin-bottom:6px;font-weight:600}
+.lb__desc{color:rgba(255,255,255,.8);font-size:.86rem;max-width:600px;margin:0 auto;line-height:1.6}
+.lb__thumbs{position:absolute;bottom:22px;left:0;right:0;display:flex;justify-content:center;gap:8px;padding:0 20px;overflow-x:auto;scrollbar-width:none}
+.lb__thumbs::-webkit-scrollbar{display:none}
+.lb__thumb{width:64px;height:48px;overflow:hidden;flex-shrink:0;border:2px solid transparent;opacity:.45;transition:.3s;cursor:pointer;position:relative;border-radius:2px}
+.lb__thumb .photo{position:absolute;inset:0}
+.lb__thumb .photo::after{font-size:1.1rem}
+.lb__thumb.active{opacity:1;border-color:var(--gold)}
+
+/* ===== MODAL ===== */
+.modal{position:fixed;inset:0;z-index:500;background:rgba(61,26,35,.9);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.35s;overflow-y:auto}
+.modal.open{opacity:1;visibility:visible}
+.modal__card{width:100%;max-width:560px;background:#fff;padding:36px;box-shadow:0 50px 100px -30px rgba(0,0,0,.5);transform:translateY(16px);transition:.4s;max-height:90vh;overflow-y:auto;position:relative;border-radius:2px}
+.modal.open .modal__card{transform:none}
+.modal__close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);transition:.3s;font-size:1rem}
+.modal__close:hover{color:var(--rose-dark);border-color:var(--rose-dark)}
+.sm__body h2{font-family:var(--serif);font-size:1.7rem;font-weight:600;color:var(--wine);margin-bottom:12px}
+.sm__body > p{color:var(--text-2);line-height:1.8;font-size:.95rem;margin-bottom:22px}
+.sm__list{list-style:none;padding:0;margin:0 0 24px;border-top:1px solid var(--line)}
+.sm__list li{padding:13px 0 13px 30px;font-size:.88rem;border-bottom:1px solid var(--line);position:relative;color:var(--text-2)}
+.sm__list li::before{content:'❋';position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--rose);font-size:.8rem}
+
+/* ===== ADMIN ===== */
+.admin{position:fixed;inset:0;z-index:600;background:var(--blush);display:none;overflow:hidden}
+.admin.open{display:block}
+.admin__gate{position:absolute;inset:0;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 50% 30%,rgba(217,122,138,.15),transparent 55%)}
+.gate__card{width:100%;max-width:400px;padding:42px 34px;background:#fff;border:1px solid var(--line-2);text-align:center;position:relative;box-shadow:0 40px 80px -30px rgba(122,46,61,.3);border-radius:2px}
+.gate__card::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;height:4px;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:2px 2px 0 0}
+.gate__logo{width:72px;height:72px;border-radius:50%;margin:0 auto 20px;background:var(--rose-dark);display:grid;place-items:center;overflow:hidden;border:2px solid var(--gold)}
+.gate__logo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.gate__logo svg{width:80%;height:80%}
+.gate__card h2{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--wine);margin-bottom:6px}
+.gate__card p{font-family:var(--hand);color:var(--rose-dark);font-size:1rem;margin-bottom:22px}
+.gate__card input{width:100%;padding:13px 16px;background:var(--blush);border:1px solid var(--line-2);text-align:center;letter-spacing:.24em;outline:none;margin-bottom:14px;color:var(--text);font-size:.95rem;border-radius:2px}
+.gate__card input:focus{border-color:var(--rose)}
+.gate__hint{margin-top:18px;font-size:.72rem;color:var(--muted)}
+.gate__hint code{background:var(--blush-2);color:var(--rose-dark);padding:4px 9px;letter-spacing:.08em;font-weight:800}
+.gate__err{color:#C93B3B;font-size:.78rem;margin-top:12px;display:none}
+.gate__err.show{display:block}
+.admin__shell{display:grid;grid-template-columns:240px 1fr;height:100%}
+.admin__side{border-right:1px solid var(--line);background:#fff;display:flex;flex-direction:column;padding:22px 16px;overflow-y:auto}
+.admin__brand{display:flex;align-items:center;gap:10px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.admin__brand .mk{width:42px;height:42px;border-radius:50%;background:var(--rose-dark);display:grid;place-items:center;overflow:hidden;flex-shrink:0;border:1px solid var(--gold)}
+.admin__brand .mk img{width:100%;height:100%;object-fit:cover}
+.admin__brand .mk svg{width:80%;height:80%}
+.admin__brand b{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--wine);display:block}
+.admin__brand small{font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose-dark);font-weight:800;margin-top:3px;display:block}
+.admin__tabs{display:flex;flex-direction:column;gap:3px;flex:1}
+.admin__tabs button{display:flex;align-items:center;gap:10px;padding:11px 12px;font-size:.78rem;color:var(--muted);text-align:left;transition:.25s;font-weight:600;border-left:2px solid transparent;border-radius:0}
+.admin__tabs button svg{width:16px;height:16px;flex-shrink:0}
+.admin__tabs button:hover{background:var(--blush-2);color:var(--text)}
+.admin__tabs button.active{background:linear-gradient(90deg,rgba(217,122,138,.16),transparent);color:var(--rose-dark);border-left-color:var(--rose)}
+.admin__side-foot{display:flex;flex-direction:column;gap:6px;padding-top:16px;border-top:1px solid var(--line);margin-top:14px}
+.admin__main{display:flex;flex-direction:column;overflow:hidden}
+.admin__top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:18px 26px;border-bottom:1px solid var(--line);background:#fff}
+.admin__top h2{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--wine)}
+.admin__top p{font-family:var(--hand);font-size:.9rem;color:var(--rose-dark);margin-top:2px}
+.admin__top-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.admin-badge{display:inline-flex;align-items:center;gap:6px;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#3D8A52;background:rgba(61,138,82,.12);padding:6px 12px;font-weight:800;border-radius:100px}
+.admin__panels{flex:1;overflow-y:auto;padding:24px 26px 80px}
+.panel{display:none}
+.panel.active{display:block}
+.panel h3{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose-dark);margin:24px 0 12px;font-weight:800}
+.panel h3:first-child{margin-top:0}
+.card-box{padding:20px;background:#fff;border:1px solid var(--line);margin-bottom:16px;border-radius:2px}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field-grid .full{grid-column:1/-1}
+.hint{color:var(--muted);margin-top:10px;line-height:1.65;font-family:var(--hand);font-size:.9rem}
+.hint a{color:var(--rose-dark)}
+.uploader{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.uploader__preview{width:140px;height:140px;border-radius:50%;border:2px dashed var(--line-2);background:var(--blush);display:grid;place-items:center;overflow:hidden;flex-shrink:0;color:var(--muted);font-size:.68rem;text-align:center}
+.uploader__preview.square{border-radius:12px;width:140px;height:100px}
+.uploader__preview img{width:100%;height:100%;object-fit:cover}
+.uploader__actions{display:flex;flex-direction:column;gap:10px;flex:1;min-width:200px}
+.uploader__actions .row{display:flex;gap:8px;flex-wrap:wrap}
+.thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.thumb{position:relative;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--blush-2);border-radius:2px}
+.thumb .photo{position:absolute;inset:0}
+.thumb .photo::after{font-size:1.4rem}
+.thumb__x{position:absolute;top:6px;right:6px;width:26px;height:26px;border-radius:50%;background:rgba(61,26,35,.9);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;font-size:.8rem;color:#ff9a9a;z-index:10}
+.thumb__x:hover{background:var(--gold);color:var(--wine)}
+.ap-row{display:flex;gap:12px;padding:12px;background:var(--blush);border:1px solid var(--line);margin-bottom:8px;align-items:flex-start;border-radius:2px}
+.ap-row:hover{border-color:var(--rose)}
+.ap-row__cover{width:90px;height:68px;overflow:hidden;flex-shrink:0;position:relative;background:var(--blush-2);border-radius:2px}
+.ap-row__cover .photo{position:absolute;inset:0}
+.ap-row__cover .photo::after{font-size:1.2rem}
+.ap-row__body{flex:1;min-width:0}
+.ap-row__cat{font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--rose-dark);font-weight:800}
+.ap-row__title{font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--wine);margin-top:3px;line-height:1.25}
+.ap-row__desc{font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.5}
+.ap-row__actions{display:flex;gap:6px;flex-shrink:0}
+.ap-row__actions button{width:30px;height:30px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);border-radius:50%;transition:.25s}
+.ap-row__actions button:hover{border-color:var(--rose);color:var(--rose-dark)}
+.empty-note{padding:30px;text-align:center;color:var(--muted);font-family:var(--hand);border:1px dashed var(--line-2);font-size:1rem;border-radius:2px}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,30px);z-index:900;background:var(--rose-dark);color:#fff;padding:13px 24px;font-size:.8rem;font-weight:700;letter-spacing:.04em;opacity:0;transition:.4s;pointer-events:none;box-shadow:0 24px 50px -18px rgba(168,75,93,.6);max-width:90vw;text-align:center;border-radius:100px}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1024px){
+  .hero__wrap{grid-template-columns:1fr;gap:44px}
+  .hero__visual{max-width:480px;margin:0 auto;width:100%}
+  .intro__grid{grid-template-columns:1fr;gap:50px}
+  .intro__media{max-width:480px;margin:0 auto}
+  .split__grid{grid-template-columns:1fr}
+  .booking__grid{grid-template-columns:1fr;gap:44px}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:32px}
+  .pillars__grid{grid-template-columns:1fr}
+  .pillar{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .pillar:last-child{border-bottom:0}
+  .admin__shell{grid-template-columns:1fr}
+  .admin__side{flex-direction:row;align-items:center;padding:12px 16px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto;gap:10px}
+  .admin__brand{border:0;padding:0 12px 0 0;margin:0;border-right:1px solid var(--line);flex-shrink:0}
+  .admin__brand .txt{display:none}
+  .admin__tabs{flex-direction:row;flex:0 0 auto;gap:4px}
+  .admin__tabs button{white-space:nowrap;padding:9px 12px;border-left:0;border-bottom:2px solid transparent}
+  .admin__tabs button.active{border-left:0;border-bottom-color:var(--rose)}
+  .admin__tabs button span{display:none}
+  .admin__side-foot{flex-direction:row;border:0;padding:0;margin:0;flex-shrink:0}
+  .admin__side-foot .btn span{display:none}
+  .ps__thumbs{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:768px){
+  .wrap{padding:0 20px}
+  .nav{display:none}
+  .burger{display:block}
+  .header__actions .btn--sm:not(.btn--primary){display:none}
+  .section{padding:80px 0}
+  .hero{padding:50px 0 70px}
+  .hero__title{font-size:2.1rem}
+  .hero__meta{grid-template-columns:1fr 1fr;gap:16px}
+  .hero__meta b{font-size:1.3rem}
+  .g-grid{grid-template-columns:1fr}
+  .row-2,.field-grid{grid-template-columns:1fr}
+  .admin__panels{padding:18px 16px 80px}
+  .admin__top{padding:14px 16px}
+  .footer__grid{grid-template-columns:1fr;gap:28px}
+  .form{padding:24px}
+  .ps__stage{aspect-ratio:4/3}
+  .ps__info{padding:22px 20px 20px}
+  .ps__nav{width:40px;height:40px;font-size:1rem}
+  .ps__nav.prev{left:8px}
+  .ps__nav.next{right:8px}
+  .ps__thumbs{grid-template-columns:repeat(4,1fr);gap:6px}
+  .intro__points{grid-template-columns:1fr}
+  .intro__badge{right:8px;bottom:-8px}
+}
+@media (max-width:480px){
+  .wrap{padding:0 16px}
+  .hero__title{font-size:1.8rem}
+  .section-title{font-size:1.55rem}
+  .hero__cta .btn{flex:1}
+  .hero__meta{grid-template-columns:1fr;gap:12px}
+  .tst{padding:28px 22px}
+  .fab{width:50px;height:50px;bottom:16px;right:16px}
+  .fab svg{width:22px;height:22px}
+  .btn{padding:12px 22px;font-size:.6rem}
+  .split__card__body{padding:24px 20px}
+  .split__card__body h3{font-size:1.35rem}
+  .ps__thumbs{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true"><div class="ticker__track" id="tickerTrack"></div></div>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <a href="#top" class="brand">
+      <span class="brand__mark" data-logo></span>
+      <span class="brand__text">
+        <span class="brand__name" data-name>VeeMyke <em>Studios</em></span>
+        <span class="brand__sub" data-sub>Portraits & Events · Abuja</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#split">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Book</a>
+    </nav>
+    <div class="header__actions">
+      <a href="https://wa.me/2348137774888" target="_blank" rel="noopener" class="btn btn--wa btn--sm">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
+        WhatsApp
+      </a>
+      <a href="#booking" class="btn btn--primary btn--sm">Book a Session</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about">About</a>
+  <a href="#split">Services</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#booking">Book</a>
+  <button class="btn btn--primary" id="openAdminMobile" style="margin-top:20px">Admin</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero__wrap">
+    <div class="hero__content">
+      <span class="hero__tag" id="heroTag">Timeless moments, preserved</span>
+      <h1 class="hero__title" id="heroTitle">
+        <span id="heroLine1">Capture, inspire,</span>
+        <em id="heroLine2">preserve memories.</em>
+      </h1>
+      <p class="hero__sub" id="heroSub">Abuja's portrait and events studio — crafting <b>timeless images</b> that celebrate your story, your people and the moments that matter most.</p>
+      <div class="hero__cta">
+        <a href="#booking" class="btn btn--primary" id="heroBtn1">Book a Session</a>
+        <a href="#portfolio" class="btn btn--outline" id="heroBtn2">View Portfolio</a>
+      </div>
+      <div class="hero__meta" id="heroMeta"></div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__frame__deco tl"></div>
+      <div class="hero__frame__deco br"></div>
+      <div class="hero__frame">
+        <div id="heroCarousel"></div>
+        <div class="hero__caption">
+          <small id="heroPhotoSmall">Featured Session</small>
+          <b id="heroPhotoTitle">Portraits by VeeMyke</b>
+        </div>
+        <div class="hero__dots" id="heroDots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<div class="pillars">
+  <div class="wrap">
+    <div class="pillars__grid" id="pillarsGrid"></div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro" id="about">
+  <div class="wrap intro__grid">
+    <div class="intro__media">
+      <div class="intro__img">
+        <div class="photo" id="introPhoto"><img id="introImg" alt="" onload="this.classList.add('loaded')" onerror="this.style.display='none'"></div>
+      </div>
+      <div class="intro__badge">
+        <b id="introBadgeNum">500+</b>
+        <small>Sessions Captured</small>
+      </div>
+    </div>
+    <div class="intro__right">
+      <span class="eyebrow">About the Studio</span>
+      <h2 id="aboutTitle">Every image tells <em>your story.</em></h2>
+      <p id="aboutText1"></p>
+      <p id="aboutText2"></p>
+      <div class="intro__sig" id="aboutSig">— VeeMyke Studios</div>
+      <div class="intro__points" id="aboutPoints"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT — Portraits / Events -->
+<section class="split" id="split">
+  <div class="wrap">
+    <div class="head head--center">
+      <span class="eyebrow eyebrow--center">What We Do</span>
+      <h2 class="section-title">Two studios. One <em>standard.</em></h2>
+      <p class="section-lead">Portraits that celebrate you. Events that preserve the day. Every session shot with intention and edited with care.</p>
+    </div>
+    <div class="split__grid" id="splitGrid"></div>
+  </div>
+</section>
+
+<!-- PORTFOLIO SLIDER -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="head head--center">
+      <span class="eyebrow eyebrow--center">Portfolio Showcase</span>
+      <h2 class="section-title">Selected <em>frames.</em></h2>
+      <p class="section-lead">A curated slideshow of recent sessions — click any thumbnail to jump in, or let it play.</p>
+    </div>
+    <div class="ps">
+      <div class="ps__stage" id="psStage">
+        <div class="ps__counter" id="psCounter">01 / 08</div>
+        <button class="ps__nav prev" id="psPrev">‹</button>
+        <button class="ps__nav next" id="psNext">›</button>
+        <div class="ps__info">
+          <small id="psCat">Portraits</small>
+          <h3 id="psTitle">Featured Session</h3>
+          <p id="psDesc">Curated from our studio archive.</p>
+        </div>
+      </div>
+      <div class="ps__thumbs" id="psThumbs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow">Full Portfolio</span>
+        <h2 class="section-title">Frames that <em>tell stories.</em></h2>
+        <p class="section-lead">Click any post to explore the full session — most contain multiple images.</p>
+      </div>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="g-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="head head--center">
+      <span class="eyebrow eyebrow--center">Kind Words</span>
+      <h2 class="section-title">Loved by <em>clients.</em></h2>
+    </div>
+    <div class="tst-grid" id="tstGrid"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta__in">
+    <h2>Ready to create something <em>timeless?</em></h2>
+    <p>Portrait, event or family session — let's create images you'll be proud to look back on for a lifetime.</p>
+    <div class="cta__btns">
+      <a href="https://wa.me/2348137774888" target="_blank" rel="noopener" class="btn btn--gold">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="tel:+2348137774888" class="btn btn--outline-light">Call 0813 777 4888</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="wrap booking__grid">
+    <div class="booking__info">
+      <span class="eyebrow">Book a Session</span>
+      <h2>Let's talk about <em>your story.</em></h2>
+      <p>Fill the form and we'll confirm on WhatsApp within a few hours. Same-day bookings often possible — just ask.</p>
+      <div class="info-block">
+        <div class="info-block__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg></div>
+        <div><b>Phone / WhatsApp</b><span id="contactPhone"><a href="tel:+2348137774888">0813 777 4888</a></span></div>
+      </div>
+      <div class="info-block">
+        <div class="info-block__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></div>
+        <div><b>Email</b><span id="contactEmail"><a href="mailto:veemykestudios@gmail.com">veemykestudios@gmail.com</a></span></div>
+      </div>
+      <div class="info-block">
+        <div class="info-block__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <div><b>Studio Location</b><span id="contactAddress">Abuja, Kuje, Nigeria 900105</span></div>
+      </div>
+      <a href="https://wa.me/2348137774888?text=Hi%20VeeMyke%20Studios%2C%20I%20want%20to%20book%20a%20session" target="_blank" rel="noopener" class="btn btn--wa btn--block" style="margin-top:16px">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+
+    <form class="form" id="bookingForm">
+      <h3>Session Enquiry</h3>
+      <p>Tell us about your story</p>
+      <div class="row-2">
+        <label class="field"><span>Your name</span><input type="text" required placeholder="Full name"></label>
+        <label class="field"><span>WhatsApp number</span><input type="tel" required placeholder="0801 234 5678"></label>
+      </div>
+      <div class="row-2">
+        <label class="field"><span>Preferred date</span><input type="date" required></label>
+        <label class="field"><span>Session type</span>
+          <select required>
+            <option value="">Choose...</option>
+            <option>Portrait Session</option>
+            <option>Family Portraits</option>
+            <option>Maternity Session</option>
+            <option>Birthday / Milestone</option>
+            <option>Event Coverage</option>
+            <option>Wedding</option>
+            <option>Brand / Commercial</option>
+            <option>Something else</option>
+          </select>
+        </label>
+      </div>
+      <label class="field"><span>Location / Venue</span><input type="text" placeholder="Where would you like to shoot?"></label>
+      <label class="field"><span>Tell us more</span><textarea placeholder="Your vision, references, mood, crew size..."></textarea></label>
+      <button type="submit" class="btn btn--primary btn--block">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <span class="brand__mark" data-logo></span>
+          <span class="brand__text">
+            <span class="brand__name" data-name>VeeMyke <em>Studios</em></span>
+            <span class="brand__sub" data-sub>Portraits & Events · Abuja</span>
+          </span>
+        </div>
+        <p class="footer__about">To capture & create timeless moments that inspire, and preserve memories. Portraits & events photography based in Abuja, Nigeria.</p>
+        <div class="socials">
+          <a href="https://instagram.com/veemykestudios" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="mailto:veemykestudios@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></a>
+          <a href="https://wa.me/2348137774888" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5A8.4 8.4 0 0 1 12.5 20a8.4 8.4 0 0 1-3.9-.9L3 21l1.9-5.6a8.4 8.4 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3a8.4 8.4 0 0 1 8.5 8.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Sessions</h4>
+        <ul id="footerSvc"></ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#booking">Book</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+2348137774888">0813 777 4888</a></li>
+          <li><a href="mailto:veemykestudios@gmail.com">veemykestudios@gmail.com</a></li>
+          <li><a href="https://wa.me/2348137774888">WhatsApp us</a></li>
+          <li><a href="#" id="footerAdmin">Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> VeeMyke Studios · Abuja, Nigeria</span>
+      <span class="footer__tagline">Timeless moments, preserved.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2348137774888" target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb__close" id="lbClose">✕</button>
+  <button class="lb__nav prev" id="lbPrev">‹</button>
+  <button class="lb__nav next" id="lbNext">›</button>
+  <div class="lb__stage"><div class="photo" id="lbStage"><img id="lbImg" alt=""></div></div>
+  <div class="lb__info">
+    <span class="lb__cat" id="lbCat"></span>
+    <h3 class="lb__title" id="lbTitle"></h3>
+    <p class="lb__desc" id="lbDesc"></p>
+  </div>
+  <div class="lb__thumbs" id="lbThumbs"></div>
+</div>
+
+<!-- SERVICE MODAL -->
+<div class="modal" id="svcModal">
+  <div class="modal__card">
+    <button class="modal__close" id="svcClose">✕</button>
+    <div id="svcContent"></div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div class="admin" id="admin" aria-hidden="true">
+  <div class="admin__gate" id="adminGate">
+    <form class="gate__card" id="gateForm">
+      <div class="gate__logo" data-logo></div>
+      <h2>Admin Panel</h2>
+      <p>Enter passcode to manage the site</p>
+      <input type="password" id="gatePass" placeholder="••••••••">
+      <button class="btn btn--primary btn--block" type="submit">Unlock Dashboard</button>
+      <div class="gate__err" id="gateErr">Incorrect passcode.</div>
+      <p class="gate__hint">Demo passcode: <code>veemyke2025</code></p>
+      <p class="gate__hint"><a href="#" id="gateExit" style="color:var(--rose-dark)">← Back to site</a></p>
+    </form>
+  </div>
+
+  <div class="admin__shell" id="adminShell" style="display:none">
+    <aside class="admin__side">
+      <div class="admin__brand">
+        <span class="mk" data-logo></span>
+        <span class="txt"><b>VeeMyke</b><small>Admin</small></span>
+      </div>
+      <nav class="admin__tabs" id="adminTabs">
+        <button class="active" data-tab="branding"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg><span>Branding</span></button>
+        <button data-tab="hero"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m3 16 5-5 4 4 3-3 6 6"/></svg><span>Hero</span></button>
+        <button data-tab="about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/></svg><span>About & Services</span></button>
+        <button data-tab="gallery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Gallery</span></button>
+        <button data-tab="contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Contact</span></button>
+        <button data-tab="data"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg><span>Data</span></button>
+      </nav>
+      <div class="admin__side-foot">
+        <button class="btn btn--outline btn--sm" id="adminView"><span>View Site</span></button>
+        <button class="btn btn--outline btn--sm" id="adminLogout"><span>Log Out</span></button>
+      </div>
+    </aside>
+
+    <main class="admin__main">
+      <header class="admin__top">
+        <div><h2 id="panelTitle">Branding</h2><p id="panelSub">Logo, name and identity</p></div>
+        <div class="admin__top-actions">
+          <span class="admin-badge">● Live</span>
+          <button class="btn btn--outline btn--sm" id="resetAll" style="color:#C93B3B;border-color:#C93B3B">Reset</button>
+        </div>
+      </header>
+      <div class="admin__panels">
+
+        <section class="panel active" data-panel="branding">
+          <h3>Logo — upload from gallery</h3>
+          <div class="card-box">
+            <div class="uploader">
+              <div class="uploader__preview" id="logoPreview">No logo</div>
+              <div class="uploader__actions">
+                <div class="row">
+                  <label class="btn btn--primary btn--sm">📁 Upload Logo from Gallery<input type="file" accept="image/*" id="logoInput" hidden></label>
+                  <button class="btn btn--outline btn--sm" id="logoRemove">Remove</button>
+                </div>
+                <p class="hint">Pick any image from your phone — appears instantly in the header, footer, admin sidebar and login gate.</p>
+              </div>
+            </div>
+          </div>
+          <h3>Studio identity</h3>
+          <div class="card-box">
+            <div class="field-grid">
+              <label class="field"><span>Studio name</span><input type="text" data-bind="brand.name"></label>
+              <label class="field"><span>Sub-line</span><input type="text" data-bind="brand.sub"></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="hero">
+          <h3>Hero copy</h3>
+          <div class="card-box">
+            <div class="field-grid">
+              <label class="field full"><span>Tagline (script)</span><input type="text" data-bind="hero.tag"></label>
+              <label class="field full"><span>Headline line 1</span><input type="text" data-bind="hero.line1"></label>
+              <label class="field full"><span>Headline line 2 (rose italic)</span><input type="text" data-bind="hero.line2"></label>
+              <label class="field full"><span>Sub-headline</span><textarea data-bind="hero.sub" rows="3"></textarea></label>
+            </div>
+          </div>
+          <h3>Hero slider images</h3>
+          <div class="card-box">
+            <label class="btn btn--primary btn--sm">📁 Add Slides from Gallery<input type="file" accept="image/*" multiple id="heroSlideInput" hidden></label>
+            <div class="thumb-grid" id="heroSlideList" style="margin-top:14px"></div>
+          </div>
+          <h3>Hero meta numbers</h3>
+          <div class="card-box">
+            <div id="heroMetaEditor"></div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="about">
+          <h3>About section</h3>
+          <div class="card-box">
+            <div class="uploader" style="margin-bottom:16px">
+              <div class="uploader__preview square" id="introImgPreview">None</div>
+              <div class="uploader__actions">
+                <div class="row">
+                  <label class="btn btn--primary btn--sm">📁 Upload Portrait<input type="file" accept="image/*" id="introImgInput" hidden></label>
+                  <button class="btn btn--outline btn--sm" id="introImgRemove">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="field-grid">
+              <label class="field full"><span>Section headline</span><input type="text" data-bind="about.title"></label>
+              <label class="field full"><span>Paragraph 1</span><textarea data-bind="about.text1" rows="3"></textarea></label>
+              <label class="field full"><span>Paragraph 2</span><textarea data-bind="about.text2" rows="3"></textarea></label>
+              <label class="field"><span>Signature</span><input type="text" data-bind="about.sig"></label>
+              <label class="field"><span>Badge number</span><input type="text" data-bind="about.badge"></label>
+            </div>
+          </div>
+          <h3>About stat points</h3>
+          <div class="card-box">
+            <div id="aboutPointsEditor"></div>
+          </div>
+          <h3>Services (Portraits & Events split)</h3>
+          <div class="card-box">
+            <div id="splitEditor"></div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="gallery">
+          <h3>Create gallery post</h3>
+          <div class="card-box">
+            <div class="field-grid">
+              <label class="field full"><span>Title</span><input type="text" id="gTitle" placeholder="e.g. Portrait — Studio Session"></label>
+              <label class="field full"><span>Description</span><textarea id="gDesc" rows="2"></textarea></label>
+              <label class="field"><span>Category</span><select id="gCat"></select></label>
+            </div>
+            <div style="margin-top:14px">
+              <label class="btn btn--primary btn--sm">📁 Upload Photos from Gallery<input type="file" accept="image/*" multiple id="gFileInput" hidden></label>
+            </div>
+          </div>
+          <h3>Posts <span id="gCount" style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none"></span></h3>
+          <div id="gList"></div>
+        </section>
+
+        <section class="panel" data-panel="contact">
+          <h3>Contact information</h3>
+          <div class="card-box">
+            <div class="field-grid">
+              <label class="field"><span>Phone display</span><input type="text" data-bind="contact.phone"></label>
+              <label class="field"><span>WhatsApp (intl, no +)</span><input type="text" data-bind="contact.whatsapp"></label>
+              <label class="field full"><span>Email</span><input type="text" data-bind="contact.email"></label>
+              <label class="field full"><span>Address</span><input type="text" data-bind="contact.address"></label>
+              <label class="field full"><span>Instagram handle</span><input type="text" data-bind="contact.instagram"></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="data">
+          <h3>Backup &amp; restore</h3>
+          <div class="card-box">
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn--primary btn--sm" id="exportData">Export JSON</button>
+              <label class="btn btn--outline btn--sm">Import<input type="file" accept="application/json" id="importData" hidden></label>
+              <button class="btn btn--outline btn--sm" id="resetAll2" style="color:#C93B3B;border-color:#C93B3B">Reset Everything</button>
+            </div>
+          </div>
+          <h3>Admin passcode</h3>
+          <div class="card-box">
+            <label class="field"><span>New passcode</span><input type="text" id="passInput"></label>
+            <button class="btn btn--primary btn--sm" id="passSave">Update</button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="toast" id="toast">Saved</div>
+
+<script>
+(function(){
+'use strict';
+const $ = (s,c)=>(c||document).querySelector(s);
+const $$ = (s,c)=>Array.from((c||document).querySelectorAll(s));
+const uid = ()=>Math.random().toString(36).slice(2,10);
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* Logo SVG */
+function logoSVG(){
+  return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">' +
+    '<defs><linearGradient id="vg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E0C08C"/><stop offset="100%" stop-color="#C9A961"/></linearGradient></defs>' +
+    '<circle cx="50" cy="50" r="46" fill="none" stroke="url(#vg)" stroke-width="2"/>' +
+    '<text x="50" y="68" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="48" font-style="italic" font-weight="700" fill="url(#vg)">V</text>' +
+    '<circle cx="68" cy="68" r="3" fill="#E0C08C"/>' +
+    '</svg>';
+}
+
+const U = (id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w||1400}&q=80`;
+const P = {
+  portraitF: U('1531746020798-e6953c6e8e04',1400),
+  portraitF2: U('1524504388940-b1c1722653e1',1400),
+  beauty: U('1531123897727-8f129e1688ce',1400),
+  girl: U('1521572163474-6864f9cf17ab',1400),
+  bride: U('1519741497674-611481863552',1400),
+  couple: U('1519225421980-715cb0215aed',1400),
+  groom: U('1583939003579-730e3918a45a',1400),
+  family: U('1522673607200-164d1b6ce486',1400),
+  maternity: U('1555252333-9f8e92e65df9',1400),
+  birthday: U('1533174072545-7a4b6ad7a6c3',1400),
+  rooftop: U('1530103862676-de8c9debad1d',1400),
+  event: U('1540575467063-178a50c2df87',1400),
+  festival: U('1464366400600-7168b8af9bc3',1400),
+  studio: U('1493663284031-b7e3aefcae8e',1400),
+  camera: U('1502920917128-1aa500764cbd',1400),
+  conf: U('1511578314322-379afb476865',1400),
+  model: U('1494790108377-be9c29b29330',1400),
+  dark: U('1506794778202-cad84cf45f1d',1400)
+};
+const HERO_IMAGES = [P.portraitF, P.bride, P.beauty, P.family, P.event];
+
+function seedPosts(){
+  return [
+    { id:uid(), title:'Portrait — The Studio Session', cat:'Portraits',
+      desc:'A refined editorial portrait session exploring warm light, soft textures and honest expression.',
+      images:[P.portraitF, P.beauty, P.girl] },
+    { id:uid(), title:'Bridal — The Preparation', cat:'Bridal',
+      desc:'Quiet, tender bridal portraits captured in the hours before the ceremony begins.',
+      images:[P.bride, P.dress || P.groom, P.couple] },
+    { id:uid(), title:'Family — At Home', cat:'Family',
+      desc:'A relaxed family session in natural light — real connection, real laughter, real moments.',
+      images:[P.family, P.maternity] },
+    { id:uid(), title:'Rooftop Birthday', cat:'Events',
+      desc:'An intimate rooftop celebration documented in warm natural light.',
+      images:[P.birthday, P.rooftop] },
+    { id:uid(), title:'Corporate Gala — Evening', cat:'Events',
+      desc:'Full event coverage from welcome reception to closing celebration.',
+      images:[P.event, P.conf, P.festival] },
+    { id:uid(), title:'Maternity Portrait', cat:'Portraits',
+      desc:'A tender maternity session capturing the beauty of waiting — soft light, quiet anticipation.',
+      images:[P.maternity, P.family] },
+    { id:uid(), title:'Model Portfolio', cat:'Portraits',
+      desc:'A model portfolio session with bold framing and warm editorial tones.',
+      images:[P.model, P.dark] },
+    { id:uid(), title:'Traditional Wedding Rites', cat:'Bridal',
+      desc:'A vibrant documentation of a traditional wedding — colour, ceremony, family, joy.',
+      images:[P.groom, P.bride, P.couple] }
+  ];
+}
+
+const DEFAULTS = {
+  brand: { name:'VeeMyke Studios', sub:'Portraits & Events · Abuja', logo:'' },
+  hero: {
+    tag:'Timeless moments, preserved',
+    line1:'Capture, inspire,',
+    line2:'preserve memories.',
+    sub:'Abuja\'s portrait and events studio — crafting timeless images that celebrate your story, your people and the moments that matter most.',
+    slides: HERO_IMAGES.map(src=>({ id:uid(), src })),
+    meta: [
+      { n:'500+', l:'Sessions captured' },
+      { n:'5.0', l:'Average rating' },
+      { n:'48hr', l:'Preview delivery' }
+    ]
+  },
+  pillars: [
+    { icon:'camera', t:'Portraits & Events', d:'Specialists in portrait and event photography — a focused craft, not everything for everyone.' },
+    { icon:'heart', t:'Timeless, Not Trendy', d:'Edited to age gracefully. Images you\'ll still love twenty years from now.' },
+    { icon:'star', t:'Preserved Memories', d:'Every session treated with the same obsessive care — big or small.' }
+  ],
+  about: {
+    title:'Every image tells your story.',
+    text1:'VeeMyke Studios is a portraits and events photography studio based in Abuja, Nigeria. We exist to capture and create timeless moments that inspire — and preserve memories that matter.',
+    text2:'From quiet studio portrait sessions to full-day event coverage, every shoot is shot with intention and edited with care. No rushed work, no preset shortcuts. Just images you\'ll be proud to look back on.',
+    sig:'— VeeMyke Studios',
+    badge:'500+',
+    img: P.portraitF,
+    points: [
+      { n:'500+', l:'Sessions captured' },
+      { n:'5.0', l:'Average rating' },
+      { n:'48hr', l:'Preview delivery' }
+    ]
+  },
+  split: [
+    { id:'portrait', title:'Portrait Sessions', cat:'Portraits', img: P.beauty,
+      desc:'Studio and outdoor portrait sessions that actually look like you. Editorial, personal brand, maternity, family and more.',
+      list:['Individual & personal brand portraits','Family & maternity sessions','Graduation & milestone shoots','Bridal & engagement portraits'] },
+    { id:'events', title:'Event Coverage', cat:'Events', img: P.event,
+      desc:'Full-day event coverage delivered as a curated story — not just a folder of files. Weddings, parties, corporate events.',
+      list:['Weddings & traditional ceremonies','Birthdays & anniversaries','Corporate galas & conferences','Concerts & live performances'] }
+  ],
+  gallery: {
+    cats:['Portraits','Bridal','Family','Events'],
+    posts: seedPosts()
+  },
+  contact: {
+    phone:'0813 777 4888',
+    whatsapp:'2348137774888',
+    email:'veemykestudios@gmail.com',
+    address:'Abuja, Kuje, Nigeria 900105',
+    instagram:'veemykestudios'
+  },
+  password:'veemyke2025'
+};
+
+const STORE_KEY = 'veemyke.v1';
+function load(){
+  const base = JSON.parse(JSON.stringify(DEFAULTS));
+  try{
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw) return merge(base, JSON.parse(raw));
+  }catch(e){}
+  return base;
+}
+function merge(base, patch){
+  if (!patch || typeof patch !== 'object') return base;
+  Object.keys(patch).forEach(k=>{
+    const v = patch[k];
+    if (Array.isArray(v)) base[k] = v;
+    else if (v && typeof v === 'object'){
+      if (!base[k] || typeof base[k] !== 'object' || Array.isArray(base[k])) base[k] = {};
+      merge(base[k], v);
+    } else if (v !== undefined) base[k] = v;
+  });
+  return base;
+}
+let state = load();
+
+function save(){
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); return true; } catch(e){ return false; }
+}
+function toast(msg){
+  const el = $('#toast'); el.textContent = msg; el.classList.add('show');
+  clearTimeout(el._t); el._t = setTimeout(()=>el.classList.remove('show'), 2400);
+}
+
+/* PHOTO helper */
+function photoHTML(src, alt){
+  if (!src) return '<div class="photo"></div>';
+  return '<div class="photo"><img src="'+esc(src)+'" alt="'+esc(alt||'')+'" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.style.display=\'none\'"></div>';
+}
+
+/* ============== BRAND ============== */
+function applyBrand(){
+  const b = state.brand;
+  $$('[data-logo]').forEach(el=>{
+    if (b.logo) el.innerHTML = '<img src="'+b.logo+'" alt="logo" onerror="this.parentNode.innerHTML=logoSVG()">';
+    else el.innerHTML = logoSVG();
+  });
+  $$('[data-name]').forEach(el => {
+    const n = b.name, idx = n.indexOf(' ');
+    if (idx > 0) el.innerHTML = esc(n.slice(0, idx)) + ' <em>' + esc(n.slice(idx+1)) + '</em>';
+    else el.textContent = n;
+  });
+  $$('[data-sub]').forEach(el => el.textContent = b.sub);
+  document.title = b.name + ' — Timeless Moments, Preserved | Abuja';
+}
+
+/* ============== TICKER ============== */
+function renderTicker(){
+  const items = ['Portraits & Events Photography','Abuja · Nigeria','Capturing Timeless Moments','Preserving Memories','WhatsApp 0813 777 4888','Book Your Session Today'];
+  const b = '<span>'+items.join('</span><span>')+'</span>';
+  $('#tickerTrack').innerHTML = b + b;
+}
+
+/* ============== HERO ============== */
+let heroIdx = 0, heroTimer = null;
+function renderHero(){
+  const h = state.hero;
+  if ($('#heroTag')) $('#heroTag').textContent = h.tag;
+  if ($('#heroLine1')) $('#heroLine1').textContent = h.line1;
+  if ($('#heroLine2')) $('#heroLine2').textContent = h.line2;
+  if ($('#heroSub')) $('#heroSub').innerHTML = esc(h.sub).replace('timeless images','<b>timeless images</b>');
+  if ($('#heroMeta')) $('#heroMeta').innerHTML = (h.meta||[]).map(m=>'<div><b>'+esc(m.n)+'</b><small>'+esc(m.l)+'</small></div>').join('');
+  const slides = h.slides||[];
+  if ($('#heroCarousel')) $('#heroCarousel').innerHTML = slides.map((s,i)=>
+    '<div class="hero__photo'+(i===0?' active':'')+'">'+photoHTML(s.src,'')+'</div>'
+  ).join('');
+  if ($('#heroDots')) {
+    $('#heroDots').innerHTML = slides.map((s,i)=>'<button data-i="'+i+'" class="'+(i===0?'active':'')+'"></button>').join('');
+    $$('#heroDots button').forEach(b => b.addEventListener('click', ()=> goHero(+b.dataset.i)));
+  }
+  heroIdx = 0;
+  updateHeroCaption();
+  startHero();
+}
+function updateHeroCaption(){
+  const posts = state.gallery.posts || [];
+  const p = posts[heroIdx % Math.max(posts.length,1)];
+  if ($('#heroPhotoSmall')) $('#heroPhotoSmall').textContent = p ? p.cat : 'Featured Session';
+  if ($('#heroPhotoTitle')) $('#heroPhotoTitle').textContent = p ? p.title : 'Portraits by VeeMyke';
+}
+function goHero(n){
+  const s = state.hero.slides||[]; if (!s.length) return;
+  heroIdx = (n + s.length) % s.length;
+  $$('.hero__photo').forEach((el,i)=> el.classList.toggle('active', i===heroIdx));
+  $$('#heroDots button').forEach((el,i)=> el.classList.toggle('active', i===heroIdx));
+  updateHeroCaption();
+  startHero();
+}
+function startHero(){
+  clearTimeout(heroTimer);
+  if ((state.hero.slides||[]).length < 2) return;
+  heroTimer = setTimeout(()=> goHero(heroIdx+1), 5000);
+}
+
+/* ============== PILLARS ============== */
+const PILLAR_ICONS = {
+  camera:'<rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="4"/>',
+  heart:'<path d="M12 21s-7-4.4-7-9.4A3.6 3.6 0 0 1 12 8a3.6 3.6 0 0 1 7 2.6c0 5-7 9.4-7 9.4z"/>',
+  star:'<path d="M12 2 15 8l6 1-4.5 4.5L17.7 20 12 17l-5.7 3 1.2-6.5L3 9l6-1z"/>'
+};
+function renderPillars(){
+  $('#pillarsGrid').innerHTML = state.pillars.map(p=>
+    '<div class="pillar"><div class="pillar__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(PILLAR_ICONS[p.icon]||PILLAR_ICONS.star)+'</svg></div>'+
+    '<h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p></div>'
+  ).join('');
+}
+
+/* ============== ABOUT ============== */
+function renderAbout(){
+  const a = state.about;
+  if ($('#aboutTitle')) $('#aboutTitle').innerHTML = esc(a.title).replace(/(your story|story)/i, m => '<em>'+m+'</em>');
+  if ($('#aboutText1')) $('#aboutText1').textContent = a.text1;
+  if ($('#aboutText2')) $('#aboutText2').textContent = a.text2;
+  if ($('#aboutSig')) $('#aboutSig').textContent = a.sig;
+  if ($('#introBadgeNum')) $('#introBadgeNum').textContent = a.badge;
+  const img = $('#introImg');
+  if (img) { img.src = a.img || ''; img.onload = function(){ this.classList.add('loaded'); }; }
+  if ($('#aboutPoints')) $('#aboutPoints').innerHTML = (a.points||[]).map(p=>'<div class="intro__point"><b>'+esc(p.n)+'</b><span>'+esc(p.l)+'</span></div>').join('');
+}
+
+/* ============== SPLIT ============== */
+function renderSplit(){
+  $('#splitGrid').innerHTML = state.split.map(s=>
+    '<div class="split__card" data-svc="'+s.id+'">'+photoHTML(s.img, s.title)+
+      '<div class="split__card__body"><small>'+esc(s.cat)+'</small><h3>'+esc(s.title)+'</h3>'+
+      '<p>'+esc(s.desc)+'</p>'+
+      '<span class="cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>'+
+    '</div>'
+  ).join('');
+  $$('#splitGrid .split__card').forEach(el => el.addEventListener('click', ()=> openSplit(el.dataset.svc)));
+  if ($('#footerSvc')) $('#footerSvc').innerHTML = state.split.map(s=>'<li><a href="#split">'+esc(s.title)+'</a></li>').join('');
+}
+function openSplit(id){
+  const s = state.split.find(x => x.id === id); if (!s) return;
+  $('#svcContent').innerHTML =
+    '<div class="sm__body"><h2>'+esc(s.title)+'</h2><p>'+esc(s.desc)+'</p>'+
+    '<h3 style="font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose-dark);margin-bottom:14px;font-weight:800">What\'s included</h3>'+
+    '<ul class="sm__list">'+(s.list||[]).map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
+    '<a href="https://wa.me/2348137774888?text='+encodeURIComponent('Hi VeeMyke Studios, I\'m interested in '+s.title)+'" target="_blank" rel="noopener" class="btn btn--primary btn--block">Enquire on WhatsApp</a></div>';
+  $('#svcModal').classList.add('open'); document.body.classList.add('locked');
+}
+
+/* ============== PORTFOLIO SLIDER ============== */
+let portIdx = 0, portTimer = null, portItems = [];
+function renderPortfolio(){
+  const posts = state.gallery.posts || [];
+  portItems = posts.slice(0,8).map(p => ({
+    src: p.images && p.images[0] ? p.images[0] : '',
+    cat: p.cat, title: p.title, desc: p.desc
+  }));
+  const stage = $('#psStage');
+  $$('.ps__slide', stage).forEach(el => el.remove());
+  portItems.forEach((it,i)=>{
+    const d = document.createElement('div');
+    d.className = 'ps__slide' + (i===0?' active':'');
+    d.innerHTML = photoHTML(it.src, it.title);
+    stage.insertBefore(d, stage.firstChild);
+  });
+  $('#psThumbs').innerHTML = portItems.map((it,i)=>
+    '<div class="ps__thumb'+(i===0?' active':'')+'" data-i="'+i+'">'+photoHTML(it.src,'')+'</div>'
+  ).join('');
+  $$('#psThumbs .ps__thumb').forEach(t => t.addEventListener('click', ()=> goPort(+t.dataset.i)));
+  portIdx = 0;
+  updatePortInfo();
+  startPortAuto();
+}
+function updatePortInfo(){
+  const it = portItems[portIdx]; if (!it) return;
+  if ($('#psCat')) $('#psCat').textContent = it.cat;
+  if ($('#psTitle')) $('#psTitle').textContent = it.title;
+  if ($('#psDesc')) $('#psDesc').textContent = it.desc;
+  if ($('#psCounter')) $('#psCounter').innerHTML = String(portIdx+1).padStart(2,'0') + ' / <b>' + String(portItems.length).padStart(2,'0') + '</b>';
+}
+function goPort(n){
+  if (!portItems.length) return;
+  portIdx = (n + portItems.length) % portItems.length;
+  $$('.ps__slide').forEach((el,i)=> el.classList.toggle('active', i===portIdx));
+  $$('#psThumbs .ps__thumb').forEach((el,i)=> el.classList.toggle('active', i===portIdx));
+  updatePortInfo();
+  startPortAuto();
+}
+function startPortAuto(){
+  clearInterval(portTimer);
+  if (portItems.length < 2) return;
+  portTimer = setInterval(()=> goPort(portIdx+1), 6000);
+}
+
+/* ============== GALLERY GRID ============== */
+let activeFilter = 'All', visiblePosts = [];
+function renderFilters(){
+  const cats = ['All'].concat(state.gallery.cats);
+  $('#filters').innerHTML = cats.map(c =>
+    '<button class="chip'+(c===activeFilter?' active':'')+'" data-filter="'+esc(c)+'">'+esc(c)+'</button>'
+  ).join('');
+  $$('#filters .chip').forEach(b => b.addEventListener('click', ()=>{ activeFilter = b.dataset.filter; renderFilters(); renderGallery(); }));
+}
+function renderGallery(){
+  const posts = state.gallery.posts || [];
+  visiblePosts = activeFilter === 'All' ? posts : posts.filter(p => p.cat === activeFilter);
+  const grid = $('#galleryGrid');
+  if (!visiblePosts.length){ grid.innerHTML = '<div class="g-empty">No posts in this category yet.</div>'; return; }
+  grid.innerHTML = visiblePosts.map(p=>{
+    const cover = p.images && p.images[0] ? p.images[0] : '';
+    const n = (p.images||[]).length;
+    return '<figure class="g-post" data-post="'+p.id+'">'+
+      photoHTML(cover, p.title)+
+      '<span class="g-post__cat">'+esc(p.cat)+'</span>'+
+      '<span class="g-post__count">'+n+' photo'+(n===1?'':'s')+'</span>'+
+      '<div class="g-post__info"><h3 class="g-post__title">'+esc(p.title)+'</h3>'+
+        '<p class="g-post__desc">'+esc(p.desc||'')+'</p>'+
+        '<span class="g-post__cta">Open Story →</span>'+
+      '</div>'+
+    '</figure>';
+  }).join('');
+  $$('#galleryGrid .g-post').forEach(el => el.addEventListener('click', ()=> openLightbox(el.dataset.post, 0)));
+}
+
+/* ============== LIGHTBOX ============== */
+let lbPostId = null, lbIdx = 0, lbImages = [];
+function openLightbox(postId, idx){
+  const post = (state.gallery.posts||[]).find(p => p.id === postId); if (!post) return;
+  lbPostId = postId; lbImages = post.images || []; lbIdx = idx || 0;
+  updateLightbox();
+  $('#lightbox').classList.add('open'); document.body.classList.add('locked');
+}
+function updateLightbox(){
+  const post = (state.gallery.posts||[]).find(p => p.id === lbPostId); if (!post) return;
+  const src = lbImages[lbIdx]; if (!src) return;
+  const img = $('#lbImg');
+  img.src = src;
+  img.onload = function(){ this.classList.add('loaded'); };
+  img.onerror = function(){ this.style.display='none'; };
+  img.style.display = '';
+  $('#lbCat').textContent = post.cat;
+  $('#lbTitle').textContent = post.title;
+  $('#lbDesc').textContent = post.desc || '';
+  $('#lbThumbs').innerHTML = lbImages.map((src,i)=>
+    '<div class="lb__thumb'+(i===lbIdx?' active':'')+'" data-i="'+i+'">'+photoHTML(src,'')+'</div>'
+  ).join('');
+  $$('#lbThumbs .lb__thumb').forEach(b => b.addEventListener('click', ()=>{ lbIdx = +b.dataset.i; updateLightbox(); }));
+}
+function closeLightbox(){ $('#lightbox').classList.remove('open'); document.body.classList.remove('locked'); }
+function stepLightbox(d){ if (!lbImages.length) return; lbIdx = (lbIdx + d + lbImages.length) % lbImages.length; updateLightbox(); }
+
+/* ============== TESTIMONIALS ============== */
+function renderTestimonials(){
+  const T = [
+    { q:'Every image from our session feels like art. VeeMyke captured our family in a way I didn\'t know was possible.', n:'Ada O.', r:'Family Session', a:'AO' },
+    { q:'My personal brand portraits are stunning. I use them everywhere — LinkedIn, website, everything. Worth every naira.', n:'Chioma N.', r:'Personal Brand', a:'CN' },
+    { q:'They covered our event with so much grace. Every candid, every moment — nothing was missed.', n:'Tunde A.', r:'Event Client', a:'TA' },
+    { q:'The bridal portraits took my breath away. These are the kind of images you frame and pass down.', n:'Amina K.', r:'Bridal Session', a:'AK' },
+    { q:'Relaxed, professional and the final images are extraordinary. Booking again for our next milestone.', n:'Fatima I.', r:'Milestone Session', a:'FI' },
+    { q:'Timeless is the right word. These photos will never go out of style.', n:'Emeka N.', r:'Portrait Client', a:'EN' }
+  ];
+  $('#tstGrid').innerHTML = T.map(t =>
+    '<div class="tst"><div class="tst__stars">★★★★★</div>' +
+      '<p>“'+esc(t.q)+'”</p>' +
+      '<div class="tst__who"><div class="tst__av">'+t.a+'</div><div><b>'+esc(t.n)+'</b><small>'+esc(t.r)+'</small></div></div>' +
+    '</div>'
+  ).join('');
+}
+
+/* ============== CONTACT ============== */
+function renderContact(){
+  const c = state.contact;
+  if ($('#contactPhone')) $('#contactPhone').innerHTML = '<a href="tel:+'+c.whatsapp+'">'+esc(c.phone)+'</a>';
+  if ($('#contactEmail')) $('#contactEmail').innerHTML = '<a href="mailto:'+esc(c.email)+'">'+esc(c.email)+'</a>';
+  if ($('#contactAddress')) $('#contactAddress').textContent = c.address;
+}
+
+/* ============== RENDER ============== */
+function renderSite(){
+  applyBrand(); renderTicker(); renderHero(); renderPillars(); renderAbout();
+  renderSplit(); renderPortfolio(); renderFilters(); renderGallery(); renderTestimonials(); renderContact();
+}
+
+/* ============== HEADER ============== */
+function initHeader(){
+  const burger = $('#burger'), mnav = $('#mobileNav');
+  burger.addEventListener('click', ()=>{
+    burger.classList.toggle('open'); mnav.classList.toggle('open');
+    document.body.classList.toggle('locked', mnav.classList.contains('open'));
+  });
+  $$('#mobileNav a').forEach(a => a.addEventListener('click', ()=>{
+    burger.classList.remove('open'); mnav.classList.remove('open'); document.body.classList.remove('locked');
+  }));
+}
+
+/* ============== ADMIN ============== */
+let adminUnlocked = false;
+function openAdmin(){
+  $('#admin').classList.add('open'); document.body.classList.add('locked');
+  $('#adminGate').style.display = adminUnlocked ? 'none' : 'grid';
+  $('#adminShell').style.display = adminUnlocked ? 'grid' : 'none';
+  if (!adminUnlocked) setTimeout(()=> $('#gatePass').focus(), 200);
+  if (adminUnlocked) syncAdminForms();
+}
+function closeAdmin(){ $('#admin').classList.remove('open'); document.body.classList.remove('locked'); }
+function initGate(){
+  $('#gateForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    if ($('#gatePass').value.trim() === state.password){
+      adminUnlocked = true;
+      $('#gateErr').classList.remove('show'); $('#gatePass').value = '';
+      $('#adminGate').style.display = 'none'; $('#adminShell').style.display = 'grid';
+      syncAdminForms(); toast('Welcome back');
+    } else { $('#gateErr').classList.add('show'); $('#gatePass').value = ''; }
+  });
+  $('#gateExit').addEventListener('click', e=>{ e.preventDefault(); closeAdmin(); });
+  $('#adminLogout').addEventListener('click', ()=>{ adminUnlocked = false; closeAdmin(); toast('Logged out'); });
+  $('#adminView').addEventListener('click', closeAdmin);
+}
+const PANEL_META = {
+  branding:['Branding','Logo, name and identity'],
+  hero:['Hero','Copy, slides and numbers'],
+  about:['About & Services','Studio story and services'],
+  gallery:['Gallery','Multi-image posts'],
+  contact:['Contact','Phone, email, address'],
+  data:['Data','Backup and reset']
+};
+function initTabs(){
+  $$('#adminTabs button').forEach(b => b.addEventListener('click', ()=>{
+    const t = b.dataset.tab;
+    $$('#adminTabs button').forEach(x => x.classList.toggle('active', x === b));
+    $$('.panel').forEach(p => p.classList.toggle('active', p.dataset.panel === t));
+    const meta = PANEL_META[t] || ['',''];
+    $('#panelTitle').textContent = meta[0];
+    $('#panelSub').textContent = meta[1];
+    $('.admin__panels').scrollTop = 0;
+    if (t === 'hero') { renderHeroSlideList(); renderHeroMetaEditor(); }
+    if (t === 'about') { renderAboutPointsEditor(); renderSplitEditor(); }
+    if (t === 'gallery') { renderGalleryAdmin(); renderCatSelect(); }
+  }));
+}
+function initBindings(){
+  $$('[data-bind]').forEach(el => {
+    const path = el.dataset.bind;
+    const handler = ()=>{
+      const v = el.value;
+      const parts = path.split('.'); const last = parts.pop();
+      const tgt = parts.reduce((o,k)=> (o[k]=o[k]||{}), state);
+      tgt[last] = v; save();
+      if (path.startsWith('brand.')) applyBrand();
+      if (path.startsWith('hero.')) renderHero();
+      if (path.startsWith('about.')) renderAbout();
+      if (path.startsWith('contact.')) renderContact();
+    };
+    el.addEventListener('input', handler);
+    el.addEventListener('change', handler);
+  });
+}
+function syncAdminForms(){
+  $$('[data-bind]').forEach(el => {
+    const path = el.dataset.bind; const parts = path.split('.');
+    let v = state; parts.forEach(k => { v = v && v[k]; });
+    el.value = v == null ? '' : v;
+  });
+  syncPreview('#logoPreview', state.brand.logo, 'No logo');
+  syncPreview('#introImgPreview', state.about.img, 'None');
+  renderHeroSlideList(); renderHeroMetaEditor(); renderAboutPointsEditor();
+  renderSplitEditor(); renderGalleryAdmin(); renderCatSelect();
+}
+function syncPreview(sel, src, empty){
+  const el = $(sel); if (!el) return;
+  el.innerHTML = src ? '<img src="'+src+'" alt="">' : '<span>'+empty+'</span>';
+}
+function wireUpload(inputSel, handler){
+  const input = $(inputSel); if (!input) return;
+  input.addEventListener('change', async ()=>{
+    const files = Array.from(input.files || []); if (!files.length) return;
+    try{ await handler(files); } catch(err){ console.error(err); toast('Could not process image'); }
+    input.value = '';
+  });
+}
+function optimise(file, maxDim, quality){
+  return new Promise((resolve, reject)=>{
+    const r = new FileReader();
+    r.onerror = reject;
+    r.onload = ()=>{
+      const img = new Image();
+      img.onerror = reject;
+      img.onload = ()=>{
+        let w = img.naturalWidth, h = img.naturalHeight;
+        const sc = Math.min(1, maxDim / Math.max(w,h));
+        w = Math.round(w*sc); h = Math.round(h*sc);
+        const c = document.createElement('canvas'); c.width = w; c.height = h;
+        c.getContext('2d').drawImage(img, 0, 0, w, h);
+        try{ resolve(c.toDataURL('image/jpeg', quality || .82)); } catch(e){ reject(e); }
+      };
+      img.src = r.result;
+    };
+    r.readAsDataURL(file);
+  });
+}
+function initUploads(){
+  wireUpload('#logoInput', async files=>{
+    state.brand.logo = await optimise(files[0], 600, .92);
+    save(); applyBrand(); syncPreview('#logoPreview', state.brand.logo, 'No logo'); toast('✓ Logo updated');
+  });
+  $('#logoRemove').addEventListener('click', ()=>{ state.brand.logo=''; save(); applyBrand(); syncPreview('#logoPreview', '', 'No logo'); toast('Logo removed'); });
+  wireUpload('#heroSlideInput', async files=>{
+    for (const f of files){
+      const src = await optimise(f, 1600, .82);
+      state.hero.slides.push({ id:uid(), src });
+    }
+    save(); renderHero(); renderHeroSlideList(); toast(files.length+' slide(s) added');
+  });
+  wireUpload('#introImgInput', async files=>{
+    state.about.img = await optimise(files[0], 1200, .85);
+    save(); renderAbout(); syncPreview('#introImgPreview', state.about.img, 'None'); toast('About image updated');
+  });
+  $('#introImgRemove').addEventListener('click', ()=>{ state.about.img=''; save(); renderAbout(); syncPreview('#introImgPreview','','None'); });
+  wireUpload('#gFileInput', async files=>{
+    const title = $('#gTitle').value.trim();
+    const desc = $('#gDesc').value.trim();
+    const cat = $('#gCat').value || state.gallery.cats[0];
+    if (!title){ toast('Add a title first'); return; }
+    const images = [];
+    for (const f of files){ images.push(await optimise(f, 1400, .75)); }
+    state.gallery.posts.unshift({ id:uid(), title, desc: desc || (cat+' — from the VeeMyke archive.'), cat, images });
+    save(); $('#gTitle').value=''; $('#gDesc').value='';
+    renderGallery(); renderPortfolio(); renderGalleryAdmin();
+    toast('✓ Post published');
+  });
+}
+function renderHeroSlideList(){
+  const el = $('#heroSlideList'); if (!el) return;
+  if (!state.hero.slides.length){ el.innerHTML = '<div class="empty-note">No slides yet.</div>'; return; }
+  el.innerHTML = state.hero.slides.map(s =>
+    '<div class="thumb">'+photoHTML(s.src,'')+'<button class="thumb__x" data-slide="'+s.id+'">✕</button></div>'
+  ).join('');
+  $$('#heroSlideList .thumb__x').forEach(b => b.addEventListener('click', ()=>{
+    state.hero.slides = state.hero.slides.filter(s => s.id !== b.dataset.slide);
+    save(); renderHero(); renderHeroSlideList(); toast('Slide removed');
+  }));
+}
+function renderHeroMetaEditor(){
+  const el = $('#heroMetaEditor'); if (!el) return;
+  el.innerHTML = (state.hero.meta||[]).map((m,i)=>
+    '<div style="display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-bottom:8px">' +
+      '<input type="text" value="'+esc(m.n)+'" data-hm-idx="'+i+'" data-hm-field="n" style="padding:9px;background:var(--blush);border:1px solid var(--line-2)">' +
+      '<input type="text" value="'+esc(m.l)+'" data-hm-idx="'+i+'" data-hm-field="l" style="padding:9px;background:var(--blush);border:1px solid var(--line-2)">' +
+    '</div>'
+  ).join('');
+  $$('#heroMetaEditor [data-hm-idx]').forEach(inp=>{
+    inp.addEventListener('input', ()=>{ state.hero.meta[+inp.dataset.hmIdx][inp.dataset.hmField] = inp.value; save(); renderHero(); });
+  });
+}
+function renderAboutPointsEditor(){
+  const el = $('#aboutPointsEditor'); if (!el) return;
+  el.innerHTML = (state.about.points||[]).map((p,i)=>
+    '<div style="display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-bottom:8px">' +
+      '<input type="text" value="'+esc(p.n)+'" data-ap-idx="'+i+'" data-ap-field="n" style="padding:9px;background:var(--blush);border:1px solid var(--line-2)">' +
+      '<input type="text" value="'+esc(p.l)+'" data-ap-idx="'+i+'" data-ap-field="l" style="padding:9px;background:var(--blush);border:1px solid var(--line-2)">' +
+    '</div>'
+  ).join('');
+  $$('#aboutPointsEditor [data-ap-idx]').forEach(inp=>{
+    inp.addEventListener('input', ()=>{ state.about.points[+inp.dataset.apIdx][inp.dataset.apField] = inp.value; save(); renderAbout(); });
+  });
+}
+function renderSplitEditor(){
+  const el = $('#splitEditor'); if (!el) return;
+  el.innerHTML = state.split.map((s,i)=>
+    '<div style="padding:14px;background:var(--blush);border:1px solid var(--line);margin-bottom:10px">' +
+      '<div class="field-grid">' +
+        '<label class="field"><span>Title</span><input type="text" value="'+esc(s.title)+'" data-sp-idx="'+i+'" data-sp-field="title"></label>' +
+        '<label class="field"><span>Category</span><input type="text" value="'+esc(s.cat)+'" data-sp-idx="'+i+'" data-sp-field="cat"></label>' +
+        '<label class="field full"><span>Description</span><textarea rows="2" data-sp-idx="'+i+'" data-sp-field="desc">'+esc(s.desc)+'</textarea></label>' +
+        '<label class="field full"><span>Image URL</span><input type="text" value="'+esc(s.img||'')+'" data-sp-idx="'+i+'" data-sp-field="img"></label>' +
+      '</div>' +
+    '</div>'
+  ).join('');
+  $$('#splitEditor [data-sp-idx]').forEach(inp=>{
+    inp.addEventListener('input', ()=>{ state.split[+inp.dataset.spIdx][inp.dataset.spField] = inp.value; save(); renderSplit(); });
+  });
+}
+function renderGalleryAdmin(){
+  const el = $('#gList'); if (!el) return;
+  const posts = state.gallery.posts || [];
+  $('#gCount').textContent = posts.length ? '· '+posts.length+' posts' : '';
+  if (!posts.length){ el.innerHTML = '<div class="empty-note">No posts yet.</div>'; return; }
+  el.innerHTML = posts.map(p =>
+    '<div class="ap-row">' +
+      '<div class="ap-row__cover">'+photoHTML(p.images && p.images[0] ? p.images[0] : '', '')+'</div>' +
+      '<div class="ap-row__body">' +
+        '<div class="ap-row__cat">'+esc(p.cat)+'</div>' +
+        '<div class="ap-row__title">'+esc(p.title)+'</div>' +
+        '<div class="ap-row__desc">'+esc(p.desc||'')+'</div>' +
+      '</div>' +
+      '<div class="ap-row__actions"><button class="danger" data-del="'+p.id+'" style="color:#C93B3B">✕</button></div>' +
+    '</div>'
+  ).join('');
+  $$('#gList [data-del]').forEach(b => b.addEventListener('click', ()=>{
+    if (!confirm('Delete this post?')) return;
+    state.gallery.posts = state.gallery.posts.filter(p => p.id !== b.dataset.del);
+    save(); renderGallery(); renderPortfolio(); renderGalleryAdmin(); toast('Post deleted');
+  }));
+}
+function renderCatSelect(){ $('#gCat').innerHTML = state.gallery.cats.map(c=>'<option>'+esc(c)+'</option>').join(''); }
+
+function initData(){
+  $('#exportData').addEventListener('click', ()=>{
+    const blob = new Blob([JSON.stringify(state, null, 2)], { type:'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'veemyke-data.json'; a.click(); URL.revokeObjectURL(a.href);
+    toast('Backup downloaded');
+  });
+  $('#importData').addEventListener('change', e=>{
+    const file = e.target.files[0]; if (!file) return;
+    const fr = new FileReader();
+    fr.onload = ()=>{
+      try{
+        const parsed = JSON.parse(fr.result);
+        const base = JSON.parse(JSON.stringify(DEFAULTS));
+        state = merge(base, parsed);
+        save(); renderSite(); syncAdminForms(); toast('Data imported');
+      }catch(err){ toast('Invalid file'); }
+    };
+    fr.readAsText(file); e.target.value = '';
+  });
+  const reset = ()=>{
+    if (!confirm('Reset everything?')) return;
+    state = JSON.parse(JSON.stringify(DEFAULTS));
+    save(); renderSite(); syncAdminForms(); toast('Reset complete');
+  };
+  $('#resetAll').addEventListener('click', reset);
+  $('#resetAll2').addEventListener('click', reset);
+  $('#passSave').addEventListener('click', ()=>{
+    const v = $('#passInput').value.trim();
+    if (v.length < 4){ toast('Min 4 characters'); return; }
+    state.password = v; save(); $('#passInput').value = ''; toast('Passcode updated');
+  });
+}
+
+/* ============== INIT ============== */
+function init(){
+  try { $('#year').textContent = new Date().getFullYear(); } catch(e){}
+  try { renderSite(); } catch(e){ console.error('site', e); }
+  try { initHeader(); } catch(e){}
+  try { initGate(); } catch(e){}
+  try { initTabs(); } catch(e){}
+  try { initBindings(); } catch(e){}
+  try { initUploads(); } catch(e){}
+  try { initData(); } catch(e){}
+
+  if ($('#psPrev')) $('#psPrev').addEventListener('click', ()=> goPort(portIdx-1));
+  if ($('#psNext')) $('#psNext').addEventListener('click', ()=> goPort(portIdx+1));
+
+  try {
+    $('#lbClose').addEventListener('click', closeLightbox);
+    $('#lbPrev').addEventListener('click', ()=> stepLightbox(-1));
+    $('#lbNext').addEventListener('click', ()=> stepLightbox(1));
+    $('#lightbox').addEventListener('click', e=>{ if (e.target.id === 'lightbox') closeLightbox(); });
+    $('#svcClose').addEventListener('click', ()=>{ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); });
+    $('#svcModal').addEventListener('click', e=>{ if (e.target.id === 'svcModal'){ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); } });
+    document.addEventListener('keydown', e=>{
+      if (e.key === 'Escape'){ closeLightbox(); $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); }
+      if (!$('#lightbox').classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+      if (e.key === 'ArrowRight') stepLightbox(1);
+    });
+  } catch(e){}
+
+  try {
+    $('#bookingForm').addEventListener('submit', e=>{
+      e.preventDefault();
+      const inputs = e.target.querySelectorAll('input, select, textarea');
+      const text = 'Hi VeeMyke Studios! New booking enquiry.\n\n' +
+        'Name: ' + (inputs[0].value||'') + '\n' +
+        'WhatsApp: ' + (inputs[1].value||'') + '\n' +
+        'Date: ' + (inputs[2].value||'') + '\n' +
+        'Session: ' + (inputs[3].value||'') + '\n' +
+        'Location: ' + (inputs[4].value||'') + '\n' +
+        'Details: ' + (inputs[5].value||'');
+      window.open('https://wa.me/2348137774888?text=' + encodeURIComponent(text), '_blank');
+      toast('Opening WhatsApp...');
+      e.target.reset();
+    });
+  } catch(e){}
+
+  try {
+    ['#openAdminMobile','#footerAdmin'].forEach(sel => {
+      const el = $(sel); if (el) el.addEventListener('click', e=>{ e.preventDefault(); openAdmin(); });
+    });
+    if (location.hash === '#admin') openAdmin();
+  } catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+        </html>
